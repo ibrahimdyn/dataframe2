@@ -19,10 +19,10 @@ import matplotlib as mpl
 #import joblib
 from joblib import Parallel, delayed 
 
-imglst=glob.glob("/home/idayan/imglst/*.fits")
+#imglst=glob.glob("/home/idayan/imglst/*.fits")
 
-len(imglst)
+#len(imglst)
 
-print(len(imglst))
+#print(len(imglst))
 
-imglst[0]
+#imglst[0]
