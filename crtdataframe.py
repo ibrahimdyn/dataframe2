@@ -23,6 +23,6 @@ imglst=glob.glob("/home/idayan/imglst/*.fits")
 
 len(imglst)
 
-#print(len(imglst))
+print(len(imglst))
 
 #imglst[0]
