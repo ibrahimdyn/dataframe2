@@ -21,7 +21,7 @@
 
 
 module load anaconda
-source activate /share/sw/open/anaconda/3
+source activate /home/idayan/anaconda3
 
 cat /etc/hosts
 jupyter lab --ip=0.0.0.0 --port=8888
