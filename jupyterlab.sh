@@ -1,12 +1,3 @@
-# #!/bin/bash
-# #SBATCH --job-name=jupyter
-# #SBATCH --partition=gpu
-# #SBATCH --gres=gpu:1
-# #SBATCH --time=2-00:00:00
-# #SBATCH --mem=50GB
-# #SBATCH --output=/home/<sunetID>/jupyter.log
-
-
 #!/bin/bash
 
 #SBATCH -N 1
@@ -16,6 +7,15 @@
 #SBATCH --time 12:00:00
 #SBATCH --array=1-128%32
 #SBATCH --output=/home/idayan/jupyter.log
+
+
+# #!/bin/bash
+# #SBATCH --job-name=jupyter
+# #SBATCH --partition=gpu
+# #SBATCH --gres=gpu:1
+# #SBATCH --time=2-00:00:00
+# #SBATCH --mem=50GB
+# #SBATCH --output=/home/<sunetID>/jupyter.log
 
 
 
