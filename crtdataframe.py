@@ -21,7 +21,7 @@ from joblib import Parallel, delayed
 
 imglst=glob.glob("/home/idayan/imglst/*.fits")
 
-#len(imglst)
+len(imglst)
 
 #print(len(imglst))
 
