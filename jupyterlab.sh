@@ -11,7 +11,7 @@
 
 
 
-#module load anaconda
+
 source /home/idayan/anaconda3/bin/activate
 
 #cat /etc/hosts
