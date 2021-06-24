@@ -11,7 +11,7 @@
 
 
 
-
+export XDG_RUNTIME_DIR=""
 source /home/idayan/anaconda3/bin/activate
 
 #cat /etc/hosts
