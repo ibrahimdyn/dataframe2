@@ -4,6 +4,9 @@
 #import pandas as pd
 #from joblib import Parallel, delayed
 #import os
+
+source $HOME/env/bin/activate 
+
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
