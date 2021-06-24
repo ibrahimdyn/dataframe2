@@ -19,15 +19,17 @@ import matplotlib as mpl
 #import joblib
 from joblib import Parallel, delayed 
 
-imglst=glob.glob("/home/idayan/imglst/*.fits")
+#imglst=glob.glob("/home/idayan/imglst/*.fits")
 
-len(imglst)
+#len(imglst)
 
-print(len(imglst))
+
 
 #imglst[0]
 
 imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
+
+print(len(imglst))
 
 N=len(imglst)
 #z=SkyCoord.from_name("PSR J1231-1411")
