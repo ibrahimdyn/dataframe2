@@ -1,5 +1,5 @@
 #!/bin/bash 
 
-source $HOME/env/bin/activate 
+source /home/idayan/env/bin/activate 
 
 python /home/idayan/dataframe2/crtdataframe.py /home/idayan/imglst/*.fits
