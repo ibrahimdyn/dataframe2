@@ -59,4 +59,4 @@ def llc(filee):
 
 ##%%timeit
 wrr=pd.DataFrame() 
-wrr=pd.concat(Parallel(n_jobs=-1, backend="multiprocessing", batch_size=2, verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
+wrr=pd.concat(Parallel(n_jobs=12, backend="multiprocessing", verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
