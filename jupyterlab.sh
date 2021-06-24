@@ -5,8 +5,7 @@
 #SBATCH --cpus-per-task 12
 #SBATCH --mem 20G
 #SBATCH --time 12:00:00
-
-#SBATCH --output=/home/idayan/slurm-%A_%a.out
+#SBATCH --output=/home/idayan/jupyter.log
 
 
 
