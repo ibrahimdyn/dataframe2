@@ -11,8 +11,8 @@
 
 
 
-module load anaconda
+#module load anaconda
 source /home/idayan/anaconda3/bin/activate
 
-cat /etc/hosts
+#cat /etc/hosts
 jupyter lab --ip=127.0.0.1 --port=2323
