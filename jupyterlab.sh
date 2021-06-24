@@ -6,7 +6,7 @@
 #SBATCH --mem 20G
 #SBATCH --time 12:00:00
 #SBATCH --array=1-128%32
-#SBATCH --output=slurm-%A_%a.out
+#SBATCH --output=/home/idayan/slurm-%A_%a.out
 ##SBATCH --output=/home/idayan/jupyter.log
 
 
