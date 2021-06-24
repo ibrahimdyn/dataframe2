@@ -54,6 +54,6 @@ def llc(filee):
             'Freq':hdulist.header["CRVAL3"], 'Time':hdulist.header["DATE-OBS"][17:23]}, ignore_index=True)
     return aa 
 
-%%timeit
+##%%timeit
 wrr=pd.DataFrame() 
 wrr=pd.concat(Parallel(n_jobs=-1, backend="multiprocessing", batch_size=2, verbose=10)(delayed(llc)(imglst[i]) for i in range(16000,16400)),ignore_index=True)
