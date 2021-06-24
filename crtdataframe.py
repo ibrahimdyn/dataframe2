@@ -4,6 +4,7 @@
 #import pandas as pd
 #from joblib import Parallel, delayed
 #import os
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import astropy.io.fits as fits
@@ -24,10 +25,10 @@ from joblib import Parallel, delayed
 #len(imglst)
 
 
-
+imglst = glob.glob(sys.argv[1])
 #imglst[0]
 
-imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
+#imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
 
 print(len(imglst))
 
