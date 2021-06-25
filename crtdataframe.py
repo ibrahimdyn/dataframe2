@@ -32,7 +32,7 @@ from joblib import Parallel, delayed
 #imglst[0]
 
 #imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
-imglst=glob.glob("/hddstore/idayan/*")
+imglst=glob.glob("/hddstore/idayan/*.fits")
 print(len(imglst))
 
 N=len(imglst)
