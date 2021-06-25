@@ -7,7 +7,7 @@
 #SBATCH --array=1-128%32
 
 source /home/idayan/env/bin/activate 
-cp /zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits /hddstore/idayan/
+#cp /zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits /hddstore/idayan/
 #python /home/idayan/dataframe2/crtdataframe.py /home/idayan/imglst/*.fits
 #python /home/idayan/dataframe2/crtdataframe.py $SLURM_ARRAY_TASK_ID"/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits"
 
