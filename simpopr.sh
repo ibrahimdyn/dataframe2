@@ -9,7 +9,7 @@
 source /home/idayan/env/bin/activate 
 
 slurm_job_id=os.environ['SLURM_ARRAY_TASK_ID']
-folders=list(glob.glob('/zfs/helios/filer0/mkuiack1/202008122000/*_all'))
+folders=(glob.glob('/zfs/helios/filer0/mkuiack1/202008122000/*_all'))
 
 
 #cp /zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits /hddstore/idayan/
