@@ -13,6 +13,7 @@
 
 export XDG_RUNTIME_DIR=""
 source /home/idayan/anaconda3/bin/activate
+conda activate test
 
 #cat /etc/hosts
 jupyter lab --ip=127.0.0.1 --port=2323
