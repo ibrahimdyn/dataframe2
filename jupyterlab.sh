@@ -7,7 +7,7 @@
 #SBATCH --time 12:00:00
 #SBATCH --output=/home/idayan/jupyter.log
 
-# #SBATCH --array=1-128%32
+#SBATCH --array=1-128%32
 
 
 
