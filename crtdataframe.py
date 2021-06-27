@@ -31,8 +31,9 @@ from joblib import Parallel, delayed
 #imglst = glob.glob(sys.argv[1])
 #imglst[0]
 
-imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
+#imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
 #imglst=glob.glob("/hddstore/idayan/*.fits")
+imglst=glob.glob("/home/idayan/imglst/*.fits")
 print(len(imglst))
 
 N=len(imglst)
@@ -60,3 +61,5 @@ def llc(filee):
 ##%%timeit
 wrr=pd.DataFrame() 
 wrr=pd.concat(Parallel(n_jobs=-1, backend="multiprocessing", batch_size=2, verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
+
+wrr.to_csv('neww.txt')
