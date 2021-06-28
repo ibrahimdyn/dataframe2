@@ -28,6 +28,7 @@ import io
 import time
 
 import pickle
+from tqdm import tqdm
 
 
 
@@ -62,6 +63,8 @@ def llc(filee):
     return aa
 
 start= time.time()
+
+tqdm.pandas()
 
 wrr=pd.DataFrame() 
 wrr=pd.concat((llc(imglst[i]) for i in range(0,N)),ignore_index=True)
