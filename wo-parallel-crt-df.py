@@ -60,7 +60,15 @@ def llc(filee):
     
     
     return aa
-  
+
+start= time.time()
+
 wrr=pd.DataFrame() 
 wrr=pd.concat((llc(imglst[i]) for i in range(0,N)),ignore_index=True)
+
+
+end= time.time()
+
+
+print(end-start)
 
