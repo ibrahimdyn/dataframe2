@@ -53,12 +53,48 @@ def llc(filee):
     
     return aa
   
-#  %time
+#def llc2(x):
+#wrr=pd.DataFrame() 
+#wrr=pd.concat((llc(imglst[i]) for i in range(16000,16400)),ignore_index=True) 
+
+
+
+#    print(f'Sleeping {seconds} second(s)...')
+#    time.sleep(seconds)
+#    return f'Done Sleeping...{seconds}'
+start= time.time()
+#%time
+#futures=[]
+wrr=pd.DataFrame()
 with concurrent.futures.ProcessPoolExecutor() as executor:
+    
     #secs= glob.glob(("/home/idayan/imglst/*"))
     #secs = [5, 4, 3, 2, 1]
     #executor.map(llc, imglst)
-    results = executor.map(llc, imglst)
-    for result in results:
-        wrr=pd.DataFrame()
-        wrr=pd.concat(result, ignore_index=True)
+ #   results = executor.map(llc, imglst)
+    
+    #wrr=pd.DataFrame()
+    #for result in results:
+    #    futures.append(result)
+    #future  = executor.submit(llc,imglst)
+    #futures.append(future)
+    
+
+#for number in couple_ods:
+#future=executor.submit(task,number)
+#futures.append(future)
+
+    for result in executor.map(llc, imglst):
+        #dostuff(result)
+        wrr=wrr.append(result)
+        #wrr.to_pickle('DF.pkl')
+        wrr.to_csv("/home/idayan/DFcsv.csv",index=True)
+        
+#wrr.to_csv("/home/idayan/weeee.txt")
+#wrr.to_csv("/home/idayan/weeee.t")
+#OBS_JOBS.to_csv("$HOME/{}_JOBS.txt".format(obs), index=False, header=False, sep=" ")
+#wrr.to_pickle('rerer.pkl')
+end= time.time()
+
+print(end-start)
+    
