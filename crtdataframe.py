@@ -62,7 +62,7 @@ wrr.to_csv('PSR09-210104df.csv')
 
 end= time.time()
 
-timetaken=print(end-start)
+timetaken=end-start
 timetaken.to_csv('thetmtkn')
 
 
