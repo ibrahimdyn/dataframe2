@@ -23,7 +23,10 @@ start= time.time()
 #imglst = glob.glob(sys.argv[1])
 #imglst[0]
 
-imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
+imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040500/*_all/SB*/imgs/*")
+
+#imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
+
 #imglst=glob.glob("/hddstore/idayan/*.fits")
 #imglst=glob.glob("/home/idayan/imglst/*.fits")
 print(len(imglst))
