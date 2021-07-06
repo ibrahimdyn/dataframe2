@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task 2
 #SBATCH --mem 20G
 #SBATCH --time 12:00:00
-#SBATCH --array=1-30%10
+
 
 
 source /home/idayan/env/bin/activate 
