@@ -1,12 +1,3 @@
-#import glob
-#import astropy.io.fits as fits
-#import numpy as np
-#import pandas as pd
-#from joblib import Parallel, delayed
-#import os
-
-
-
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
@@ -27,7 +18,7 @@ from joblib import Parallel, delayed
 
 #len(imglst)
 
-
+start= time.time()
 #imglst = glob.glob(sys.argv[1])
 #imglst[0]
 
@@ -39,6 +30,7 @@ print(len(imglst))
 N=len(imglst)
 #z=SkyCoord.from_name("PSR J1231-1411")
 #z=SkyCoord.from_name("4C 14.27") #
+z=SkyCoord.from_name("PSRB0950+08")
 def llc(filee):
 
     hdulist= (fits.open(filee))[0]     
@@ -46,7 +38,10 @@ def llc(filee):
     w=wcs.WCS(hdulist.header) #
     #wcoo=w.wcs_world2pix(231.794534, 51.100721 ,1,1,1) 
     #wcoo=w.wcs_world2pix()
-    wcoo=w.wcs_world2pix(100, 100 ,1,1,1)  ##
+    
+    ### wcoo=w.wcs_world2pix(100, 100 ,1,1,1)  ## neww.csv came from here
+    wcoo=w.wcs_world2pix(z.ra, z.dec,1,1,1)
+    
     arrwcoo=np.asarray(wcoo)  #
    # aa=pd.DataFrame(columns =['I', 'Freq', 'Time'])
    # aa=aa.append({'I':(hdulist.data)[0,0,int(arrwcoo[0]),int(arrwcoo[1])], 
@@ -55,11 +50,19 @@ def llc(filee):
     
     aa=pd.DataFrame(columns =['I', 'Freq', 'Time'])
     aa=aa.append({'I':(hdulist.data)[0,0,int(arrwcoo[0]),int(arrwcoo[1])], 
-            'Freq':hdulist.header["CRVAL3"], 'Time':hdulist.header["DATE-OBS"][17:23]}, ignore_index=True)
+            'Freq':hdulist.header["CRVAL3"], 'Time':hdulist.header["DATE-OBS"][11:23]}, ignore_index=True)
     return aa 
 
 ##%%timeit
 wrr=pd.DataFrame() 
 wrr=pd.concat(Parallel(n_jobs=3, backend="multiprocessing", batch_size=2, verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
+wrr.to_csv('PSR09-210104df.csv')
+#wrr.to_csv('PSRB090.csv')
 
-wrr.to_csv('neww.csv')
+
+end= time.time()
+
+timetaken=print(end-start)
+timetaken.to_csv('thetmtkn')
+
+
