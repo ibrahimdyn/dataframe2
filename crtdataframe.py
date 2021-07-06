@@ -13,6 +13,7 @@ from astropy import units as u
 import matplotlib as mpl
 #import joblib
 from joblib import Parallel, delayed 
+import time
 
 #imglst=glob.glob("/home/idayan/imglst/*.fits")
 
