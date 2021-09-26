@@ -59,7 +59,7 @@ def llc(filee):
 
 ##%%timeit
 wrr=pd.DataFrame() 
-wrr=pd.concat(Parallel(n_jobs=4, backend="multiprocessing", verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
+wrr=pd.concat(Parallel(n_jobs=3, backend="multiprocessing", verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
 wrr.to_csv('PSR09-210104df.csv')
 #wrr.to_csv('PSRB090.csv')
 
