@@ -24,8 +24,8 @@ import time
 #imglst[0]
 
 #imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040500/*_all/SB*/imgs/*") ## 1. 
-imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040400/*_all/SB*/imgs/*") ## 2.
-
+#imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040400/*_all/SB*/imgs/*") ## 2.
+imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040300/*_all/SB*/imgs/*") ## 3.
 
 
 #imglst=glob.glob("/hddstore/idayan/*.fits")
