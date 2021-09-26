@@ -30,7 +30,7 @@ imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040300/*_all/SB*/imgs/*") ##
 
 #imglst=glob.glob("/hddstore/idayan/*.fits")
 #imglst=glob.glob("/home/idayan/imglst/*.fits")
-print(len(imglst))
+#print(len(imglst))
 
 N=len(imglst)
 #z=SkyCoord.from_name("PSR J1231-1411")
