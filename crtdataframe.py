@@ -19,13 +19,14 @@ import time
 
 #len(imglst)
 
-start= time.time()
+#start= time.time()
 #imglst = glob.glob(sys.argv[1])
 #imglst[0]
 
-imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040500/*_all/SB*/imgs/*")
+#imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040500/*_all/SB*/imgs/*") ## 1. 
+imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202101040400/*_all/SB*/imgs/*") ## 2.
 
-#imglst=glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*")
+
 
 #imglst=glob.glob("/hddstore/idayan/*.fits")
 #imglst=glob.glob("/home/idayan/imglst/*.fits")
@@ -64,9 +65,9 @@ wrr.to_csv('PSR09-210104df.csv')
 #wrr.to_csv('PSRB090.csv')
 
 
-end= time.time()
+#end= time.time()
 
-timetaken=end-start
-timetaken.to_csv('thetmtkn')
+#timetaken=end-start
+#timetaken.to_csv('thetmtkn')
 
 
