@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH -N 1
+#SBATCH -N 2
 #SBATCH --ntasks-per-node 2
 #SBATCH --cpus-per-task 8
 #SBATCH --mem 20G
