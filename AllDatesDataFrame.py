@@ -61,7 +61,7 @@ def llc(filee):
 ##%%timeit
 
 #dates=[202101032000, 202101031700]
-dates=[202101032100 ,202101032200 ,202101032300 ,202101031600, 202101031500]
+dates=[202101040000, 202101040100, 202101040200, 202101031339, 202101031500]
 for date in dates:
     
     imglst=glob.glob("/zfs/helios/filer0/mkuiack1/{}/*_all/SB*/imgs/*".format(date))
