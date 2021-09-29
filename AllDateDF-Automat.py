@@ -79,6 +79,7 @@ for date in dates:
     #    pass to second argument
         #wrr.to_csv('Dateof{}.csv'.format(date))
     except Exception:
+        print('it gave error')
         continue
         #print('An exception occureddd')
     #else:
