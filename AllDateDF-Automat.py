@@ -73,11 +73,13 @@ for date in dates:
         
         
         wrr=pd.concat(Parallel(n_jobs=4, backend="multiprocessing", verbose=10)(delayed(llc)(imglst[i]) for i in range(0,N)),ignore_index=True)
+        wrr.to_csv('Dateof{}.csv'.format(date))
         #pass
     #if arcwoo is None:
     #    pass to second argument
         #wrr.to_csv('Dateof{}.csv'.format(date))
-    except
-        print('An exception occureddd')
-    else:
-        wrr.to_csv('Dateof{}.csv'.format(date))
+    except Exception:
+        continue
+        #print('An exception occureddd')
+    #else:
+        #wrr.to_csv('Dateof{}.csv'.format(date))
