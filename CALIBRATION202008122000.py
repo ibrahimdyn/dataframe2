@@ -110,7 +110,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
             continue
     
     fit = np.polyfit(x,y,1)
-    print(x)
+    #3print(x)
     return fit[0], fit[1]
   
   
@@ -121,7 +121,7 @@ def calibrate(images):
     
     print os.path.basename(images)
     
-    if np.nanstd(fitsimg.data[0,0,:,:]) < 100 :
+    if np.nanstd(fitsimg.data[0,0,:,:]) < 1000 :
         
         #look for sources
         configuration = {
@@ -177,6 +177,11 @@ def calibrate(images):
 #vv
 obs_dir = "/zfs/helios/filer0/mkuiack1/"
 
+t1 = time.time()
+
 fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
 for i in fits_list[0:200]:
     calibrate(i)
+    
+
+print "processing time:", time.time() -t1
