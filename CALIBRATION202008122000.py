@@ -164,7 +164,7 @@ def calibrate(images):
             print "ssecond if, check slope_cor:" , slope_cor
             
         fields=[slope_cor, intercept_cor, len(sr), os.path.basename(images)]
-        with open(r'/home/idayan/FIT_results.csv', 'a') as f:
+        with open(r'/home/idayan/CALIBRATEDIMAGES/FIT_results.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
             
