@@ -20,4 +20,6 @@ source /home/idayan/env/bin/activate
 
 #python /home/idayan/dataframe2/crtdataframe.py 
 #python /home/idayan/dataframe2/AllDatesDataFrame.py
-python /home/idayan/dataframe2/AllDateDF-Automat.py
+#python /home/idayan/dataframe2/AllDateDF-Automat.py
+#CALIBRATION202008122000.py
+python /home/idayan/dataframe2/CALIBRATION202008122000.py
