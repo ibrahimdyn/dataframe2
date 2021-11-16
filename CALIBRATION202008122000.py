@@ -183,5 +183,5 @@ fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
 #for i in fits_list:
 #    calibrate(i)
     
-Parallel(n_jobs=8)(delayed(calibrate)(i) for i in fits_list[0:200])
+Parallel(n_jobs=8)(delayed(calibrate)(i) for i in fits_list)
 print "processing time:", time.time() -t1
