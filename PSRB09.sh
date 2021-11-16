@@ -3,7 +3,7 @@
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 8
 #SBATCH --mem 20G
-#SBATCH --time 12:00:00
+#SBATCH --time 24:00:00
 #SBATCH --output=/home/idayan/CALIBRATEDIMAGES/calibration.log
 
 
