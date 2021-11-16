@@ -180,8 +180,8 @@ obs_dir = "/zfs/helios/filer0/mkuiack1/"
 t1 = time.time()
 
 fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
-for i in fits_list[0:200]:
-    calibrate(i)
+#for i in fits_list:
+#    calibrate(i)
     
-
+Parallel(n_jobs=8)(delayed(calibrate)(i) for i in fits_list[0:200])
 print "processing time:", time.time() -t1
