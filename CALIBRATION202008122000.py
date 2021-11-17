@@ -114,6 +114,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
         fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
     else:
         fit = [1e9,1e9,1e9,1e9,0]
+        cov = np.array([[1e12, 1e12], [1e12, 1e12]])
 
     return fit[0], cov[0,0], fit[1], cov[1,1], len(x)
     #fit = np.polyfit(x,y,1)
