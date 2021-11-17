@@ -105,7 +105,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
             sr_indexes.append(i)
             y.append(float(sr[i].flux.value))
             x.append(float(flux))
-            w.append(float(sr[i].f_int_err))
+            w.append(float(sr[i].flux.error))
         else:
             continue
             
