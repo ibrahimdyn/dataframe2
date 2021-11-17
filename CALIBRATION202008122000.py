@@ -105,13 +105,20 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
             sr_indexes.append(i)
             y.append(float(sr[i].flux.value))
             x.append(float(flux))
-            #w.append(float(sr[i].f_int_err))
+            w.append(float(sr[i].f_int_err))
         else:
             continue
-    
-    fit = np.polyfit(x,y,1)
+            
+    if len(x) > 2:
+        w = np.array(w,dtype=float)
+        fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
+    else:
+        fit = [1e9,1e9,1e9,1e9,0]
+
+    return fit[0], cov[0,0], fit[1], cov[1,1], len(x)
+    #fit = np.polyfit(x,y,1)
     #3print(x)
-    return fit[0], fit[1]
+    #return fit[0], fit[1]
   
   
 def calibrate(images):
@@ -148,7 +155,7 @@ def calibrate(images):
         
             ref_cat_8C = pd.read_csv('~/asu.tsv', sep=';',error_bad_lines=False, comment='#')
             #zz = SkyCoord((ref_cat_8C['RAB1950']),(ref_cat_8C['DEB1950']), unit=(u.hourangle, u.deg))
-            slope_cor, intercept_cor = compare_flux(sr,
+            slope_cor,slope_err, intercept_cor, int_err, N_match = compare_flux(sr,
                                        SkyCoord((ref_cat_8C['RAB1950']),(ref_cat_8C['DEB1950']), unit=(u.hourangle, u.deg)).ra.deg,
                                        SkyCoord((ref_cat_8C['RAB1950']),(ref_cat_8C['DEB1950']), unit=(u.hourangle, u.deg)).dec.deg,
                                        ref_cat_8C["Sint"],
@@ -156,7 +163,7 @@ def calibrate(images):
             print "still inside first if, check slope_cor:" , slope_cor
         else:
             ref_cat = pd.read_csv("/home/idayan/AARTFAAC_catalogue.csv")
-            slope_cor, intercept_cor = compare_flux(sr,
+            slope_cor,slope_err, intercept_cor, int_err, N_match = compare_flux(sr,
                                        ref_cat["ra"],
                                        ref_cat["decl"],
                                        ref_cat["f_int"],
