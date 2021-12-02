@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task 8
 #SBATCH --mem 20G
 #SBATCH --time 12:00:00
-#SBATCH --output=/home/idayan/CALIBRATEDIMAGES/calibration.log
+#SBATCH --output=/home/idayan/CALIBRATEDIMAGES/calibration2.log
 
 
 
@@ -22,4 +22,6 @@ source /home/idayan/env/bin/activate
 #python /home/idayan/dataframe2/AllDatesDataFrame.py
 #python /home/idayan/dataframe2/AllDateDF-Automat.py
 #CALIBRATION202008122000.py
-python /home/idayan/dataframe2/CALIBRATION202008122000.py
+#python /home/idayan/dataframe2/CALIBRATION202008122000.py
+
+python /home/idayan/dataframe2/justcalib-only60MHz.py
