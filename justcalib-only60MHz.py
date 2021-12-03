@@ -209,7 +209,7 @@ def Check_location(fits_file):
 
 obs_dir = "/zfs/helios/filer0/mkuiack1/"
 #fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
-fits_list=sorted(glob.glob(obs_dir+"202009240800/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
+fits_list=sorted(glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
 
 t1 = time.time()
 
