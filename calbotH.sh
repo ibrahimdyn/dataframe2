@@ -26,4 +26,6 @@ source /home/idayan/env/bin/activate
 
 #python /home/idayan/dataframe2/justcalib-only60MHz.py
 
-python /home/idayan/dataframe2/calboth.py
+#python /home/idayan/dataframe2/calboth.py
+
+python /home/idayan/dataframe2/calbothH.py
