@@ -145,8 +145,10 @@ def Check_location(fits_file):
     #target_dec = 21.896
     #target_ra= loca.ra.deg
     #target_dec= loca.dec.deg
+    print fits_file
     
     fitsimg = fits.open(fits_file)[0]
+    
     
     lofarfrequencyOffset = 0.0
     lofarBW = 195312.5
@@ -216,5 +218,5 @@ t1 = time.time()
 #for i in fits_list:
 #    calibrate(i)
     
-Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in fits_list[0:1000])
+Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in fits_list)
 print "processing time:", time.time() -t1
