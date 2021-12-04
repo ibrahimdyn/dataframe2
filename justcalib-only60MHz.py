@@ -218,5 +218,5 @@ t1 = time.time()
 #for i in fits_list:
 #    calibrate(i)
     
-Parallel(n_jobs=8,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in fits_list)
+Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in fits_list)
 print "processing time:", time.time() -t1
