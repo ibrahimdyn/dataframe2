@@ -210,7 +210,7 @@ def Check_location(fits_file):
         #                               ref_cat["f_int_err"])
         
         fields=[slope_cor,slope_err, intercept_cor, int_err, N_match, len(sr)]
-        with open(r'/home/idayan/CALwith60Mhz/Calboth-imgs/fit_results.csv', 'a') as f:
+        with open(r'/home/idayan/CALBOTH/fit_results.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
         
