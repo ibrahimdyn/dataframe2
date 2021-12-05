@@ -232,12 +232,18 @@ obs_dir = "/zfs/helios/filer0/mkuiack1/"
 #fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
 fits_list=sorted(glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
 
+arranged_fits_list= []
+for i in fits_list:
+    if os.path.basename(i)[0] == str(2) :
+        
+        arranged_fits_list.append(i)
+
 t1 = time.time()
 
 #for i in fits_list:
 #    calibrate(i)
     
-out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in fits_list)
+Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in arranged_fits_list)
 print "processing time:", time.time() -t1                    
 
 
