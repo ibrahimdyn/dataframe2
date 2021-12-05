@@ -190,7 +190,9 @@ def Check_location(fits_file):
                                        ref_cat["f_int_err"])
         
         fields=[slope_cor,slope_err, intercept_cor, int_err, N_match, len(sr)]
-        with open(r'/home/idayan/CALwith60Mhz/Calimgs/fit_results.csv', 'a') as f:
+        #with open(r'/home/idayan/CALwith60Mhz/Calimgs/fit_results.csv', 'a') as f:
+        with open(r'/zfs/helios/filer0/idayan/Cal60-20200812/fit_results.csv', 'a') as f:
+        #/zfs/helios/filer0/idayan/Cal60-20200812
             writer = csv.writer(f)
             writer.writerow(fields)
         
@@ -200,14 +202,10 @@ def Check_location(fits_file):
                             "-B"+str(int(np.ceil(bw /lofarBW))))
 
             fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
-            fitsimg.writeto("/home/idayan/CALwith60Mhz/Calimgs/"+filename,overwrite=True)
-        
-        
-        
-
-        
-        
-                    
+            #fitsimg.writeto("/home/idayan/CALwith60Mhz/Calimgs/"+filename,overwrite=True)
+            fitsimg.writeto("/zfs/helios/filer0/idayan/Cal60-20200812/"+filename,overwrite=True)
+            
+                   
 
 obs_dir = "/zfs/helios/filer0/mkuiack1/"
 #fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
