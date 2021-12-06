@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task 12
 #SBATCH --mem 20G
 #SBATCH --time 12:00:00
-#SBATCH -w helios-cn004
+#SBATCH -w helios-cn006
 #SBATCH --output=/home/idayan/jupyter.log
 # #SBATCH --array=1-128%32
 
