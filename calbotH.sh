@@ -28,4 +28,8 @@ source /home/idayan/env/bin/activate
 
 #python /home/idayan/dataframe2/calboth.py
 
-python /home/idayan/dataframe2/calbothH.py
+#python /home/idayan/dataframe2/calbothH.py
+
+python /home/idayan/dataframe2/calw2ref-202009240800.py
+
+
