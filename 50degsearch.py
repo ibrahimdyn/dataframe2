@@ -59,18 +59,20 @@ SROBSDIR=obsdir[:66]
 
 #imglst=[]
 fits_list= sorted(glob.glob("/zfs/helios/filer0/mkuiack1/202009290730/*_all/SB*/imgs/*fits"))
-for i in SROBSDIR[1:]:
+for i in SROBSDIR[5:]:
     #imglst = sorted(glob.glob(i+ "/*_all"))
     #np.append(fits_list, )
     fits_list.append(sorted(glob.glob(i+ "/*_all/SB*/imgs/*fits")))
     
     #print i
     #print imglst
+    
 
 CS002 = EarthLocation.from_geocentric (3826577.109500000, 461022.900196000, 5064892.758, 'm')
 position = SkyCoord(148.56*u.degree, 
                     7.66*u.degree)
 
+arrfits_list=fits_list[0][:]
 notin50 = []
 for i in arrfits_list:
     hdl=fits.open(i)[0]
@@ -82,13 +84,13 @@ for i in arrfits_list:
     sep=imgcentercoord.separation(targetcoord).deg
     
     if sep> 50:
-        notinview.append(i)
+        notin50.append(i)
         
     #obs_list_t=[]
     #if sep < 75:
     #    obs_list_t.append(i)
     #    print i 
-with open('your_file.csv', 'w') as f:
+with open('Notin50_file.csv', 'w') as f:
     for item in notin50:
         f.write("%s\n" % item)
    
