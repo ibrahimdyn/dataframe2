@@ -42,28 +42,6 @@ def rms(data):
     """
     data -= np.median(data)
     return np.sqrt(np.power(data, 2).sum()/len(data))
-
-
-def clipmy(data, sigma):
-    """Remove all values above a threshold from the array.
-    Uses iterative clipping at sigma value until nothing more is getting clipped.
-    Args:
-        data: a numpy array
-    """
-    data = data[np.isfinite(data)]
-    raveled = data.ravel()
-    median = np.median(data)
-    std = np.std(data)
-    #newdata = data[np.abs(data-median) <= sigma*std]
-    #ma.masked_where(np.abs(data-median) <= sigma*std, data)
-    #if len(newdata) and len(newdata) != len(raveled):
-    newdata=np.where(np.abs(data-median) <= sigma*std, data, np.inf)
-    #if len(newdata) and np.shape(newdata) != np.shape(data):
-    if (newdata).size and np.count_nonzero(np.isinf(data)) != 0: 
-        print newdata
-        return clip(newdata, sigma)
-    else:
-        return newdata
     
 def clip(data, sigma):
     """Remove all values above a threshold from the array.
@@ -97,7 +75,7 @@ dff=pd.DataFrame()
 #radius_outer=100
 #area1pix=0.00612
 
-for i in fitslist[0:10]:
+for i in fitslist:
     
         #hdl=fits.open(i)
         #fitsimgdata= hdl[0].data[0,0,:,:]
