@@ -97,7 +97,7 @@ dff=pd.DataFrame()
 #radius_outer=100
 #area1pix=0.00612
 
-for i in fitslist[0:10]:
+for i in fitslist:
     
         #hdl=fits.open(i)
         #fitsimgdata= hdl[0].data[0,0,:,:]
