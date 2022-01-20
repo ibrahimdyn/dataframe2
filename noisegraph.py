@@ -5,7 +5,7 @@ from astropy import units as u
 from regions import CirclePixelRegion, PixCoord, CircleAnnulusPixelRegion
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 from scipy.stats import norm
@@ -20,7 +20,7 @@ from photutils.aperture import CircularAperture
 from photutils.aperture import CircularAnnulus
 from photutils.aperture import aperture_photometry
 
-%matplotlib inline
+#%matplotlib inline
 
 import numpy.ma as ma
 
