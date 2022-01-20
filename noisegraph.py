@@ -42,6 +42,28 @@ def rms(data):
     """
     data -= np.median(data)
     return np.sqrt(np.power(data, 2).sum()/len(data))
+
+
+def clipmy(data, sigma):
+    """Remove all values above a threshold from the array.
+    Uses iterative clipping at sigma value until nothing more is getting clipped.
+    Args:
+        data: a numpy array
+    """
+    data = data[np.isfinite(data)]
+    raveled = data.ravel()
+    median = np.median(data)
+    std = np.std(data)
+    #newdata = data[np.abs(data-median) <= sigma*std]
+    #ma.masked_where(np.abs(data-median) <= sigma*std, data)
+    #if len(newdata) and len(newdata) != len(raveled):
+    newdata=np.where(np.abs(data-median) <= sigma*std, data, np.inf)
+    #if len(newdata) and np.shape(newdata) != np.shape(data):
+    if (newdata).size and np.count_nonzero(np.isinf(data)) != 0: 
+        print newdata
+        return clip(newdata, sigma)
+    else:
+        return newdata
     
 def clip(data, sigma):
     """Remove all values above a threshold from the array.
@@ -75,7 +97,7 @@ dff=pd.DataFrame()
 #radius_outer=100
 #area1pix=0.00612
 
-for i in fitslist:
+for i in fitslist[0:10]:
     
         #hdl=fits.open(i)
         #fitsimgdata= hdl[0].data[0,0,:,:]
@@ -89,18 +111,26 @@ for i in fitslist:
         #skyregion = aperture.CircularAnnulus(position, r_in=j, r_out=j+100)
         #areaindeg = skyregion.area() * area1pix
     
-    #annulus_aperture = CircularAnnulus(position, r_in=600, r_out=1100.)
+        #annulus_aperture = CircularAnnulus(position, r_in=600, r_out=1100.)
         annulus_masks = annulus_aperture.to_mask(method='center')
         
-        annulus_data=(annulus_masks[0].multiply(fitsimg))
+        annulus_data=(annulus_masks[0].multiply(imgdata))
         #result=bkgrms(annulus_data)
         
-        masks = skyregion.to_mask(method='center')
-        annulus_data = masks[0].multiply(imgdata)
-        mask = masks[0].data
-        annulus_data_1d = annulus_data[mask > 0]
-        annulus_data_1d = annulus_data_1d[annulus_data_1d != 0]
-        _, median_sigclip, median_stdev = sigma_clipped_stats(annulus_data_1d, sigma=3)
+        #masks = skyregion.to_mask(method='center')
+        #annulus_data = masks[0].multiply(imgdata)
+        #mask = masks[0].data
+        mask = annulus_masks[0].data
+        annulus_data_new = annulus_data[mask > 0]
+        #annulus_data_new =annulus_data_new[(annulus_data_new != np.nan)& (annulus_data_new != 0)]
+        
+        
+        #annulus_data_1d = annulus_data[mask > 0]
+        #annulus_data_1d = annulus_data_1d[annulus_data_1d != 0]
+        
+        
+        #_, median_sigclip, median_stdev = sigma_clipped_stats(annulus_data_1d, sigma=3)
+        _, median_sigclip, median_stdev = sigma_clipped_stats(annulus_data_new, sigma=3)
         
         # ----- %%% -------
         # these are also giving same results
