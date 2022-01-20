@@ -86,8 +86,8 @@ for i in fitslist:
 
     for j in ranges:
         annulus_aperture = CircularAnnulus(position, r_in=j, r_out=j+100)
-        skyregion = aperture.CircularAnnulus(position, r_in=j, r_out=j+100)
-        areaindeg = skyregion.area() * area1pix
+        #skyregion = aperture.CircularAnnulus(position, r_in=j, r_out=j+100)
+        #areaindeg = skyregion.area() * area1pix
     
     #annulus_aperture = CircularAnnulus(position, r_in=600, r_out=1100.)
         annulus_masks = annulus_aperture.to_mask(method='center')
