@@ -183,8 +183,8 @@ def Check_location(fits_file):
                     writer = csv.writer(f)
                     writer.writerow(fields)
 
-print starting img glob
+print("starting img glob")
 fits_list=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*.fits"))
-print len(fits_list) amount of images
+print len(fits_list)
 Parallel(n_jobs=4,backend="multiprocessing", verbose=10)(delayed(Check_location)(fits_file) for fits_file in fits_list)
 
