@@ -1,27 +1,57 @@
 import os
 import sys
-import csv 
-import argparse
-import glob
-import time 
+import csv
 
 from datetime import datetime
+#import datetime
+
+import argparse
 import numpy as np
 import pandas as pd
 
 #from sourcefinder.accessors import open as open_accessor
 #from sourcefinder.accessors import sourcefinder_image_from_accessor
 
-from joblib import Parallel, delayed
+from tkp.accessors import sourcefinder_image_from_accessor
+from tkp.accessors import open as open_accessor
 
 from astropy.io import fits
 from astropy.io.fits.hdu.hdulist import HDUList
 from astropy.time import Time
+import glob
+from astropy.coordinates import SkyCoord
+import sys
+import matplotlib.pyplot as plt
+import numpy as np
+import astropy.io.fits as fits
+import glob
+#from mpl_toolkits import mplot3d
+import astropy.wcs as wcs
+from astropy.table import Table
+import pandas as pd
+from astropy.coordinates import SkyCoord
+from astropy.coordinates import Angle
+from astropy import units as u
 
+
+import matplotlib as mpl
+#import joblib
+from joblib import Parallel, delayed
+import time
+import pyds9 as pyd
 from tkp.accessors import sourcefinder_image_from_accessor
 from tkp.accessors import open as open_accessor
 
-from astropy.coordinates import SkyCoord
+
+from astropy.io.fits.hdu.hdulist import HDUList
+from astropy.time import Time
+
+import csv
+
+import tkp.sourcefinder.image
+import matplotlib.pyplot as plt
+import math
+#from datetime import datetime
 
 #loca=SkyCoord.from_name("PSR B0950+08")
 
@@ -153,6 +183,8 @@ def Check_location(fits_file):
                     writer = csv.writer(f)
                     writer.writerow(fields)
 
-
-
+print starting img glob
+fits_list=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*.fits"))
+print len(fits_list) amount of images
+Parallel(n_jobs=4,backend="multiprocessing", verbose=10)(delayed(Check_location)(fits_file) for fits_file in fits_list)
 
