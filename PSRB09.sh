@@ -32,4 +32,8 @@ source /home/idayan/env/bin/activate
 #python /home/idayan/dataframe2/CALIBRATION202008122000.py
 #python /home/idayan/dataframe2/justcalib-only60MHz.py
 
-python /home/idayan/dataframe2/noisegraph.py
+#python /home/idayan/dataframe2/noisegraph.py
+
+python /home/idayan/dataframe2/GPHUNTgit.py
+
+
