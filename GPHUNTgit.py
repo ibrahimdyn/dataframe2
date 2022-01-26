@@ -143,7 +143,7 @@ def Check_location(fits_file):
             "back_size_x": 64,
             "back_size_y": 64,
             "margin": 0,
-            "radius": 100}
+            "radius": 200}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
@@ -187,5 +187,5 @@ def Check_location(fits_file):
 print("starting img glob")
 fits_list=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*.fits"))
 print len(fits_list)
-Parallel(n_jobs=10,backend="multiprocessing", verbose=15)(delayed(Check_location)(fits_file) for fits_file in fits_list)
+Parallel(n_jobs=15,backend="multiprocessing", verbose=10)(delayed(Check_location)(fits_file) for fits_file in fits_list)
 
