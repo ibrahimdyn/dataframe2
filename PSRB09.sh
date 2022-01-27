@@ -15,7 +15,8 @@
 
 
 
-source /home/idayan/env/bin/activate 
+#source /home/idayan/env/bin/activate
+source /home/idayan/new_env/bin/activate
 
 
 
