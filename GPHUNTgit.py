@@ -143,7 +143,7 @@ def Check_location(fits_file):
             "back_size_x": 64,
             "back_size_y": 64,
             "margin": 0,
-            "radius": 400}
+            "radius": 50}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
@@ -170,7 +170,7 @@ def Check_location(fits_file):
                     np.deg2rad(target_ra))
 
             distance  = np.sqrt((sr_x - cat_x)**2 + (sr_y - cat_y)**2)
-            if  distance < 1.0:
+            if  distance < 2.0:
                 
                 fields=[(sr[i].flux.value-intercept_cor)/slope_cor,
                         (sr[i].flux.error)/slope_cor,
