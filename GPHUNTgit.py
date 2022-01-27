@@ -170,7 +170,7 @@ def Check_location(fits_file):
                     np.deg2rad(target_ra))
 
             distance  = np.sqrt((sr_x - cat_x)**2 + (sr_y - cat_y)**2)
-            if  distance < 2.0:
+            if  distance < 3.0:
                 
                 fields=[(sr[i].flux.value-intercept_cor)/slope_cor,
                         (sr[i].flux.error)/slope_cor,
