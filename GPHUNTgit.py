@@ -143,7 +143,7 @@ def Check_location(fits_file):
             "back_size_x": 64,
             "back_size_y": 64,
             "margin": 0,
-            "radius": 200}
+            "radius": 400}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
