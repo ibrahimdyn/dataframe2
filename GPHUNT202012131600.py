@@ -143,14 +143,14 @@ def Check_location(fits_file):
             "back_size_x": 64,
             "back_size_y": 64,
             "margin": 0,
-            "radius": 50}
+            "radius": 400}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
                                                                    plane=0),
                                                      **configuration)
 
-        sr = imagedata.extract(det=3, anl=3,
+        sr = imagedata.extract(det=5, anl=3,
                                labelled_data=None, labels=[],
                                force_beam=True)
 
