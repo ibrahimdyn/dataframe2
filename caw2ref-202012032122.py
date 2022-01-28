@@ -234,7 +234,7 @@ obs_dir = "/zfs/helios/filer0/mkuiack1/"
 #fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
 #fits_list=sorted(glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
 #fits_list=sorted(glob.glob(obs_dir+"202009240800/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
-fits_list=sorted(glob.glob(obs_dir+"202012032122/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
+fits_list=sorted(glob.glob(obs_dir+"202012032122/"+"*_all/"+"SB*/"+"imgs/"+"*.fits"))
 #fits_list= sorted(glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/2020-08-12T21:06:50-21:09:59_all/SB166-2020-08-12T21:06:50-21:09:59/imgs/*.fits"))
 
 arranged_fits_list= []
