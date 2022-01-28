@@ -212,7 +212,7 @@ def Check_location(fits_file):
         
         fields=[slope_cor,slope_err, intercept_cor, int_err, N_match, len(sr)]
         #with open(r'/zfs/helios/filer0/idayan/calw2ref-202009240800/', 'a') as f:
-        with open(r'/zfs/helios/filer0/idayan/calw2ref-202009240800/try_fit_results_.csv', 'a') as f:
+        with open(r'/zfs/helios/filer0/idayan/calw2ref-202012032122/try_fit_results_.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
         
