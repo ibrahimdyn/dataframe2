@@ -37,3 +37,5 @@ source /home/idayan/new_env/bin/activate
 
 #python /home/idayan/dataframe2/GPHUNTgit.py
 python /home/idayan/dataframe2/GPHUNT202012032122.py
+python /home/idayan/dataframe2/calw2ref-202009240800.py
+
