@@ -165,8 +165,8 @@ def Check_location(fits_file):
 
         # Source find 
         configuration = {
-            "back_size_x": 64,
-            "back_size_y": 64,
+            "back_size_x": 32,
+            "back_size_y": 32,
             "margin": 0,
             "radius": 0}
 
