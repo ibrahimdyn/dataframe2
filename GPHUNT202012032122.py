@@ -190,7 +190,11 @@ obs_dir = "/zfs/helios/filer0/mkuiack1/"
 #fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
 #fits_list=sorted(glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
 #fits_list=sorted(glob.glob(obs_dir+"202009240800/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
-fits_list=sorted(glob.glob(obs_dir+"202012032122/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
+
+#fits_list=sorted(glob.glob(obs_dir+"202012032122/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
+fits_list=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202012032122/*.fits"))
+
+
 #fits_list=sorted(glob.glob('/zfs/helios/filer0/mkuiack1/202012032122/2020-12-03T21:24:39-21:27:49_all/\
 #SB156-2020-12-03T21:24:39-21:27:49/imgs/*'))
 #fits_list= sorted(glob.glob("/zfs/helios/filer0/mkuiack1/202008122000/2020-08-12T21:06:50-21:09:59_all/SB166-2020-08-12T21:06:50-21:09:59/imgs/*.fits"))
