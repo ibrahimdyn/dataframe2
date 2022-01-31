@@ -3,7 +3,7 @@
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 15
 #SBATCH --mem 20G
-#SBATCH --time 42:00:00
+#SBATCH --time 420:00:00
 #SBATCH --output=/home/idayan/caw2ref-202012032122.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
