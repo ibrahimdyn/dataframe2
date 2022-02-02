@@ -179,7 +179,7 @@ def Check_location(fits_file):
                         frq, datetime.strftime(t.datetime, format="%Y-%m-%dT%H:%M:%S"), fits_file, None]
         
             #replace with pandas csv write 
-                with open(r'/home/idayan/_ALLfiler0GPhunt_.csv', 'a') as f:
+                with open(r'/home/idayan/_ALLfiler01GPhunt_.csv', 'a') as f:
                     writer = csv.writer(f)
                     print('printing fields')
                     writer.writerow(fields)
