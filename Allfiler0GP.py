@@ -150,7 +150,7 @@ def Check_location(fits_file):
                                                                    plane=0),
                                                      **configuration)
 
-        sr = imagedata.extract(det=3, anl=3,
+        sr = imagedata.extract(det=5, anl=3,
                                labelled_data=None, labels=[],
                                force_beam=True)
 
