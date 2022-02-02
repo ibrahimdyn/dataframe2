@@ -128,8 +128,8 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
         w = np.array(w,dtype=float)
         fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
     else:
-        fit = [1e10,1e10,1e10,1e10,0]
-        cov = np.array([[1e12, 1e12], [1e12, 1e12]])
+        fit = [1e9,1e9,1e9,1e9,0]
+        cov = np.array([[1e19, 1e9], [1e9, 1e9]])
 
     return fit[0], cov[0,0], fit[1], cov[1,1], len(x)
     #fit = np.polyfit(x,y,1)
@@ -164,11 +164,12 @@ def Check_location(fits_file):
     if np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0:
 
         # Source find 
+        #try with new radius=830 (65deg)
         configuration = {
             "back_size_x": 64,
             "back_size_y": 64,
             "margin": 0,
-            "radius": 0}
+            "radius": 830}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
@@ -212,7 +213,7 @@ def Check_location(fits_file):
         
         fields=[slope_cor,slope_err, intercept_cor, int_err, N_match, len(sr)]
         #with open(r'/zfs/helios/filer0/idayan/calw2ref-202009240800/', 'a') as f:
-        with open(r'/zfs/helios/filer0/idayan/calw2ref-202009240800/try_fit_results_.csv', 'a') as f:
+        with open(r'/zfs/helios/filer0/idayan/calw2refnrad-202009240800/try_fit_results_.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
         
@@ -226,7 +227,7 @@ def Check_location(fits_file):
 
             fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
             #fitsimg.writeto("/zfs/helios/filer0/idayan/calw2ref-202009240800/"+filename,overwrite=True)
-            fitsimg.writeto("/zfs/helios/filer0/idayan/calw2ref-202009240800/"+filename,overwrite=True)
+            fitsimg.writeto("/zfs/helios/filer0/idayan/calw2refnrad-202009240800/"+filename,overwrite=True)
         
         
         
