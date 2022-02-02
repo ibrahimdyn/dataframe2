@@ -140,10 +140,10 @@ def Check_location(fits_file):
 
         # Source find 
         configuration = {
-            "back_size_x": 64,
-            "back_size_y": 64,
+            "back_size_x": 32,
+            "back_size_y": 32,
             "margin": 0,
-            "radius": 200}
+            "radius": 0}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
