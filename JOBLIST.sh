@@ -10,7 +10,7 @@
 
 
 singularity shell -B /zfs/helios/filer1/mkuiack1/:/opt/Data $HOME/lofar-pipeline.simg
-echo uname -n
+uname -n
 source /opt/lofarsoft/lofarinit.sh
 
 
