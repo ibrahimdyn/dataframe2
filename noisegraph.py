@@ -34,7 +34,7 @@ from photutils.background import StdBackgroundRMS
 
 #fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*fits"))
 fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202012032122/*fits"))
-#fitsimg=fits.getdata(fitslist[3100])[0,0,:,:]
+fitsimg=fits.getdata(fitslist[0])[0,0,:,:]
 
 def rms(data):
     """Returns the RMS of the data about the median.
