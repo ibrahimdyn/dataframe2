@@ -32,8 +32,9 @@ from astropy.visualization import simple_norm
 from astropy.stats import SigmaClip
 from photutils.background import StdBackgroundRMS
 
-fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*fits"))
-fitsimg=fits.getdata(fitslist[3100])[0,0,:,:]
+#fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*fits"))
+fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202012032122/*fits"))
+#fitsimg=fits.getdata(fitslist[3100])[0,0,:,:]
 
 def rms(data):
     """Returns the RMS of the data about the median.
@@ -169,7 +170,9 @@ for i in fitslist:
 
     #pd.Series(reesultlist)    
     dff=dff.append(newrs,ignore_index=True)
-    dff.to_pickle("noisegraphdf-calw2ref-202009240800.pkl")
+    #dff.to_pickle("noisegraphdf-calw2ref-202009240800.pkl")
+    dff.to_pickle("noisegraphdf-calw2ref-202012032122.pkl")
+    
         
     #print "bottom i ", df
     
