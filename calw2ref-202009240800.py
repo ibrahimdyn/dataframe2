@@ -164,12 +164,13 @@ def Check_location(fits_file):
     if np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0:
 
         # Source find 
-        #try with new radius=830 (65deg)
+        #try with new radius=830 (65deg) rms for this figure was 15 now i will try new radius :
+        #try with new radius=530
         configuration = {
             "back_size_x": 64,
             "back_size_y": 64,
             "margin": 0,
-            "radius": 830}
+            "radius": 30}
 
         img_HDU = fits.HDUList(fitsimg)
         imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
@@ -213,7 +214,7 @@ def Check_location(fits_file):
         
         fields=[slope_cor,slope_err, intercept_cor, int_err, N_match, len(sr)]
         #with open(r'/zfs/helios/filer0/idayan/calw2ref-202009240800/', 'a') as f:
-        with open(r'/zfs/helios/filer0/idayan/calw2refnrad-202009240800/try_fit_results_.csv', 'a') as f:
+        with open(r'/zfs/helios/filer0/idayan/calw2refnrad2-202009240800/try_fit_results_.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
         
@@ -227,7 +228,7 @@ def Check_location(fits_file):
 
             fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
             #fitsimg.writeto("/zfs/helios/filer0/idayan/calw2ref-202009240800/"+filename,overwrite=True)
-            fitsimg.writeto("/zfs/helios/filer0/idayan/calw2refnrad-202009240800/"+filename,overwrite=True)
+            fitsimg.writeto("/zfs/helios/filer0/idayan/calw2refnrad2-202009240800/"+filename,overwrite=True)
         
         
         
