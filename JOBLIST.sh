@@ -15,8 +15,8 @@ uname -n
 source /opt/lofarsoft/lofarinit.sh
 
 
-#source /home/idayan/env/bin/activate
-source /home/idayan/new_env/bin/activate
+source /home/idayan/env/bin/activate
+#source /home/idayan/new_env/bin/activate
 
 
 #cp /zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits /hddstore/idayan/
