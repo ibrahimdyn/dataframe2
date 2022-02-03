@@ -8,7 +8,8 @@
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
-
+uname -n
+echo before
 singularity shell -B /zfs/helios/filer1/mkuiack1/:/opt/Data $HOME/lofar-pipeline.simg
 uname -n
 source /opt/lofarsoft/lofarinit.sh
