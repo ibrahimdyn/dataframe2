@@ -10,7 +10,7 @@
 
 uname -n
 echo before
-singularity shell -B /zfs/helios/filer1/mkuiack1/:/opt/Data $HOME/lofar-pipeline.simg
+singularity shell -B /zfs/helios/filer1/mkuiack1/:/opt/Data /home/idayan/lofar-pipeline.simg
 uname -n
 source /opt/lofarsoft/lofarinit.sh
 
