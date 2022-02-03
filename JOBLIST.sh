@@ -12,6 +12,7 @@ uname -n
 echo before
 singularity shell -B /zfs/helios/filer1/mkuiack1/:/opt/Data /home/idayan/lofar-pipeline.simg
 uname -n
+ls /opt
 source /opt/lofarsoft/lofarinit.sh
 
 
