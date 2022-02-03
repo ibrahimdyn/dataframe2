@@ -9,7 +9,7 @@
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
 
-singularity shell -B /zfs/helios/filer1/mkuiack1/:/opt/Data ~/lofar-pipeline.simg
+singularity exec -B /zfs/helios/filer1/mkuiack1/:/opt/Data ~/lofar-pipeline.simg
 
 source /opt/lofarsoft/lofarinit.sh
 
