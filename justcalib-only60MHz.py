@@ -129,8 +129,8 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
         w = np.array(w,dtype=float)
         fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
     else:
-        fit = [1e10,1e10,1e10,1e10,0]
-        cov = np.array([[1e12, 1e12], [1e12, 1e12]])
+        fit = [1e9,1e9,1e9,1e9,0]
+        cov = np.array([[1e9, 1e9], [1e9, 1e9]])
 
     return fit[0], cov[0,0], fit[1], cov[1,1], len(x)
     #fit = np.polyfit(x,y,1)
@@ -191,7 +191,7 @@ def Check_location(fits_file):
         
         fields=[slope_cor,slope_err, intercept_cor, int_err, N_match, len(sr)]
         #with open(r'/home/idayan/CALwith60Mhz/Calimgs/fit_results.csv', 'a') as f:
-        with open(r'/zfs/helios/filer0/idayan/Cal60-20200812/fit_results.csv', 'a') as f:
+        with open(r'/zfs/helios/filer0/idayan/Cal60-202006061630/fit_results.csv', 'a') as f:
         #/zfs/helios/filer0/idayan/Cal60-20200812
             writer = csv.writer(f)
             writer.writerow(fields)
@@ -203,25 +203,28 @@ def Check_location(fits_file):
 
             fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
             #fitsimg.writeto("/home/idayan/CALwith60Mhz/Calimgs/"+filename,overwrite=True)
-            fitsimg.writeto("/zfs/helios/filer0/idayan/Cal60-20200812/"+filename,overwrite=True)
+            fitsimg.writeto("/zfs/helios/filer0/idayan/Cal60-202006061630/"+filename,overwrite=True)
             
                    
 
-obs_dir = "/zfs/helios/filer0/mkuiack1/"
+#obs_dir = "/zfs/helios/filer0/mkuiack1/"
+obs_dir = "/zfs/helios/filer1/idayan/"
+
 #fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
-fits_list=sorted(glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*"))
+fits_list=sorted(glob.glob(obs_dir+"202006061630/"+"*_all*"+"/*SB*/"+"imgs/"+"2*.fits"))
 
 
-arranged_fits_list= []
-for i in fits_list:
-    if os.path.basename(i)[0] == str(2) :
-        
-        arranged_fits_list.append(i)
+#arranged_fits_list= []
+#for i in fits_list:
+#    if os.path.basename(i)[0] == str(2) :
+#        
+#        arranged_fits_list.append(i)
 
 t1 = time.time()
 
 #for i in fits_list:
 #    calibrate(i)
     
-Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in arranged_fits_list)
+#Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in arranged_fits_list)
+Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(Check_location)(i) for i in fits_list)
 print "processing time:", time.time() -t1
