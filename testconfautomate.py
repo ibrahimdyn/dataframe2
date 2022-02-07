@@ -56,6 +56,7 @@ def process(cfg):
     file_count = len(files)
     print file_count
     print files
+    print dirs
 
 if __name__ == "__main__":
     
