@@ -24,7 +24,7 @@ def get_configuration():
     """
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--indir', type=str, default="/tmp",
+    parser.add_argument('--indir', type=str, default="./",
                         help="Input directory for fitsfile.")
     parser.add_argument('--fitsfile', type=str, default="./",
                         help="Target fits file.")
@@ -52,7 +52,8 @@ def get_configuration():
 def process(cfg):
     
     
-    path, dirs, files = next(os.walk("/home/idayan"))
+    #path, dirs, files = next(os.walk("/home/idayan"))
+    path, dirs, files = next(os.walk(cfg.indir))
     file_count = len(files)
     print file_count
     print files
