@@ -125,7 +125,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
         else:
             continue
             
-    if len(x) > 4:
+    if len(x) > 7:
         w = np.array(w,dtype=float)
         fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
     else:
