@@ -24,9 +24,9 @@ def get_configuration():
     """
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--indir', type=str, default="",
+    parser.add_argument('--indir', type=str, default="/tmp",
                         help="Input directory for fitsfile.")
-    parser.add_argument('--fitsfile', type=str, default="",
+    parser.add_argument('--fitsfile', type=str, default="./",
                         help="Target fits file.")
 
     parser.add_argument('--threshold', type=float, default=1000.0,
