@@ -55,6 +55,7 @@ def process(cfg):
     path, dirs, files = next(os.walk("/home/idayan"))
     file_count = len(files)
     print file_count
+    print files
 
 if __name__ == "__main__":
     
