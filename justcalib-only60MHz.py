@@ -163,7 +163,7 @@ def Check_location(fits_file):
 
     
     # Initial quality condition. 
-    if np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0:
+    if np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0 and np.nanstd(fitsimg.data[0,0,:,:]) > 3.0:
 
         # Source find 
         configuration = {
