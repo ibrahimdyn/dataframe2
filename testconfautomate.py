@@ -54,6 +54,7 @@ def process(cfg):
     
     #path, dirs, files = next(os.walk("/home/idayan"))
     path, dirs, files = next(os.walk(cfg.indir))
+    fpath, fdirs, ffiles = (os.walk(cfg.indir))
     file_count = len(files)
     print file_count
     print files
