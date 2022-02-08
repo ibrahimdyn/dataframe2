@@ -33,7 +33,9 @@ from astropy.stats import SigmaClip
 from photutils.background import StdBackgroundRMS
 
 #fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*fits"))
-fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202012032122/*fits"))
+#fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202012032122/*fits"))
+fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/Cal60-202006061630/*fits"))
+
 fitsimg=fits.getdata(fitslist[0])[0,0,:,:]
 
 def rms(data):
@@ -131,7 +133,7 @@ for i in fitslist:
         
         
         #_, median_sigclip, median_stdev = sigma_clipped_stats(annulus_data_1d, sigma=3)
-        _, median_sigclip, median_stdev = sigma_clipped_stats(annulus_data_new, sigma=3)
+        #_, median_sigclip, median_stdev = sigma_clipped_stats(annulus_data_new, sigma=3)
         
         # ----- %%% -------
         # these are also giving same results
@@ -151,19 +153,21 @@ for i in fitslist:
         #sigmaclped_annulus=clip(annulus_data_1d,3)
         #result=rms(sigmaclped_annulus)
         
-        result=median_stdev
-        
-        print "result for j"
-        print result
+        #result=median_stdev
+        #result=rms(clip(annulus_data_new,3))
+        result=rms(clip(annulus_data_new,3))
+        #print "result for j"
+        #print result
         #result.astype(pd.DataFrame)
         #pd.astype(result)
         #pd.DataFrame()
         #fresult=result.astype(float)
         resultlist.append(result)
+        
         #pdresultlist=resultlist.tolist()
         
         
-        print j, 'j'
+        #print j, 'j'
 
 #pd.Series()       
     newrs=pd.Series(resultlist)
@@ -171,7 +175,7 @@ for i in fitslist:
     #pd.Series(reesultlist)    
     dff=dff.append(newrs,ignore_index=True)
     #dff.to_pickle("noisegraphdf-calw2ref-202009240800.pkl")
-    dff.to_pickle("noisegraphdf-calw2ref-202012032122.pkl")
+    dff.to_pickle("noisegraphdf-calw222ref-202006061630.pkl")
     
         
     #print "bottom i ", df
