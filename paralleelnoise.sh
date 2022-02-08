@@ -33,5 +33,5 @@ source /home/idayan/new_env/bin/activate
 
 #python /home/idayan/dataframe2/noisegraph.py
 
-python /home/idayan/dataframe2/#parallelized-noisegraph.py
+python /home/idayan/dataframe2/parallelized-noisegraph.py
 
