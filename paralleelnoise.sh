@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@ibrahimdyn 
-ibrahimdyn
-/
-dataframe2
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-dataframe2/noisegraph.sh
-@ibrahimdyn
-ibrahimdyn Update noisegraph.sh
-Latest commit 003ded6 9 hours ago
- History
- 1 contributor
-44 lines (24 sloc)  1.17 KB
-   
 #!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
@@ -60,5 +31,7 @@ source /home/idayan/new_env/bin/activate
 #python /home/idayan/dataframe2/GPHUNTgit.py
 #python /home/idayan/dataframe2/GPHUNT202012032122.py
 
-python /home/idayan/dataframe2/noisegraph.py
+#python /home/idayan/dataframe2/noisegraph.py
+
+python /home/idayan/dataframe2/#parallelized-noisegraph.py
 
