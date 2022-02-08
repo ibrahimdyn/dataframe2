@@ -58,6 +58,7 @@ def process(cfg):
     print file_count
     print files
     print dirs
+    print path
 
 if __name__ == "__main__":
     
