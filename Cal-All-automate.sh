@@ -31,4 +31,6 @@ source /home/idayan/new_env/bin/activate
 #python /home/idayan/dataframe2/GPHUNT202012032122.py
 
 echo "your cwd is:" $(pwd)
-python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="2020-08-12T23:06:50-S186.0-B1.fits"
+#for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
+ b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits
+python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$b"
