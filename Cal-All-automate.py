@@ -235,14 +235,14 @@ if __name__ == "__main__":
     
         cfg = get_configuration()
         
-        if cfg.outdir[-1] != "/":
-            cfg.outdir = cfg.outdir+"/"
+       # if cfg.outdir[-1] != "/":
+       #     cfg.outdir = cfg.outdir+"/"
 
-        if cfg.indir[-1] != "/":
-            cfg.indir = cfg.indir+"/"
+        #if cfg.indir[-1] != "/":
+        #    cfg.indir = cfg.indir+"/"
 
-        if not os.path.isdir(cfg.outdir):
-                os.mkdir(cfg.outdir)
+#        if not os.path.isdir(cfg.outdir):
+#                os.mkdir(cfg.outdir)
         
         process(cfg)
 sys.exit()
