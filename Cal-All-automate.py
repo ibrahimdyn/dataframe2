@@ -21,7 +21,7 @@ from astropy.time import Time
 
 
 # In[ ]:
-
+obs=sys.argv[1]
 
 def get_configuration():
     """
@@ -47,7 +47,7 @@ def get_configuration():
 
     parser.add_argument('--threshold', type=float, default=1000.0,
                         help="RMS Threshold to reject image.")
-    parser.add_argument('--outdir', type=str, default="/zfs/helios/filer1/idayan/",
+    parser.add_argument('--outdir', type=str, default="/zfs/helios/filer1/idayan/{}/".format(obs),
                         help="Desitnation directory.")
     
     #parser.add_argument('--outdir', type=str, default="./",
@@ -241,8 +241,8 @@ if __name__ == "__main__":
         #if cfg.indir[-1] != "/":
         #    cfg.indir = cfg.indir+"/"
 
-#        if not os.path.isdir(cfg.outdir):
-#                os.mkdir(cfg.outdir)
+        if not os.path.isdir(cfg.outdir):
+                os.mkdir(cfg.outdir)
         
         process(cfg)
 sys.exit()
