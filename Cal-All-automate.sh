@@ -32,7 +32,9 @@ source /home/idayan/new_env/bin/activate
 
 echo "your cwd is:" $(pwd)
 #for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
-b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits`
+#b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits`
+b=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
+
 echo "this files will be processed:"
 for i in "$b"; do echo "$i"; done
 echo "processed files' end"
