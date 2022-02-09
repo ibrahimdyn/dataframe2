@@ -36,4 +36,6 @@ b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits`
 echo "this files will be processed:"
 for i in "$b"; do echo "$i"; done
 echo "processed files' end"
-python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$i"
+for i in "$b"; do python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$i"; done
+#python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$i"
+
