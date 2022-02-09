@@ -32,5 +32,5 @@ source /home/idayan/new_env/bin/activate
 
 echo "your cwd is:" $(pwd)
 #for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
- b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits
+b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits`
 python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$b"
