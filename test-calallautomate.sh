@@ -46,5 +46,5 @@ echo "processed files' end"
 #FILE=${FILES[$SLURM_ARRAY_TASK_ID]}
 
 #FILES=(assembled_reads/*.sorted.bam)    
-FILE=${$b[$SLURM_ARRAY_TASK_ID]}
+FILE=${($b)[$SLURM_ARRAY_TASK_ID]}
 echo $FILE
