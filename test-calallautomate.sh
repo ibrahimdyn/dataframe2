@@ -4,7 +4,8 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --mem 20G
 #SBATCH --time 40:00:00
-#SBATCH --output=/home/idayan/noisegraphH.log
+#SBATCH --output=/home/idayan/testt-callallauto.log
+#SBATCH --array=1-10%3
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
