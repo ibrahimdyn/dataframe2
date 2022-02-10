@@ -1,10 +1,11 @@
 #!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 10
+#SBATCH --cpus-per-task 3
 #SBATCH --mem 20G
 #SBATCH --time 40:00:00
-#SBATCH --output=/home/idayan/noisegraphH.log
+#SBATCH --array=1-12080%10
+##### #SBATCH --output=/home/idayan/noisegraphH.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
