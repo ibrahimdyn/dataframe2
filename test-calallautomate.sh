@@ -46,6 +46,7 @@ ls $c > ~/test44.txt
 echo "echoing sed command; ready steady go:"
 ls `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt`
 echo "echoED sed command!!!"
+python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' ~/$test44.txt` 
 #python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' $test33.txt` 
 #/home/mkuiack1/A12_pipeline/helios_pipeline/A12_pipelinearray.sh `sed $SLURM_ARRAY_TASK_ID'q;d' $OBSSLICEFILE` 
 #for i in $b;do python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$i; done
