@@ -48,7 +48,10 @@ echo "echoing sed command; ready steady go:"
 echo "echoED sed command!!!"
 #python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
 #Cal-All-automate.py
-python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt` 
+#python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt` 
+
+#--fitsfile="$i"
+python /home/idayan/dataframe2/Cal-All-automate.py  --fitsfile=`sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt`
 
 #echo "this files will be processed:"
 #for i in "$b"; do echo "$i"; done
