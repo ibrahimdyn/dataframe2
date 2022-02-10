@@ -33,11 +33,25 @@ source /home/idayan/new_env/bin/activate
 echo "your cwd is:" $(pwd)
 #for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
 #b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits`
-b=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
+#b=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
 
-echo "this files will be processed:"
-for i in "$b"; do echo "$i"; done
-echo "processed files' end"
-for i in $b;do python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$i; done
+#echo "this files will be processed:"
+#for i in "$b"; do echo "$i"; done
+#echo "processed files' end"
+
+#c=`ls /zfs/helios/filer1/idayan/202006040630/*_all/SB*/imgs/*.fits`
+c=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
+ls $c > test44.txt
+echo "echoing sed command; ready steady go:"
+#ls `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt`
+echo "echoED sed command!!!"
+#python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
+#Cal-All-automate.py
+python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
+
+#echo "this files will be processed:"
+#for i in "$b"; do echo "$i"; done
+#echo "processed files' end"
+#for i in $b;do python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$i; done
 #python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$i"
 
