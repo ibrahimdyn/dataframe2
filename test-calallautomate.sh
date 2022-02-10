@@ -50,5 +50,5 @@ echo "processed files' end"
 #FILE=${$b[$SLURM_ARRAY_TASK_ID]}
 #FILE=${($b)[$SLURM_ARRAY_TASK_ID]}
 echo $SLURM_ARRAY_TASK_ID
-FILE=${$b[$SLURM_ARRAY_TASK_ID]}
+FILE=${"$b"[$SLURM_ARRAY_TASK_ID]}
 echo $FILE
