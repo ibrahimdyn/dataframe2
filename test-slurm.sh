@@ -26,6 +26,6 @@ echo "STOP=$STOP"
 
 for (( N = $START; N <= $STOP; N++ ))
 do
-    LINE=$(sed -n "$N"p test44.txt)
+    LINE=$(sed -n "$N"p ~/test44.txt)
     echo $LINE
 done
