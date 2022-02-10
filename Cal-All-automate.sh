@@ -47,7 +47,7 @@ echo "STOP=$STOP"
 for (( N = $START; N <= $STOP; N++ ))
 do
     echo $N
-    LINE=$(sed -n "$N"p ~/test44.txt)
+    LINE=$(sed -n "$N"p ~/3Dates.txt)
     echo $LINE
     echo "before processing, NoFiles"
     echo $(wc -l ~/3Dates.txt)
