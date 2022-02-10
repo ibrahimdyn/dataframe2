@@ -16,7 +16,9 @@ from astropy.io import fits
 from astropy.io.fits.hdu.hdulist import HDUList
 from astropy.time import Time
 
-
+print "printing sysargv1:\n"
+print sys.argv[1]
+#obs=(sys.argv[1]).split("/")[5]
 
 def get_configuration():
     """
@@ -24,14 +26,14 @@ def get_configuration():
     """
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--indir', type=str, default="./",
+    parser.add_argument('--indir', type=str, default="",
                         help="Input directory for fitsfile.")
-    parser.add_argument('--fitsfile', type=str, default="./",
+    parser.add_argument('--fitsfile', type=str, default="",
                         help="Target fits file.")
 
     parser.add_argument('--threshold', type=float, default=1000.0,
                         help="RMS Threshold to reject image.")
-    parser.add_argument('--outdir', type=str, default="./",
+    parser.add_argument('--outdir', type=str, default="",
                         help="Desitnation directory.")
 
     parser.add_argument("--detection", default=5, type=float,
@@ -53,24 +55,25 @@ def process(cfg):
     
     
     #path, dirs, files = next(os.walk("/home/idayan"))
-    path, dirs, files = next(os.walk(cfg.indir))
-    fpath, fdirs, ffiles = (os.walk(cfg.indir))
-    file_count = len(ffiles)
-    print file_count
-    print ffiles
-    print fdirs
-    print fpath
+    print obs
+    #path, dirs, files = next(os.walk(cfg.indir))
+    #fpath, fdirs, ffiles = (os.walk(cfg.indir))
+    #file_count = len(ffiles)
+    #print file_count
+    #print ffiles
+    #print fdirs
+    #print fpath
 
 if __name__ == "__main__":
     
     
         cfg = get_configuration()
         
-        if cfg.outdir[-1] != "/":
-            cfg.outdir = cfg.outdir+"/"
+        #if cfg.outdir[-1] != "/":
+        #    cfg.outdir = cfg.outdir+"/"
 
-        if cfg.indir[-1] != "/":
-            cfg.indir = cfg.indir+"/"
+        #if cfg.indir[-1] != "/":
+        #    cfg.indir = cfg.indir+"/"
 
         if not os.path.isdir(cfg.outdir):
                 os.mkdir(cfg.outdir)
