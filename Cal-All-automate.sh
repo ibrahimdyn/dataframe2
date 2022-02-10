@@ -46,11 +46,17 @@ echo "STOP=$STOP"
 
 for (( N = $START; N <= $STOP; N++ ))
 do
+    echo $N
     LINE=$(sed -n "$N"p ~/test44.txt)
     echo $LINE
+    echo "before processing, NoFiles"
+    echo $(wc -l ~/test44.txt)
     #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
     python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
+    echo "after processing, NoFiles"
+    echo $(wc -l ~/test44.txt)
+    
 done
 
 
