@@ -39,6 +39,15 @@ b=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
 echo "this files will be processed:"
 for i in "$b"; do echo "$i"; done
 echo "processed files' end"
+
+#c=`ls /zfs/helios/filer1/idayan/202006040630/*_all/SB*/imgs/*.fits`
+c=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
+ls $c > test33.txt
+echo "echoing sed command; ready steady go:"
+`sed $SLURM_ARRAY_TASK_ID'q;d' $test33.txt`
+echo "echoED sed command!!!"
+#python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' $test33.txt` 
+#/home/mkuiack1/A12_pipeline/helios_pipeline/A12_pipelinearray.sh `sed $SLURM_ARRAY_TASK_ID'q;d' $OBSSLICEFILE` 
 #for i in $b;do python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$i; done
 #python /home/idayan/dataframe2/Cal-All-automate.py --indir=/zfs/helios/filer0/idayan/Calimgs/ --fitsfile="$i"
 
@@ -49,6 +58,6 @@ echo "processed files' end"
 #FILES=(assembled_reads/*.sorted.bam)    
 #FILE=${$b[$SLURM_ARRAY_TASK_ID]}
 #FILE=${($b)[$SLURM_ARRAY_TASK_ID]}
-echo $SLURM_ARRAY_TASK_ID
-FILE=${"$b"[$SLURM_ARRAY_TASK_ID]}
-echo $FILE
+#echo $SLURM_ARRAY_TASK_ID
+#FILE=${"$b"[$SLURM_ARRAY_TASK_ID]}
+#echo $FILE
