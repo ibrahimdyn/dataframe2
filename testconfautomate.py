@@ -17,6 +17,8 @@ from astropy.io.fits.hdu.hdulist import HDUList
 from astropy.time import Time
 
 print "outside and before eeverythin"
+obs=(sys.argv[1]).split("/")[5]
+print "obs variable assigned"
 
 #obs=(sys.argv[1]).split("/")[5]
 
@@ -57,6 +59,10 @@ def process(cfg):
     #path, dirs, files = next(os.walk("/home/idayan"))
     print "printinnnngggg"
     print sys.argv[1]
+    
+    print "ow printinng obs :"
+    print obs
+    
     #path, dirs, files = next(os.walk(cfg.indir))
     #fpath, fdirs, ffiles = (os.walk(cfg.indir))
     #file_count = len(ffiles)
