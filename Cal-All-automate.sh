@@ -48,8 +48,12 @@ for (( N = $START; N <= $STOP; N++ ))
 do
     LINE=$(sed -n "$N"p ~/test44.txt)
     echo $LINE
-    python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
+    #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
+    
+    python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
 done
+
+
 
 #echo "this files will be processed:"
 #for i in "$b"; do echo "$i"; done
