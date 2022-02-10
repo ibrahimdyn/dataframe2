@@ -34,7 +34,7 @@ def get_configuration():
     
     parser.add_argument('--indir', type=str, default="",
                         help="Input directory for fitsfile.")
-    parser.add_argument('--fitsfile', type=str, default="{}".format(fitsf),
+    parser.add_argument('--fitsfile', type=str, default="".format(fitsf),
                         help="Target fits file.")
 
     #parser.add_argument('--indir', type=str, default="/zfs/helios/filer1/idayan/",
