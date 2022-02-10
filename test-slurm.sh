@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --mem 20G
 #SBATCH --time 40:00:00
-#SBATCH --array=1-121%3
+#SBATCH --array=1-10
 ###  #### SBATCH --output=/zf
 ### #SBATCH --output=/home/idayan/testt-callallauto.log
 ### #!/bin/bash
