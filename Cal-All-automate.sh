@@ -51,9 +51,9 @@ do
     echo $LINE
     echo "before processing, NoFiles"
     echo $(wc -l ~/3Dates.txt)
-    #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
+    python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
-    python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
+    #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
     echo "after processing, NoFiles"
     echo $(wc -l ~/3Dates.txt)
     
