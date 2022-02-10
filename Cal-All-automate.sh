@@ -1,10 +1,10 @@
 #!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 3
+#SBATCH --cpus-per-task 10
 #SBATCH --mem 20G
 #SBATCH --time 40:00:00
-#SBATCH --array=1-120%10
+#SBATCH --array=1-121%10
 #SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
@@ -12,24 +12,6 @@
 
 #source /home/idayan/env/bin/activate
 source /home/idayan/new_env/bin/activate
-
-
-#cp /zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits /hddstore/idayan/
-#python /home/idayan/dataframe2/crtdataframe.py /home/idayan/imglst/*.fits
-#python /home/idayan/dataframe2/crtdataframe.py $SLURM_ARRAY_TASK_ID"/zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits"
-
-
-#python /home/idayan/dataframe2/crtdataframe.py 
-#python /home/idayan/dataframe2/AllDatesDataFrame.py
-#python /home/idayan/dataframe2/AllDateDF-Automat.py
-#CALIBRATION202008122000.py
-#python /home/idayan/dataframe2/CALIBRATION202008122000.py
-#python /home/idayan/dataframe2/justcalib-only60MHz.py
-
-#python /home/idayan/dataframe2/noisegraph.py
-
-#python /home/idayan/dataframe2/GPHUNTgit.py
-#python /home/idayan/dataframe2/GPHUNT202012032122.py
 
 echo "your cwd is:" $(pwd)
 #for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
@@ -51,7 +33,23 @@ echo "echoED sed command!!!"
 #python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt` 
 
 #--fitsfile="$i"
-python /home/idayan/dataframe2/Cal-All-automate.py  --fitsfile=`sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt`
+#python /home/idayan/dataframe2/Cal-All-automate.py  --fitsfile=`sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt`
+
+
+START=$SLURM_ARRAY_TASK_ID
+NUMLINES=100
+STOP=$((SLURM_ARRAY_TASK_ID*NUMLINES))
+START="$(($STOP - $(($NUMLINES - 1))))"
+
+echo "START=$START"
+echo "STOP=$STOP"
+
+for (( N = $START; N <= $STOP; N++ ))
+do
+    LINE=$(sed -n "$N"p ~/test44.txt)
+    echo $LINE
+    python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
+done
 
 #echo "this files will be processed:"
 #for i in "$b"; do echo "$i"; done
