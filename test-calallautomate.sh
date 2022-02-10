@@ -42,10 +42,9 @@ echo "processed files' end"
 
 #c=`ls /zfs/helios/filer1/idayan/202006040630/*_all/SB*/imgs/*.fits`
 c=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
-ls $c > test33.txt
-cd ..
+ls $c > ~/test44.txt
 echo "echoing sed command; ready steady go:"
-ls `sed $SLURM_ARRAY_TASK_ID'q;d' test33.txt`
+ls `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt`
 echo "echoED sed command!!!"
 #python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' $test33.txt` 
 #/home/mkuiack1/A12_pipeline/helios_pipeline/A12_pipelinearray.sh `sed $SLURM_ARRAY_TASK_ID'q;d' $OBSSLICEFILE` 
