@@ -5,7 +5,7 @@
 #SBATCH --mem 20G
 #SBATCH --time 40:00:00
 #SBATCH --array=1-128%10
-##### #SBATCH --output=/home/idayan/noisegraphH.log
+#SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
