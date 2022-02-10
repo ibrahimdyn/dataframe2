@@ -23,8 +23,8 @@ echo "your cwd is:" $(pwd)
 #echo "processed files' end"
 
 #c=`ls /zfs/helios/filer1/idayan/202006040630/*_all/SB*/imgs/*.fits`
-c=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
-ls $c > ~/test44.txt
+#c=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
+#ls $c > ~/test44.txt
 echo "echoing sed command; ready steady go:"
 #ls `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt`
 echo "echoED sed command!!!"
@@ -50,12 +50,12 @@ do
     LINE=$(sed -n "$N"p ~/test44.txt)
     echo $LINE
     echo "before processing, NoFiles"
-    echo $(wc -l ~/test44.txt)
+    echo $(wc -l ~/3Dates.txt)
     #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
     python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
     echo "after processing, NoFiles"
-    echo $(wc -l ~/test44.txt)
+    echo $(wc -l ~/3Dates.txt)
     
 done
 
