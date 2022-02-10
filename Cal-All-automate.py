@@ -22,6 +22,7 @@ from astropy.time import Time
 
 # In[ ]:
 obs=(sys.argv[1]).split("/")[5]
+fitsf=sys.argv[1]
 #--fitsfile=/zfs/helios/filer1/idayan/202005051300/2020-05-05T13:02:02-13:05:12_all/SB281-2020-05-05T13:02:02-13:05:12/imgs/2020-05-05T13:02:02.0-SB281.fits/
 
 def get_configuration():
@@ -33,7 +34,7 @@ def get_configuration():
     
     parser.add_argument('--indir', type=str, default="",
                         help="Input directory for fitsfile.")
-    parser.add_argument('--fitsfile', type=str, default="",
+    parser.add_argument('--fitsfile', type=str, default="{}".format(fitsf),
                         help="Target fits file.")
 
     #parser.add_argument('--indir', type=str, default="/zfs/helios/filer1/idayan/",
