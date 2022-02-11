@@ -1,10 +1,10 @@
 #!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 10
-#SBATCH --mem 30G
-#SBATCH --time 40:00:00
-#SBATCH --array=1-301%30
+#SBATCH --cpus-per-task 15
+#SBATCH --mem 40G
+#SBATCH --time 240:00:00
+#SBATCH --array=1-301%50
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
@@ -47,15 +47,17 @@ echo "STOP=$STOP"
 for (( N = $START; N <= $STOP; N++ ))
 do
     echo $N
-    LINE=$(sed -n "$N"p ~/3Dates.txt)
+    #LINE=$(sed -n "$N"p ~/3Dates.txt)
+    #ALL3Dates
+    LINE=$(sed -n "$N"p ~/ALL3Dates.txt)
     echo $LINE
     echo "before processing, NoFiles"
-    echo $(wc -l ~/3Dates.txt)
+    echo $(wc -l ~/ALL3Dates.txt)
     python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
     #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
     echo "after processing, NoFiles"
-    echo $(wc -l ~/3Dates.txt)
+    echo $(wc -l ~/ALL3Dates.txt)
     
 done
 
