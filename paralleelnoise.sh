@@ -11,8 +11,8 @@
 #source /home/idayan/env/bin/activate
 source /home/idayan/new_env/bin/activate
 
-
-
+echo "processing first folder:"
+echo $1
 
 #cp /zfs/helios/filer0/mkuiack1/202008122000/*_all/SB*/imgs/*.fits /hddstore/idayan/
 #python /home/idayan/dataframe2/crtdataframe.py /home/idayan/imglst/*.fits
@@ -33,5 +33,5 @@ source /home/idayan/new_env/bin/activate
 
 #python /home/idayan/dataframe2/noisegraph.py
 
-python /home/idayan/dataframe2/parallelized-noisegraph.py
+python /home/idayan/dataframe2/parallelized-noisegraph.py $1
 
