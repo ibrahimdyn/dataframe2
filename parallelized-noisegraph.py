@@ -24,15 +24,17 @@ from photutils.aperture import aperture_photometry
 
 import numpy.ma as ma
 
-from photutils.datasets import make_100gaussians_image
+#from photutils.datasets import make_100gaussians_image
 
-from astropy.visualization import simple_norm
+#from astropy.visualization import simple_norm
 
 
 from astropy.stats import SigmaClip
 from photutils.background import StdBackgroundRMS
 
 from joblib import Parallel, delayed
+
+import sys
 
 #fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*fits"))
 #fitsimg=fits.getdata(fitslist[3100])[0,0,:,:]
