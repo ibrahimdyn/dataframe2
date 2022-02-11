@@ -93,7 +93,7 @@ def clip(data, sigma):
 import time
 start=time.time()
 
-
+print "sttartinng parrallel noise .py"
 
 #column_names=['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10']
 #df = pd.DataFrame(columns = column_names)
@@ -183,27 +183,32 @@ def noisedist(img):
     #dff=dff.append(newrs, ignore_index=True)
     #dff.to_pickle("noisegraphdfLAST202006061630.pkl")
 #dff=pd.DataFrame()
-def integrate(img):
+#1def integrate(img):
     
-    global dff
-    dff=dff.append(noisedist(img), ignore_index=True)
-    dff.to_pickle("noisegraphdfLAST000202006061630.pkl") 
-    return dff
+#1    global dff
+ #1   dff=dff.append(noisedist(img), ignore_index=True)
+  #1  dff.to_pickle("noisegraphdfLAST000202006061630.pkl") 
+    #1return dff
     #dff.to_pickle("noisegraphdfLAST0202006061630.pkl") 
     #pd.concat(noisedist(img))
     #pd.concat([df, df2])
     #dfff.to_pickle("noisegraphdfLAST0202006061630.pkl") 
     #return dfff
-obs_dir = "/zfs/helios/filer0/idayan/"
+#obs_dir = "/zfs/helios/filer0/idayan/"
+obs_dir = "/zfs/helios/filer1/idayan/"
+print "assigning sys obs argv1"
+obs_folder= sys.argv[1]
+print "assignned sys obs argv1", obs_folder
 #fitslist=sorted(glob.glob(obs_dir+"202006051431/"+"*_all*"+"/*SB*/"+"imgs/"+"2*.fits"))
 #/zfs/helios/filer0/idayan/Cal60-202006061630/
-fitslist=sorted(glob.glob(obs_dir+"Cal60-202006061630/"+"*.fits"))
+fitslist=sorted(glob.glob(obs_dir+"Caled/"+obs_folder+"/"+"*.fits"))
 if __name__ == "__main__":
     #[(integrate(i)) for i in fitslist[0:3]]
     EDF=pd.DataFrame
     out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist)
     finalres=pd.DataFrame(out)
-    finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202006061630.pkl") 
+    #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
+    finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
     #EDF.append(pd.DataFrame(out))
     #DF.append(pd.Series(out))
     #pd.DataFrame(out)
