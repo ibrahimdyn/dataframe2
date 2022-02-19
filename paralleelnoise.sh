@@ -1,6 +1,6 @@
 #!/bin/bash 
 #SBATCH -N 1
-#SBATCH --partition neutron-star
+## #SBATCH --partition neutron-star
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 15
 #SBATCH --mem 40G
