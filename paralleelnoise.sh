@@ -2,7 +2,7 @@
 #SBATCH -N 1
 ## #SBATCH --partition neutron-star
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 15
+#SBATCH --cpus-per-task 5
 #SBATCH --mem 40G
 #SBATCH --time 05:00:00
 #SBATCH --output=/home/idayan/noisedist.log
