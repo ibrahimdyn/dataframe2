@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task 15
 #SBATCH --mem 40G
 #SBATCH --time 05:00:00
-#SBATCH --output=/home/idayan/noisegraphH.log
+#SBATCH --output=/home/idayan/noisedist.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
