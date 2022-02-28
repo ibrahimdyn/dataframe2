@@ -4,7 +4,8 @@
 #SBATCH --cpus-per-task 15
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
-#SBATCH --array=1-550%50
+#SBATCH --array=13-17
+#### #SBATCH --array=1-550%50
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
@@ -40,6 +41,7 @@ START=$SLURM_ARRAY_TASK_ID
 NUMLINES=1000
 STOP=$((SLURM_ARRAY_TASK_ID*NUMLINES))
 START="$(($STOP - $(($NUMLINES - 1))))"
+#START="$(($STOP - $(($NUMLINES - 1))))"
 
 echo "START=$START"
 echo "STOP=$STOP"
