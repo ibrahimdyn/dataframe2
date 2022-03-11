@@ -94,5 +94,7 @@ for j in folderlist:
         if sep<60:
             print i
             with open(r'/home/idayan/IN60.csv', 'a') as f:
-                       writer = csv.writer(f)
-                       writer.writerow(i)
+                       f.write(i)
+                       f.write('\n')
+                       #writer = csv.writer(f)
+                       #writer.writerow(i)
