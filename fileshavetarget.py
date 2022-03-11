@@ -93,7 +93,7 @@ for j in folderlist:
         #print sep
         if sep<60:
             print i
-            with open(r'/home/idayan/IN60.csv', 'a') as f:
+            with open(r'/home/idayan/imgsin60.txt', 'a') as f:
                        f.write(i)
                        f.write('\n')
                        #writer = csv.writer(f)
