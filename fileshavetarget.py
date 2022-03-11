@@ -57,7 +57,6 @@ from astropy.coordinates import SkyCoord, match_coordinates_sky,  AltAz, EarthLo
 
 folderlist=sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/2*"))
 
-fitstemplist=f_list[0:100]
 CS002 = EarthLocation.from_geocentric (3826577.109500000, 461022.900196000, 5064892.758, 'm')
 position = SkyCoord(148.56*u.degree, 
                     7.66*u.degree)
