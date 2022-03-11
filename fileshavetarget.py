@@ -38,7 +38,7 @@ import matplotlib as mpl
 #import joblib
 from joblib import Parallel, delayed
 import time
-import pyds9 as pyd
+#import pyds9 as pyd
 from tkp.accessors import sourcefinder_image_from_accessor
 from tkp.accessors import open as open_accessor
 
