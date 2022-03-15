@@ -111,11 +111,11 @@ listofres=[]
 
 start=time.time()
 
-for fits_file in imagess[0:10]:
+for fits_file in imagess:
 #for fits_file in fits_list[0:20]:
 #     start_t = time.time()
-    if count % len(fits_list) == 0:
-        print count, "/", len(fits_list)
+    if count % len(imagess) == 0:
+        print count, "/", len(imagess)
         
     fitsimg = fits.open(fits_file)[0]
     
