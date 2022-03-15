@@ -1,7 +1,7 @@
 #!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 10
+#SBATCH --cpus-per-task 5
 #SBATCH --mem 50G
 #SBATCH --time 10-00:00:00
 ####  #### #SBATCH --output=/home/idayan/GPsearch-un202007log.log
