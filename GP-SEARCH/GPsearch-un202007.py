@@ -110,10 +110,12 @@ column_names=['MEDofSOURCE','BACKGROUND','DATE-OBS']
 listofres=[]
 
 start=time.time()
-
+print "startingforloop:"
 for fits_file in imagess:
 #for fits_file in fits_list[0:20]:
 #     start_t = time.time()
+    print "first image:", fits_file
+    print "count is:", count
     if count % len(imagess) == 0:
         print count, "/", len(imagess)
         
