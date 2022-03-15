@@ -68,7 +68,12 @@ from photutils.aperture import CircularAperture, CircularAnnulus
 from photutils.datasets import make_100gaussians_image
 
 from astropy.stats import sigma_clipped_stats
+import pickle
 
+
+IM=sys.argv[1]
+print "printing IM"
+print IM
 
 
 def distSquared(p0, p1):
@@ -92,10 +97,6 @@ def pol2cart(rho, phi):
 #fits_list = sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202005051300/2*.fits"))
 #fits_list = sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202006040630/2*.fits"))
 
-with open("/home/idayan/imgsin60.txt",'r') as f:
-    lines=f.read().splitlines()
-imagess=lines
-
 
 lofarfrequencyOffset = 0.0
 lofarBW = 195312.5
@@ -111,15 +112,21 @@ listofres=[]
 
 start=time.time()
 print "startingforloop:"
-for fits_file in imagess:
+
+
+def gphunter(IM):
+    #listofres=[]
+    
+#for fits_file in imagess:
 #for fits_file in fits_list[0:20]:
 #     start_t = time.time()
-    print "first image:", fits_file
-    print "count is:", count
-    if count % len(imagess) == 0:
-        print count, "/", len(imagess)
+    #print "first image:", fits_file
+    print 'first image in the loop:', IM
+    #print "count is:", count
+   # if count % len(imagess) == 0:
+   #     print count, "/", len(imagess)
         
-    fitsimg = fits.open(fits_file)[0]
+    fitsimg = fits.open(IM)[0]
     
     t = Time(fitsimg.header['DATE-OBS'])
     frq = fitsimg.header['RESTFRQ']
@@ -161,11 +168,13 @@ for fits_file in imagess:
             if  distance < 1.0:
                 print count
                 print "FOUND"
-                print fits_file
+                print IM
                 print sr[i]
                 
-                fitsimgdata=fits.getdata(fits_file)[0,0,:,:]
-                hdu_1 = fits.getheader(fits_file)
+                fitsimgdata=fits.getdata(IM)[0,0,:,:]
+                hdu_1 = fits.getheader(IM)
+                #fitsimgdata=fits.getdata(fits_file)[0,0,:,:]
+                #hdu_1 = fits.getheader(fits_file)
 
                 wks = wcs.WCS(hdu_1)
                 wkks = wks.dropaxis(-1).dropaxis(-1)
@@ -204,17 +213,25 @@ for fits_file in imagess:
                 templist=[Medofsourcepoint,median_sigclip,Dateobs]
 
                 listofres.append(templist)
-                fields=['fitsimg:',fits_file,"sr[i]:",sr[i],'sig,backg,date:',templist]
-                with open(r'/home/idayan/GPsearch07.csv', 'a') as f:
+                fields=['fitsimg:',IM,"sr[i]:",sr[i],'sig,backg,date:',templist]
+                with open(r'/home/idayan/GPsearch07FIELDS.csv', 'a') as f:
                     writer = csv.writer(f)
                     writer.writerow(fields)
+                with open('/home/idayan/GPsearch07DF.pkl', 'wb') as ff:
+                    pickle.dump(listofres, ff)
             #if distance > 2.0:
                 #print fitsimg
                 #print sr[i]
                 #print count
 
-    count += 1
-    
-DFF=pd.DataFrame(listofres[0:],columns=column_names)
+    #count += 1
+    #DFF=pd.DataFrame(listofres[0:],columns=column_names)
+    return #getdf(listofres)#listofres
+
+#def getdf(listt):
+#    DFFF=pd.DataFrame(listt[0:],columns=column_names)
+#    return DFFF
+
+#DFF=pd.DataFrame(listofres[0:],columns=column_names)
 end=time.time()
 print "duration:", end-start
