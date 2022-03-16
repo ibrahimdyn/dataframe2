@@ -4,8 +4,9 @@
 #SBATCH --cpus-per-task 15
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
-#SBATCH --array=13-17
-#### #SBATCH --array=1-550%50
+#### ###SBATCH --array=13-17
+#SBATCH --array=1-650%100
+#SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
@@ -51,11 +52,15 @@ do
     echo $N
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
-    LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
+    LINE=$(sed -n "$N"p ~/REMAINIGDATES.txt)
+    #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
+    
     echo $LINE
     echo "before processing, NoFiles"
     #echo $(wc -l ~/ALL3Dates.txt)
-    echo $(wc -l ~/ALL202007Dates2.txt)
+    echo $(wc -l ~/REMAINIGDATES.txt)
+    #echo $(wc -l ~/ALL202007Dates2.txt)
+    
     
     python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
