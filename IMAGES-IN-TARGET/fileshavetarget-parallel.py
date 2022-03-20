@@ -101,7 +101,7 @@ def IN60(IM):
   if sep < 60.9:
       #print i
       print IM
-      with open(r'/home/idayan/imgsin60-2-10110204.txt', 'a') as f:
+      with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
                  #f.write(i)
                  f.write(IM)
                  f.write('\n')
