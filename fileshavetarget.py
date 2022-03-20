@@ -55,7 +55,12 @@ import math
 from astropy.coordinates import SkyCoord, match_coordinates_sky,  AltAz, EarthLocation
 
 
-folderlist=sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/2*"))
+#folderlist=sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/2*"))
+folderlist=sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202010*")) \
++ sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202011*")) \
++ sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202102*")) \
++ sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202104*"))
+
 
 CS002 = EarthLocation.from_geocentric (3826577.109500000, 461022.900196000, 5064892.758, 'm')
 position = SkyCoord(148.56*u.degree, 
@@ -93,7 +98,7 @@ for j in folderlist:
         #print sep
         if sep<60:
             print i
-            with open(r'/home/idayan/imgsin60.txt', 'a') as f:
+            with open(r'/home/idayan/imgsin60-2-10110204.txt', 'a') as f:
                        f.write(i)
                        f.write('\n')
                        #writer = csv.writer(f)
