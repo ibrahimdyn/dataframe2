@@ -99,9 +99,11 @@ def IN60(IM):
 
   #print sep
   if sep < 60.9:
-      print i
+      #print i
+      print IM
       with open(r'/home/idayan/imgsin60-2-10110204.txt', 'a') as f:
-                 f.write(i)
+                 #f.write(i)
+                 f.write(IM)
                  f.write('\n')
                  #writer = csv.writer(f)
                  #writer.writerow(i)
