@@ -27,9 +27,13 @@ source /home/idayan/new_env/bin/activate
 #    print(j)
 
 ls /zfs/helios/filer1/idayan/CALed/202010*/2*.fits >> testsearchGPlist.txt
+echo "202010 done"
 ls /zfs/helios/filer1/idayan/CALed/202011*/2*.fits >> testsearchGPlist.txt
+echo "202011 done"
 ls /zfs/helios/filer1/idayan/CALed/202102*/2*.fits >> testsearchGPlist.txt
+echo "202101 done"
 ls /zfs/helios/filer1/idayan/CALed/202104*/2*.fits >> testsearchGPlist.txt
+echo "202104 done"
 
 echo "number of images in testsearchGP.txt is:"
 echo $(wc -l ~/testsearchGPlist.txt)
@@ -71,7 +75,9 @@ do
     echo $N
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
-    LINE=$(sed -n "$N"p ~/imgsin60.txt)
+    
+    LINE=$(sed -n "$N"p ~/testsearchGPlist.txt)
+    #LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
     echo "before processing, NoFiles"
