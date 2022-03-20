@@ -5,7 +5,7 @@
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
 ##### ###SBATCH --array=13-17
-#SBATCH --array=1-550%100
+#SBATCH --array=1-400%100
 #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
@@ -52,12 +52,17 @@ do
     echo $N
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
-    LINE=$(sed -n "$N"p ~/imgsin60.txt)
+    
+    LINE=$(sed -n "$N"p ~/imgsin60-3-10110204.txt)
+    #LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
     echo "before processing, NoFiles"
     #echo $(wc -l ~/ALL3Dates.txt)
-    echo $(wc -l ~/imgsin60.txt)
+    #echo $(wc -l ~/imgsin60.txt)
+    echo $(wc -l ~/mgsin60-3-10110204.txt)
+    
+    #echo $(wc -l ~/imgsin60-3-10110204.txt)
     
     python /home/idayan/dataframe2/GP-SEARCH/GPsearch-un202007.py $LINE
     #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
