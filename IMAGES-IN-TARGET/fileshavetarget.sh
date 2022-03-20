@@ -26,17 +26,17 @@ source /home/idayan/new_env/bin/activate
 #    print("printing folder")
 #    print(j)
 
-ls /zfs/helios/filer1/idayan/CALed/202010*/2*.fits >> testsearchGPlist.txt
-echo "202010 done"
-ls /zfs/helios/filer1/idayan/CALed/202011*/2*.fits >> testsearchGPlist.txt
-echo "202011 done"
-ls /zfs/helios/filer1/idayan/CALed/202102*/2*.fits >> testsearchGPlist.txt
-echo "202101 done"
-ls /zfs/helios/filer1/idayan/CALed/202104*/2*.fits >> testsearchGPlist.txt
-echo "202104 done"
+#ls /zfs/helios/filer1/idayan/CALed/202010*/2*.fits >> testsearchGPlist.txt
+#echo "202010 done"
+#ls /zfs/helios/filer1/idayan/CALed/202011*/2*.fits >> testsearchGPlist.txt
+#echo "202011 done"
+#ls /zfs/helios/filer1/idayan/CALed/202102*/2*.fits >> testsearchGPlist.txt
+#echo "202101 done"
+#ls /zfs/helios/filer1/idayan/CALed/202104*/2*.fits >> testsearchGPlist.txt
+#echo "202104 done"
 
-echo "number of images in testsearchGP.txt is:"
-echo $(wc -l ~/testsearchGPlist.txt)
+#echo "number of images in testsearchGP.txt is:"
+#echo $(wc -l ~/testsearchGPlist.txt)
 
 echo "your cwd is:" $(pwd)
 #for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
@@ -76,14 +76,15 @@ do
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
     
-    LINE=$(sed -n "$N"p ~/testsearchGPlist.txt)
+    LINE=$(sed -n "$N"p ~/REMAINIGDATES-GPs10110204up.txt) ###LINE=$(sed -n "$N"p ~/testsearchGPlist.txt)
     #LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
     echo "before processing, NoFiles"
     #echo $(wc -l ~/ALL3Dates.txt)
     #echo $(wc -l ~/imgsin60.txt)
-    echo $(wc -l ~/testsearchGPlist.txt)
+    #echo $(wc -l ~/testsearchGPlist.txt)
+    #REMAINIGDATES-GPs10110204up.txt
     
     python /home/idayan/dataframe2/IMAGES-IN-TARGET/fileshavetarget-parallel.py $LINE
     #python /home/idayan/dataframe2/GP-SEARCH/GPsearch-un202007.py $LINE
