@@ -165,7 +165,8 @@ def gphunter(IM):
                     np.deg2rad(148.56))
 
             distance  = np.sqrt((sr_x - cat_x)**2 + (sr_y - cat_y)**2)
-            if  distance < 1.0:
+            #if  distance < 1.0:
+            if  distance < 1.5:
                 print count
                 print "FOUND"
                 print IM
@@ -182,8 +183,10 @@ def gphunter(IM):
                 positionsky= [(148.56, 7.66)]
                 pixposs=wkks.all_world2pix(positionsky,1)
                 #positionspix=pixposs[0]
-                aperture = CircularAperture(pixposs, r=12.78)
-                annulus_aperture = CircularAnnulus(pixposs, r_in=24, r_out=36)
+                #aperture = CircularAperture(pixposs, r=12.78)
+                aperture = CircularAperture(pixposs, r=18.78)
+                #annulus_aperture = CircularAnnulus(pixposs, r_in=24, r_out=36)
+                annulus_aperture = CircularAnnulus(pixposs, r_in=30, r_out=42)
 
 
                 annulus_masks = annulus_aperture.to_mask(method='center')
