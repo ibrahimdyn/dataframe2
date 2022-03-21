@@ -217,10 +217,10 @@ def gphunter(IM):
 
                 listofres.append(templist)
                 fields=['fitsimg:',IM,"sr[i]:",sr[i],'sig,backg,date:',templist]
-                with open(r'/home/idayan/GPsearch07FIELDS.csv', 'a') as f:
+                with open(r'/home/idayan/GPsearch07FIELDS1-5.csv', 'a') as f:
                     writer = csv.writer(f)
                     writer.writerow(fields)
-                with open('/home/idayan/GPsearch07DF.pkl', 'wb') as ff:
+                with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
                     pickle.dump(listofres, ff)
             #if distance > 2.0:
                 #print fitsimg
