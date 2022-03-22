@@ -165,8 +165,8 @@ def gphunter(IM):
                     np.deg2rad(148.56))
 
             distance  = np.sqrt((sr_x - cat_x)**2 + (sr_y - cat_y)**2)
-            #if  distance < 1.0:
-            if  distance > 1.5:
+            if  distance < 1.0:
+            #if  distance > 1.5:
                 print count
                 print "FOUND"
                 print IM
@@ -194,9 +194,9 @@ def gphunter(IM):
                 mask = annulus_masks[0].data
                 annulus_data_1d = annulus_data[mask > 0]
                 #annulus_data_1d.shape
-                _, median_sigclip, _ = sigma_clipped_stats(annulus_data_1d)
-                background = median_sigclip * aperture.area()
-                print(background) 
+                _, median_sigclip, stdevback = sigma_clipped_stats(annulus_data_1d)
+                #background = median_sigclip * aperture.area()
+                #print(background) 
 
 
 
@@ -206,24 +206,31 @@ def gphunter(IM):
                 mask_Source = annulus_masks_Source[0].data
                 annulus_data_1d_Source = annulus_data_Source[mask_Source > 0]
                 #annulus_data_1d_Source.shape
-                Medofsourcepoint=np.median(annulus_data_1d_Source)
+                Medofsrc=np.median(annulus_data_1d_Source)
                 print(np.median(annulus_data_1d_Source))
+                
+                #Medofsourcepoint=np.median(annulus_data_1d_Source)
+                #print(np.median(annulus_data_1d_Source))
+                Maxofsrc=np.max(annulus_data_1d_Source)
 
                 Dateobs=hdu_1["DATE-OBS"]
                 #Date-obs=hdu_1["DATE-OBS"]
                 print(Dateobs)
                 #templist=[Medofsourcepoint,background,Dateobs]
-                templist=[Medofsourcepoint,median_sigclip,Dateobs]
+                templist=[Medofsrc,Maxofsrc,stdevback,Dateobs]
+                
 
                 listofres.append(templist)
-                fields=['fitsimg:',IM,"sr[i]:",sr[i],'sig,backg,date:',templist]
+                fields=[IM,sr[i],templist]
+                #fields=['fitsimg:',IM,"sr[i]:",sr[i],'sig,backg,date:',templist]
                 #with open(r'/home/idayan/GPsearch07FIELDS1-5.csv', 'a') as f:
-                with open(r'/home/idayan/GPsearch07TEST.csv', 'a') as f:
+                with open(r'/home/idayan/GPSEARCH0.csv', 'a') as f:
                     writer = csv.writer(f)
                     writer.writerow(fields)
-                with open('/home/idayan/GPsearchTEST.pkl', 'wb') as ff:
+                with open('/home/idayan/GPSEARCH0.pkl', 'wb') as ff:
                 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-                    pickle.dump(listofres, ff)
+                    pickle.dump(fields, ff)
+                    #pickle.dump(listofres, ff)
             #if distance > 2.0:
                 #print fitsimg
                 #print sr[i]
