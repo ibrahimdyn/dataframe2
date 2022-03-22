@@ -233,6 +233,8 @@ def gphunter(IM):
     #DFF=pd.DataFrame(listofres[0:],columns=column_names)
     return #getdf(listofres)#listofres
 
+if __name__ == "__main__":
+    gphunter(IM)
 #def getdf(listt):
 #    DFFF=pd.DataFrame(listt[0:],columns=column_names)
 #    return DFFF
