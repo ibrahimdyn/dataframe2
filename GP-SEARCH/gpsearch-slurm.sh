@@ -6,7 +6,7 @@
 #SBATCH --time 240:00:00
 ##### ###SBATCH --array=13-17
 #SBATCH --array=1-400%100
-#SBATCH --exclude=helios-cn[016-020]
+### ###SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
