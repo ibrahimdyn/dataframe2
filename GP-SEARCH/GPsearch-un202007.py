@@ -166,7 +166,7 @@ def gphunter(IM):
 
             distance  = np.sqrt((sr_x - cat_x)**2 + (sr_y - cat_y)**2)
             #if  distance < 1.0:
-            if  distance < 10.5:
+            if  distance > 1.5:
                 print count
                 print "FOUND"
                 print IM
