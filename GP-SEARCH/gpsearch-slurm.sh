@@ -53,14 +53,14 @@ do
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
     
-    LINE=$(sed -n "$N"p ~/imgsin60-3-10110204.txt)
-    #LINE=$(sed -n "$N"p ~/imgsin60.txt)
+    #LINE=$(sed -n "$N"p ~/imgsin60-3-10110204.txt)
+    LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
-    echo "before processing, NoFiles"
+    #echo "before processing, NoFiles"
     #echo $(wc -l ~/ALL3Dates.txt)
     #echo $(wc -l ~/imgsin60.txt)
-    echo $(wc -l ~/mgsin60-3-10110204.txt)
+    #echo $(wc -l ~/mgsin60-3-10110204.txt)
     
     #echo $(wc -l ~/imgsin60-3-10110204.txt)
     
