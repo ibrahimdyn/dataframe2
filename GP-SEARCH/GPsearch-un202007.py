@@ -165,8 +165,8 @@ def gphunter(IM):
                     np.deg2rad(148.56))
 
             distance  = np.sqrt((sr_x - cat_x)**2 + (sr_y - cat_y)**2)
-            if  distance < 1.0:
-            #if  distance > 1.5:
+            #if  distance < 1.0:
+            if  distance > 1.0:
                 print count
                 print "FOUND"
                 print IM
@@ -224,10 +224,10 @@ def gphunter(IM):
                 fields=[IM,sr[i],templist]
                 #fields=['fitsimg:',IM,"sr[i]:",sr[i],'sig,backg,date:',templist]
                 #with open(r'/home/idayan/GPsearch07FIELDS1-5.csv', 'a') as f:
-                with open(r'/home/idayan/GPSEARCH0.csv', 'a') as f:
+                with open(r'/home/idayan/GPSEARCH0TEST.csv', 'a') as f:
                     writer = csv.writer(f)
                     writer.writerow(fields)
-                with open('/home/idayan/GPSEARCH0.pkl', 'wb') as ff:
+                with open('/home/idayan/GPSEARCH0TEST.pkl', 'wb') as ff:
                 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
                     pickle.dump(fields, ff)
                     #pickle.dump(listofres, ff)
