@@ -74,7 +74,7 @@ import pickle
 
 
 IM=sys.argv[1]
-prinnt "executtion started lc-anulus-analyze.py"
+print "executtion started lc-anulus-analyze.py"
 print IM
 def distSquared(p0, p1):
     '''
