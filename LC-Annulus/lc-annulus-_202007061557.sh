@@ -71,7 +71,8 @@ do
     
     #echo $(wc -l ~/imgsin60-3-10110204.txt)
     
-    python /home/idayan/dataframe2/LC-Annulus/lc-anulus-analyze.py $LINE
+    python /home/idayan/dataframe2/LC-Annulus/lc-anulus-analyze-_202007061557.py $LINE
+    #python /home/idayan/dataframe2/LC-Annulus/lc-anulus-analyze.py $LINE
     #python /home/idayan/dataframe2/GP-SEARCH/GPsearch-un202007.py $LINE
     #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
