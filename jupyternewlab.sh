@@ -5,7 +5,7 @@
 #SBATCH --mem 20G
 #SBATCH --time 12:00:00
 #SBATCH -w helios-cn015
-#SBATCH --output=/home/idayan/jupyter.log
+#SBATCH --output=/home/idayan/jupyter15.log
 # #SBATCH --array=1-128%32
 
 
