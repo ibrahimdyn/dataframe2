@@ -18,4 +18,4 @@ source /home/idayan/env/bin/activate
 #conda activate test
 
 #cat /etc/hosts
-jupyter notebook --ip=127.0.0.1 --port=1229
+jupyter notebook --ip=127.0.0.1 --port=1339
