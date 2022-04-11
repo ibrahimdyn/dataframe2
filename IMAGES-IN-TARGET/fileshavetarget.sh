@@ -76,8 +76,8 @@ do
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
     
-    LINE=$(sed -n "$N"p ~/REMAINIGDATES-GPs10110204up.txt) ###LINE=$(sed -n "$N"p ~/testsearchGPlist.txt)
-    #LINE=$(sed -n "$N"p ~/imgsin60.txt)
+    #LINE=$(sed -n "$N"p ~/REMAINIGDATES-GPs10110204up.txt) ###LINE=$(sed -n "$N"p ~/testsearchGPlist.txt)
+    LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
     echo "before processing, NoFiles"
