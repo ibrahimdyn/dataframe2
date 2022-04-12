@@ -83,12 +83,12 @@ out60=[]
 def IN60(IM): 
   #hdl=fits.open(i)[0]
   hdl=fits.open(IM)[0]
-  obstime_=hdl.header["DATE-OBS"]
-  altaz=position.transform_to(AltAz(obstime=obstime_, location=CS002))
+  #obstime_=hdl.header["DATE-OBS"]
+  #altaz=position.transform_to(AltAz(obstime=obstime_, location=CS002))
   #altaz=position.transform_to(AltAz(obstime=[j for j in obs_times], location=CS002))
-  imgcentercoord=SkyCoord(hdl.header["CRVAL1"],hdl.header["CRVAL2"],unit="deg")
-  targetcoord=SkyCoord(altaz.az.deg,altaz.alt.deg,unit="deg")
-  sep=imgcentercoord.separation(targetcoord).deg
+  #imgcentercoord=SkyCoord(hdl.header["CRVAL1"],hdl.header["CRVAL2"],unit="deg")
+  #targetcoord=SkyCoord(altaz.az.deg,altaz.alt.deg,unit="deg")
+  #sep=imgcentercoord.separation(targetcoord).deg
   #obs_list_t=[]
   #check_list.append(i)
   #if sep < 20:
@@ -98,10 +98,35 @@ def IN60(IM):
   #    out60.append(i)
 
   #print sep
-  if sep < 30.9:
+  sep=imgcentercoord.separation(targetcoord).deg
+  
+  wks = wcs.WCS(hdl)
+  wkks = wks.dropaxis(-1).dropaxis(-1)
+  positionsky = [(148.56, 7.66)]
+
+  pixposs=wkks.all_world2pix(positionsky,1)
+  #positionspix=[pixposs[0],pixposs[1],pixposs[2],pixposs[3]]
+  positionspix=[pixposs[0]]
+
+  targetpix = positionspix[0]
+
+  p0 = [1150,1150]
+  p1 = targetpix
+
+
+#sep=imgcentercoord.separation(targetcoord).deg
+#sep=imgcentercoord.separation(imgcentercoord).deg
+
+
+  distance  = np.sqrt((p0[0] - p1[0])**2 + (p0[1] - p1[1])**2)
+  #print distance*90/1150, distance
+  
+  if distance*90/1150 < 60.9
+  #if sep < 30.9:
+    
       #print i
       print IM
-      with open(r'/home/idayan/imgsin60-CoefUpdate.txt', 'a') as f:
+      with open(r'/home/idayan/imgsin60-CoefUpdate1.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
                  #f.write(i)
                  f.write(IM)
