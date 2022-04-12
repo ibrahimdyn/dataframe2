@@ -98,7 +98,7 @@ def IN60(IM):
   #    out60.append(i)
 
   #print sep
-  sep=imgcentercoord.separation(targetcoord).deg
+  #sep=imgcentercoord.separation(targetcoord).deg
   
   wks = wcs.WCS(hdl)
   wkks = wks.dropaxis(-1).dropaxis(-1)
