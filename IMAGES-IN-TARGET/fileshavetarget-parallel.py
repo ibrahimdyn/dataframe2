@@ -121,7 +121,7 @@ def IN60(IM):
   distance  = np.sqrt((p0[0] - p1[0])**2 + (p0[1] - p1[1])**2)
   #print distance*90/1150, distance
   
-  if distance*90/1150 < 60.9
+  if distance*90/1150 < 60.9:
   #if sep < 30.9:
     
       #print i
