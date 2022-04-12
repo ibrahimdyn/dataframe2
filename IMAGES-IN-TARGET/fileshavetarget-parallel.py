@@ -98,10 +98,11 @@ def IN60(IM):
   #    out60.append(i)
 
   #print sep
-  if sep < 60.9:
+  if sep < 30.9:
       #print i
       print IM
-      with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
+      with open(r'/home/idayan/imgsin60-CoefUpdate.txt', 'a') as f:
+      #with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
                  #f.write(i)
                  f.write(IM)
                  f.write('\n')
