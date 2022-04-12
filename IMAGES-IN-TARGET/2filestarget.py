@@ -126,7 +126,7 @@ def IN60(IM):
     
       #print i
       print IM
-      with open(r'/home/idayan/imgsin60-CoefUpdate1.txt', 'a') as f:
+      with open(r'/home/idayan/RmngDates-CoefUpdate1.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
                  #f.write(i)
                  f.write(IM)
