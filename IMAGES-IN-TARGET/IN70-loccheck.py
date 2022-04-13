@@ -60,7 +60,7 @@ print "prinnting img:"
 print image
 
 src = [148.56 , 7.66]
-def IN60(IMG, src):
+def IN60(IMG, source):
     hdl=fits.open(IMG)[0]
     imgcentrecoord = SkyCoord(hdl.header["CRVAL1"],hdl.header["CRVAL2"],unit='deg')
     targetcoord = SkyCoord(source[0],source[1], unit='deg')
@@ -81,4 +81,4 @@ def IN60(IMG, src):
 if __name__ == "__main__":
   
   #if ma
-  IN60(image)
+  IN60(image, src)
