@@ -80,18 +80,20 @@ do
     LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
-    echo "before processing, NoFiles"
+    #echo "before processing, NoFiles"
     #echo $(wc -l ~/ALL3Dates.txt)
     #echo $(wc -l ~/imgsin60.txt)
     #echo $(wc -l ~/testsearchGPlist.txt)
     #REMAINIGDATES-GPs10110204up.txt
     
-    python /home/idayan/dataframe2/IMAGES-IN-TARGET/fileshavetarget-parallel.py $LINE
+    
+    python /home/idayan/dataframe2/IMAGES-IN-TARGET/IN70-loccheck.py $LINE
+    #python /home/idayan/dataframe2/IMAGES-IN-TARGET/fileshavetarget-parallel.py $LINE
     #python /home/idayan/dataframe2/GP-SEARCH/GPsearch-un202007.py $LINE
     #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
     #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
-    echo "processing done"
+    #echo "processing done"
     #echo $(wc -l ~/ALL202007Dates2.txt)
     
 done
