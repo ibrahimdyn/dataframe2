@@ -64,7 +64,8 @@ echo "echoED sed command!!!"
 START=$SLURM_ARRAY_TASK_ID
 NUMLINES=1000
 STOP=$((SLURM_ARRAY_TASK_ID*NUMLINES))
-START="$(($STOP - $(($NUMLINES - 1))))"
+START="$(($STOP - $(($NUMLINES - 1)) +16000))"
+#START="$(($STOP - $(($NUMLINES - 1))))"
 #START="$(($STOP - $(($NUMLINES - 1))))"
 
 echo "START=$START"
