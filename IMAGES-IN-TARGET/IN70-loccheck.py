@@ -72,7 +72,7 @@ def IN60(IMG, source):
       with open(r'/home/idayan/imgsin70.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
                  #f.write(i)
-                 f.write(IM)
+                 f.write(IMG)
                  f.write('\n')
     
     
