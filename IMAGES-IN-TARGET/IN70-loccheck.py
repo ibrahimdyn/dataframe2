@@ -68,8 +68,8 @@ def IN60(IMG, source):
     print sep
     if sep<70:
       
-      
-      with open(r'/home/idayan/imgsin70.txt', 'a') as f:
+      with open(r'/home/idayan/imgsin50.txt', 'a') as f:
+      #with open(r'/home/idayan/imgsin70.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
                  #f.write(i)
                  f.write(IMG)
