@@ -66,7 +66,7 @@ def IN60(IMG, source):
     targetcoord = SkyCoord(source[0],source[1], unit='deg')
     sep = imgcentrecoord.separation(targetcoord).deg
     print sep
-    if sep<70:
+    if sep<50.1:
       
       with open(r'/home/idayan/imgsin50.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin70.txt', 'a') as f:
