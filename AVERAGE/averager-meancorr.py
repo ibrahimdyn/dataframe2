@@ -89,7 +89,8 @@ with open('/home/idayan/imgsin70.txt','r') as f:
 imagepaths = sorted(lines)   
 
 DTofimagepaths=[]
-for i in sorted(imagepaths[21000:21600]):
+for i in sorted(imagepaths):
+#for i in sorted(imagepaths[21000:21600]):
     print i.split('/')[7][:19]
     DTofimagepaths.append(i.split('/')[7][:19])
 
