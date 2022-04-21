@@ -95,12 +95,12 @@ DTofimagepaths=[]
 
 for i in sorted(imagepaths):
 #for i in sorted(imagepaths[21000:21600]):
-    print i.split('/')[7][:19]
+    #print i.split('/')[7][:19]
     DTofimagepaths.append(i.split('/')[7][:19])
 
 matching=[]
 for i in sorted(set(DTofimagepaths)):
-    print i
+    #print i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 
 
