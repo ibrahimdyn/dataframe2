@@ -140,7 +140,12 @@ for k in matching:
                 print s,'inside first'
                 data_1 += fits.getdata(myfiles[i],
                                           header=False)[0,0,:,:]
-                data_1 = data_1/(nofile/2)
+                #data_1 = data_1/(nofile/2)
+                if nofile % 2 == 0:
+                    data_1 = data_1/((nofile/2))
+                  
+                if nofile % 2 == 1:
+                    data_1 = data_1/(math.floor(nofile/2+1))
 
                 freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
                 #np.mean(freqlist1)*0.195
@@ -152,7 +157,12 @@ for k in matching:
                 print 'second if', s
                 data_2 += fits.getdata(myfiles[i],
                                           header=False)[0,0,:,:]
-                data_2 = data_2/(nofile/2)
+                #data_2 = data_2/(nofile/2)
+                if nofile % 2 == 0:
+                    data_2 = data_2/((nofile/2))
+                  
+                if nofile % 2 == 1:
+                    data_2 = data_2/(math.floor(nofile/2))
 
                 freqlist2.append(float(myfiles[i].split('-')[-2][1:6]))
                 #s += 1
