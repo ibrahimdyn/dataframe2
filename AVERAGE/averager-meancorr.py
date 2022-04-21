@@ -234,4 +234,4 @@ def img_averager(list_sametimestamps):
             fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED1/%s' % (DIR) +'/' + filename2, overwrite=True)
     return 
 if __name__= "__main__":
-  Parallel(n_jobs=11,backend="multiprocessing", verbose=10)(delayed(img_averager)(i) for i in matching)
+  Parallel(n_jobs=16,backend="multiprocessing", verbose=10)(delayed(img_averager)(i) for i in matching)
