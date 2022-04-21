@@ -77,10 +77,10 @@ from pandas import DataFrame
 from bokeh.plotting import figure, output_notebook, show
 from bokeh.models import DatetimeTickFormatter
 
-logging.basicConfig(level=logging.INFO)
-output_notebook()
+#logging.basicConfig(level=logging.INFO)
+#output_notebook()
 
-query_loglevel = logging.WARNING 
+#query_loglevel = logging.WARNING 
 
 
 
