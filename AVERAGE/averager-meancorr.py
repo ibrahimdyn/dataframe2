@@ -103,8 +103,11 @@ def img_averager(list_sametimestamps):
     
 #def img_averager(listoflist_sametimestamps):
     
-    for i in list_sametimestamps:
-        if len(list_sametimestamps)>11:
+    if len(list_sametimestamps)>11:
+        
+    #    for i in list_sametimestamps:
+    #for i in list_sametimestamps:
+    #    if len(list_sametimestamps)>11:
             myfiles = list_sametimestamps
             nofile  = len(list_sametimestamps)
             print 'nofile', nofile
