@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --partition neutron-star
+### ### #SBATCH --partition neutron-star
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 7
