@@ -17,5 +17,7 @@
 source /home/idayan/new_env/bin/activate
 
 
-python /home/idayan/dataframe2/AVERAGE/averager-meancorr.py
+
+python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py
+#python /home/idayan/dataframe2/AVERAGE/averager-meancorr.py
 #python /home/idayan/dataframe2/AVERAGE/average.py
