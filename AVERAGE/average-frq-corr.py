@@ -110,13 +110,13 @@ def img_averager(list_sametimestamps):
         myfiles = list_sametimestamps
         #nofile  = len(list_sametimestamps)
         #print 'nofile', nofile
-        s=0
+        #s=0
         data_1=np.zeros((2300,2300))
         data_2=np.zeros((2300,2300))
         freqlist1=[]
         freqlist2=[]
-        print 'this is =my files :', myfiles
-        print 'len of list_sametimestamps', len(list_sametimestamps)
+        #print 'this is =my files :', myfiles
+        #print 'len of list_sametimestamps', len(list_sametimestamps)
         for i in myfiles:
         #for i in range(len(myfiles)):
 
@@ -177,12 +177,12 @@ def img_averager(list_sametimestamps):
                     #print 'end if', s
         print 'this is i:',i
         #try:
-        filenum1=int(math.floor(len(set1)/2.+1))
-        filenum2=int(math.floor(len(set2)/2.+1))
+        #filenum1=int(math.floor(len(set1)/2.+1))
+        #filenum2=int(math.floor(len(set2)/2.+1))
         #filenum1=int(math.floor(nofile/2.-1))
         #filenum2=int(math.floor(nofile/2.+1))
 
-        DIR=set1[0].split('/')[6]
+        #DIR=set1[0].split('/')[6]
         #DIR=myfiles[filenum1].split('/')[6]
         #DIR=myfiles[int(math.floor(nofile/2.-1))].split('/')[6]
         #DIR=myfiles[math.floor(nofile/2.-1)].split('/')[6]
@@ -203,6 +203,9 @@ def img_averager(list_sametimestamps):
         #fitsimg1.data=data_1
         #fitsimg2.data=data_2
         try:
+            DIR=set1[0].split('/')[6]
+            #filenum1=int(math.floor(len(set1)/2.+1))
+            
             valuefreqlst1=np.mean(freqlist1)*0.195
             fitsimg1 = fits.open(set1[0])[0]
             fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
@@ -227,7 +230,8 @@ def img_averager(list_sametimestamps):
         #print 'firs valufreqlist',valuefreqlst1
         #print valuefreqlst2, freqlist2
         try:
-            valuefreqlst2=np.mean(freqlist2)*0.195
+            #filenum2=int(math.floor(len(set2)/2.+1))
+            valuefreqlst2=np.mean(freqlist2)*0.195  
             fitsimg2 = fits.open(set2[0])[0]
             fits.setval(set2[0],'CRVAL3', value=valuefreqlst2)
             fits.setval(set2[0],'RESTFRQ', value=valuefreqlst2)
