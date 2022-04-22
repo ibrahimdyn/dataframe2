@@ -189,22 +189,29 @@ def img_averager(list_sametimestamps):
 
         #valuefreqlst1=round(np.mean(freqlist1)*0.195,3)
         #valuefreqlst2=round(np.mean(freqlist2)*0.195,3)
-        valuefreqlst1=np.mean(freqlist1)*0.195
-        valuefreqlst2=np.mean(freqlist2)*0.195
+        
+        #valuefreqlst1=np.mean(freqlist1)*0.195
+        #valuefreqlst2=np.mean(freqlist2)*0.195
 
 
-        fitsimg1 = fits.open(set1[0])[0]
-        fitsimg2 = fits.open(set2[0])[0]
+        #fitsimg1 = fits.open(set1[0])[0]
+        #fitsimg2 = fits.open(set2[0])[0]
         #fitsimg1 = fits.open(myfiles[filenum1])[0]
         #fitsimg2 = fits.open(myfiles[filenum2])[0]
         #fitsimg1 = fits.open(myfiles[math.floor(nofile/2.-1)])[0]
         #fitsimg2 = fits.open(myfiles[math.floor(nofile/2.+1)])[0]
-        fitsimg1.data=data_1
-        fitsimg2.data=data_2
+        #fitsimg1.data=data_1
+        #fitsimg2.data=data_2
         try:
+            valuefreqlst1=np.mean(freqlist1)*0.195
+            fitsimg1 = fits.open(set1[0])[0]
             fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
             fits.setval(set1[0],'RESTFRQ', value=valuefreqlst1)
             fits.setval(set1[0],'RESTFREQ', value=valuefreqlst1)
+            fitsimg1.data=data_1
+            datetime1=set1[0].split('/')[-1][:19]
+            notgetSB1=round(valuefreqlst1,0)
+            filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
         except Exception:
             pass
 
@@ -217,12 +224,19 @@ def img_averager(list_sametimestamps):
         #fits.setval(myfiles[math.floor(nofile/2.-1)],'RESTFRQ', value=valuefreqlst1)
         #fits.setval(myfiles[math.floor(nofile/2.-1)],'RESTFREQ', value=valuefreqlst1)
 
-        print 'firs valufreqlist',valuefreqlst1
-        print valuefreqlst2, freqlist2
+        #print 'firs valufreqlist',valuefreqlst1
+        #print valuefreqlst2, freqlist2
         try:
+            valuefreqlst2=np.mean(freqlist2)*0.195
+            fitsimg2 = fits.open(set2[0])[0]
             fits.setval(set2[0],'CRVAL3', value=valuefreqlst2)
             fits.setval(set2[0],'RESTFRQ', value=valuefreqlst2)
             fits.setval(set2[0],'RESTFREQ', value=valuefreqlst2)
+            fitsimg2.data=data_2
+            datetime2=set2[0].split('/')[-1][:19]
+            notgetSB2=round(valuefreqlst2,0)
+            
+            filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
         except Exception:
             pass
         #fits.setval(myfiles[filenum2],'CRVAL3', value=valuefreqlst2)
@@ -238,8 +252,8 @@ def img_averager(list_sametimestamps):
         #myfiles[math.floor(nofile/2+1)].split('/')[-1].split('-')[3]
         #myfiles[index].split('/')[-1].split('-')[3]
 
-        datetime1=set1[0].split('/')[-1][:19]
-        datetime2=set2[0].split('/')[-1][:19]
+        #datetime1=set1[0].split('/')[-1][:19]
+        #datetime2=set2[0].split('/')[-1][:19]
     #except:
 
 
@@ -251,12 +265,12 @@ def img_averager(list_sametimestamps):
         #getSB1=int(np.floor((1024./200.)*valuefreqlst1))
         #getSB2=int(np.floor((1024./200.)*valuefreqlst2))
 
-        notgetSB1=round(valuefreqlst1,0)
-        notgetSB2=round(valuefreqlst2,0)
+        #notgetSB1=round(valuefreqlst1,0)
+        #notgetSB2=round(valuefreqlst2,0)
 
 
-        filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
-        filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
+        #filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
+        #filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
 
         print 'wrting path'
 
