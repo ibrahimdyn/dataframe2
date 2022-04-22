@@ -1,0 +1,198 @@
+with open('/home/idayan/imgsin70.txt','r') as f:
+    lines=f.read().splitlines()
+imagepaths = sorted(lines)   
+
+DTofimagepaths=[]
+for i in sorted(imagepaths):
+    print i.split('/')[7][:19]
+    DTofimagepaths.append(i.split('/')[7][:19])
+
+matching=[]
+for i in sorted(set(DTofimagepaths)):
+    print i
+    matching.append([s for s in imagepaths if "{}".format(i) in s])
+
+
+
+set1_subbands=['S281', 'S284', 'S287', 'S291', 'S294', 'S298', 'S301', 'S304']
+set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
+
+
+def img_averager(list_sametimestamps):    
+    if len(list_sametimestamps)>8:    
+        set1=[]
+        set2=[]
+        myfiles = list_sametimestamps
+        #nofile  = len(list_sametimestamps)
+        #print 'nofile', nofile
+        s=0
+        data_1=np.zeros((2300,2300))
+        data_2=np.zeros((2300,2300))
+        freqlist1=[]
+        freqlist2=[]
+        print 'this is =my files :', myfiles
+        print 'len of list_sametimestamps', len(list_sametimestamps)
+        for i in myfiles:
+        #for i in range(len(myfiles)):
+
+            set1.extend([i for s in set1_subbands if s in i])
+            #set1.append([i for s in set1_subbands if s in i])
+            #set1.append([s for s in i if s in set1_subbands])
+            set2.extend([i for s in set2_subbands if s in i])
+            #set2.append([i for s in set2_subbands if s in i])
+            number_set1=len([i for i in set1 if i[:]])
+            number_set2=len([i for i in set2 if i[:]])
+
+            if len([i for i in set1 if i[:]])>5:
+                for j in range(len(set1)):
+                #if s < nofile/2:
+                #while s < nofile:
+                    #print s,'inside first'
+                    data_1 += fits.getdata(set1[j],
+                                              header=False)[0,0,:,:]
+                    #data_1 += fits.getdata(myfiles[i],
+                    #                          header=False)[0,0,:,:]
+
+                    #data_1 = data_1/(nofile/2)
+                    data_1 = data_1/(number_set1)
+
+                    #if nofile % 2 == 0:
+                    #    data_1 = data_1/((nofile/2))
+
+                    #if nofile % 2 == 1:
+                     #   data_1 = data_1/(math.floor(nofile/2+1))
+
+                    freqlist1.append(float(set1[j].split('-')[-2][1:6]))    
+                    #freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
+                    
+            if len([i for i in set2 if i[:]])>5:
+
+
+                for k in range(len(set2)):
+                #if s >= nofile/2:
+
+                    #print 'second if', s
+                    data_2 += fits.getdata(set[k][0],
+                                              header=False)[0,0,:,:]
+                    #data_2 += fits.getdata(myfiles[i],
+                   #                           header=False)[0,0,:,:]
+                    #data_2 = data_2/(nofile/2)
+                    data_2 = data_2/(number_set2)
+
+                    #if nofile % 2 == 0:
+                    #    data_2 = data_2/((nofile/2))
+
+                    #if nofile % 2 == 1:
+                    #    data_2 = data_2/(math.floor(nofile/2))
+                    freqlist2.append(float(set2[k].split('-')[-2][1:6]))
+                    print k, 'SEEETTTTTTTT2'
+                    print i, "iiiiiiii"
+                    #freqlist2.append(float(myfiles[i].split('-')[-2][1:6]))
+                    #s += 1
+                    #print 'end if', s
+        print 'this is i:',i
+        #try:
+        filenum1=int(math.floor(len(set1)/2.+1))
+        filenum2=int(math.floor(len(set2)/2.+1))
+        #filenum1=int(math.floor(nofile/2.-1))
+        #filenum2=int(math.floor(nofile/2.+1))
+
+        DIR=set1[0].split('/')[6]
+        #DIR=myfiles[filenum1].split('/')[6]
+        #DIR=myfiles[int(math.floor(nofile/2.-1))].split('/')[6]
+        #DIR=myfiles[math.floor(nofile/2.-1)].split('/')[6]
+
+        #valuefreqlst1=round(np.mean(freqlist1)*0.195,3)
+        #valuefreqlst2=round(np.mean(freqlist2)*0.195,3)
+        valuefreqlst1=np.mean(freqlist1)*0.195
+        valuefreqlst2=np.mean(freqlist2)*0.195
+
+
+        fitsimg1 = fits.open(set1[0])[0]
+        fitsimg2 = fits.open(set2[0])[0]
+        #fitsimg1 = fits.open(myfiles[filenum1])[0]
+        #fitsimg2 = fits.open(myfiles[filenum2])[0]
+        #fitsimg1 = fits.open(myfiles[math.floor(nofile/2.-1)])[0]
+        #fitsimg2 = fits.open(myfiles[math.floor(nofile/2.+1)])[0]
+        fitsimg1.data=data_1
+        fitsimg2.data=data_2
+        try:
+            fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
+            fits.setval(set1[0],'RESTFRQ', value=valuefreqlst1)
+            fits.setval(set1[0],'RESTFREQ', value=valuefreqlst1)
+        except Exception:
+            pass
+
+        #fits.setval(myfiles[filenum1],'CRVAL3', value=valuefreqlst1)
+        #fits.setval(myfiles[filenum1],'RESTFRQ', value=valuefreqlst1)
+        #fits.setval(myfiles[filenum1],'RESTFREQ', value=valuefreqlst1)
+
+
+        #fits.setval(myfiles[math.floor(nofile/2.-1)],'CRVAL3', value=valuefreqlst1)
+        #fits.setval(myfiles[math.floor(nofile/2.-1)],'RESTFRQ', value=valuefreqlst1)
+        #fits.setval(myfiles[math.floor(nofile/2.-1)],'RESTFREQ', value=valuefreqlst1)
+
+        print 'firs valufreqlist',valuefreqlst1
+        print valuefreqlst2, freqlist2
+        try:
+            fits.setval(set2[0],'CRVAL3', value=valuefreqlst2)
+            fits.setval(set2[0],'RESTFRQ', value=valuefreqlst2)
+            fits.setval(set2[0],'RESTFREQ', value=valuefreqlst2)
+        except Exception:
+            pass
+        #fits.setval(myfiles[filenum2],'CRVAL3', value=valuefreqlst2)
+        #fits.setval(myfiles[filenum2],'RESTFRQ', value=valuefreqlst2)
+        #fits.setval(myfiles[filenum2],'RESTFREQ', value=valuefreqlst2)
+
+
+        #fits.setval(myfiles[math.floor(nofile/2.+1)],'CRVAL3', value=valuefreqlst2)
+        #fits.setval(myfiles[math.floor(nofile/2.-1)],'RESTFRQ', value=valuefreqlst2)
+        #fits.setval(myfiles[math.floor(nofile/2.-1)],'RESTFREQ', value=valuefreqlst2)
+
+        #myfiles[math.floor(nofile/2-1)].split('/')[-1].split('-')[3]
+        #myfiles[math.floor(nofile/2+1)].split('/')[-1].split('-')[3]
+        #myfiles[index].split('/')[-1].split('-')[3]
+
+        datetime1=set1[0].split('/')[-1][:19]
+        datetime2=set2[0].split('/')[-1][:19]
+    #except:
+
+
+        #datetime1=myfiles[filenum1].split('/')[-1][:19]
+        #datetime2=myfiles[filenum2].split('/')[-1][:19]
+        #datetime1=myfiles[math.floor(nofile/2.-1)].split('/')[-1][:19]
+        #datetime2=myfiles[math.floor(nofile/2.+1)].split('/')[-1][:19]
+
+        #getSB1=int(np.floor((1024./200.)*valuefreqlst1))
+        #getSB2=int(np.floor((1024./200.)*valuefreqlst2))
+
+        notgetSB1=round(valuefreqlst1,0)
+        notgetSB2=round(valuefreqlst2,0)
+
+
+        filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
+        filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
+
+        print 'wrting path'
+
+        _path='/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)
+        #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
+
+        if os.path.exists(_path):
+            print 'writing images' 
+            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)+ '/' + filename1, overwrite=True)
+            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)+ '/' + filename2, overwrite=True)
+        if not os.path.exists(_path):
+            os.makedirs(_path)
+            print 'writing images, dir created' 
+            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)+ '/' + filename1, overwrite=True)
+            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR) +'/' + filename2, overwrite=True)
+        #except Exception:
+            #pass 
+        
+
+    return
+
+if __name__== "__main__":
+  
+  Parallel(n_jobs=16,backend="multiprocessing", verbose=10)(delayed(img_averager)(i) for i in matching)
