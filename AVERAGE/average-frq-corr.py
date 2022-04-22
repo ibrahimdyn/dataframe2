@@ -1,15 +1,100 @@
+import os
+import sys
+import csv
+
+from datetime import datetime
+import argparse
+import numpy as np
+import pandas as pd
+
+#from sourcefinder.accessors import open as open_accessor
+#from sourcefinder.accessors import sourcefinder_image_from_accessor
+
+from tkp.accessors import sourcefinder_image_from_accessor
+from tkp.accessors import open as open_accessor
+
+from astropy.io import fits
+from astropy.io.fits.hdu.hdulist import HDUList
+from astropy.time import Time
+
+import glob
+from astropy.coordinates import SkyCoord
+import sys
+import matplotlib.pyplot as plt
+import numpy as np
+import astropy.io.fits as fits
+import glob
+#from mpl_toolkits import mplot3d
+import astropy.wcs as wcs
+from astropy.table import Table
+import pandas as pd
+from astropy.coordinates import SkyCoord
+from astropy.coordinates import Angle
+from astropy import units as u
+import matplotlib as mpl
+#import joblib
+from joblib import Parallel, delayed
+import time
+
+#import pyds9 as pyd
+
+#from tkp.accessors import sourcefinder_image_from_accessor
+#from tkp.accessors import open as open_accessor
+
+from astropy.io.fits.hdu.hdulist import HDUList
+from astropy.time import Time
+
+import csv
+
+#import tkp.sourcefinder.image
+import matplotlib.pyplot as plt
+import math
+from datetime import datetime
+
+from astropy.coordinates import SkyCoord, match_coordinates_sky,  AltAz, EarthLocation
+
+import tkp.db
+import tkp
+#import tkp.config
+
+import tkp.db
+import logging
+
+from photutils.datasets import make_100gaussians_image
+from photutils.aperture import CircularAperture, CircularAnnulus
+
+from astropy.visualization import simple_norm
+import matplotlib.pyplot as plt
+from photutils.aperture import CircularAperture, CircularAnnulus
+from photutils.datasets import make_100gaussians_image
+
+from astropy.stats import sigma_clipped_stats
+import pickle
+
+
+import tkp.db.alchemy
+from pandas import DataFrame
+from bokeh.plotting import figure, output_notebook, show
+from bokeh.models import DatetimeTickFormatter
+
+#logging.basicConfig(level=logging.INFO)
+#output_notebook()
+
+#query_loglevel = logging.WARNING 
+
+
 with open('/home/idayan/imgsin70.txt','r') as f:
     lines=f.read().splitlines()
 imagepaths = sorted(lines)   
 
 DTofimagepaths=[]
 for i in sorted(imagepaths):
-    print i.split('/')[7][:19]
+    #print i.split('/')[7][:19]
     DTofimagepaths.append(i.split('/')[7][:19])
 
 matching=[]
 for i in sorted(set(DTofimagepaths)):
-    print i
+    #print i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 
 
@@ -19,7 +104,7 @@ set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
 
 
 def img_averager(list_sametimestamps):    
-    if len(list_sametimestamps)>8:    
+    if len(list_sametimestamps)>7:    
         set1=[]
         set2=[]
         myfiles = list_sametimestamps
@@ -175,18 +260,18 @@ def img_averager(list_sametimestamps):
 
         print 'wrting path'
 
-        _path='/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)
+        _path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
 
         if os.path.exists(_path):
             print 'writing images' 
-            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)+ '/' + filename1, overwrite=True)
-            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)+ '/' + filename2, overwrite=True)
+            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
+            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename2, overwrite=True)
         if not os.path.exists(_path):
             os.makedirs(_path)
             print 'writing images, dir created' 
-            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR)+ '/' + filename1, overwrite=True)
-            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-TEST/%s' % (DIR) +'/' + filename2, overwrite=True)
+            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
+            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR) +'/' + filename2, overwrite=True)
         #except Exception:
             #pass 
         
