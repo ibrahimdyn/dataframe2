@@ -88,7 +88,7 @@ with open('/home/idayan/imgsin70.txt','r') as f:
 imagepaths = sorted(lines)   
 
 DTofimagepaths=[]
-for i in sorted(imagepaths):
+for i in sorted(imagepaths[21000:21600]):
     #print i.split('/')[7][:19]
     DTofimagepaths.append(i.split('/')[7][:19])
 
@@ -280,18 +280,18 @@ def img_averager(list_sametimestamps):
 
         _path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
-
-        if os.path.exists(_path):
-            print 'writing images' 
-            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
-            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename2, overwrite=True)
-        if not os.path.exists(_path):
-            os.makedirs(_path)
-            print 'writing images, dir created' 
-            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
-            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR) +'/' + filename2, overwrite=True)
-        #except Exception:
-            #pass 
+        try:
+            if os.path.exists(_path):
+                print 'writing images' 
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename2, overwrite=True)
+            if not os.path.exists(_path):
+                os.makedirs(_path)
+                print 'writing images, dir created' 
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR) +'/' + filename2, overwrite=True)
+        except Exception:
+            pass 
         
 
     return
