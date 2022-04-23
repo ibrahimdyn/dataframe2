@@ -128,21 +128,34 @@ def img_averager(list_sametimestamps):
             #set2.append([i for s in set2_subbands if s in i])
             number_set1=len([i for i in set1 if i[:]])
             number_set2=len([i for i in set2 if i[:]])
-
+        try:
+            
+            data1_template= fits.getdata(set1[0],
+                                      header=False)[0,0,:,:] -fits.getdata(set1[0],
+                                      header=False)[0,0,:,:] 
+            data2_template= fits.getdata(set1[0],
+                                      header=False)[0,0,:,:] -fits.getdata(set2[0],
+                                      header=False)[0,0,:,:] 
+        except Exception:
+            pass
+      
         if len([i for i in set1 if i[:]])>5:
             for j in range(len(set1)):
             #if s < nofile/2:
             #while s < nofile:
                 #print s,'inside first'
                 print 'this is first file of set1', j, set1[j]
-                data_1 += fits.getdata(set1[j],
-                                          header=False)[0,0,:,:]
+                data1_template +=fits.getdata(set1[j],
+                                  header=False)[0,0,:,:]
+                #data_1 += fits.getdata(set1[j],
+                #                          header=False)[0,0,:,:]
                 #data_1 += fits.getdata(myfiles[i],
                 #                          header=False)[0,0,:,:]
                 freqlist1.append(float(set1[j].split('-')[-2][1:6])) 
 
                 #data_1 = data_1/(nofile/2)
-            data_1 = data_1/(number_set1)
+            data1_template = data1_template/(number_set1)
+            #data_1 = data_1/(number_set1)
 
                 #if nofile % 2 == 0:
                 #    data_1 = data_1/((nofile/2))
@@ -162,13 +175,16 @@ def img_averager(list_sametimestamps):
             
 
                 #print 'second if', s
-                data_2 += fits.getdata(set2[k],
-                                          header=False)[0,0,:,:]
+                data2_template +=fits.getdata(set2[k],
+                                  header=False)[0,0,:,:]
+                #data_2 += fits.getdata(set2[k],
+                #                          header=False)[0,0,:,:]
                 #data_2 += fits.getdata(myfiles[i],
                #                           header=False)[0,0,:,:]
                 #data_2 = data_2/(nofile/2)
                 freqlist2.append(float(set2[k].split('-')[-2][1:6]))
-            data_2 = data_2/(number_set2)
+            data2_template =data2_template /(number_set2)
+            #data_2 = data_2/(number_set2)
 
                 #if nofile % 2 == 0:
                 #    data_2 = data_2/((nofile/2))
@@ -181,7 +197,7 @@ def img_averager(list_sametimestamps):
                 #freqlist2.append(float(myfiles[i].split('-')[-2][1:6]))
                 #s += 1
                 #print 'end if', s
-        print 'this is i:',i
+        #print 'this is i:',i
         #try:
         #filenum1=int(math.floor(len(set1)/2.+1))
         #filenum2=int(math.floor(len(set2)/2.+1))
@@ -217,7 +233,8 @@ def img_averager(list_sametimestamps):
             fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
             fits.setval(set1[0],'RESTFRQ', value=valuefreqlst1)
             fits.setval(set1[0],'RESTFREQ', value=valuefreqlst1)
-            fitsimg1.data=data_1
+            fitsimg1.data=data1_template
+            #fitsimg1.data=data_1
             datetime1=set1[0].split('/')[-1][:19]
             notgetSB1=round(valuefreqlst1,0)
             filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
@@ -242,7 +259,8 @@ def img_averager(list_sametimestamps):
             fits.setval(set2[0],'CRVAL3', value=valuefreqlst2)
             fits.setval(set2[0],'RESTFRQ', value=valuefreqlst2)
             fits.setval(set2[0],'RESTFREQ', value=valuefreqlst2)
-            fitsimg2.data=data_2
+            fitsimg2.data=data2_template
+            #fitsimg2.data=data_2
             datetime2=set2[0].split('/')[-1][:19]
             notgetSB2=round(valuefreqlst2,0)
 
