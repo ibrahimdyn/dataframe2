@@ -157,7 +157,7 @@ def img_averager(list_sametimestamps):
                 #if s >= nofile/2:
 
                     #print 'second if', s
-                    data_2 += fits.getdata(set[k],
+                    data_2 += fits.getdata(set2[k],
                                               header=False)[0,0,:,:]
                     #data_2 += fits.getdata(myfiles[i],
                    #                           header=False)[0,0,:,:]
