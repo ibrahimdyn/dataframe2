@@ -88,7 +88,7 @@ with open('/home/idayan/imgsin70.txt','r') as f:
 imagepaths = sorted(lines)   
 
 DTofimagepaths=[]
-for i in sorted(imagepaths):
+for i in sorted(imagepaths[20000:]):
     #print i.split('/')[7][:19]
     DTofimagepaths.append(i.split('/')[7][:19])
 
@@ -278,9 +278,10 @@ def img_averager(list_sametimestamps):
 
         print 'wrting path'
 
-        _path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
+        #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
         try:
+            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
             if os.path.exists(_path):
                 print 'writing images' 
                 fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
