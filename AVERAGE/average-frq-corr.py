@@ -88,7 +88,7 @@ with open('/home/idayan/imgsin70.txt','r') as f:
 imagepaths = sorted(lines)   
 
 DTofimagepaths=[]
-for i in sorted(imagepaths[20000:]):
+for i in sorted(imagepaths):
     #print i.split('/')[7][:19]
     DTofimagepaths.append(i.split('/')[7][:19])
 
@@ -118,6 +118,7 @@ def img_averager(list_sametimestamps):
         #print 'this is =my files :', myfiles
         #print 'len of list_sametimestamps', len(list_sametimestamps)
         for i in myfiles:
+            print 'this is first file', i
         #for i in range(len(myfiles)):
 
             set1.extend([i for s in set1_subbands if s in i])
@@ -128,53 +129,58 @@ def img_averager(list_sametimestamps):
             number_set1=len([i for i in set1 if i[:]])
             number_set2=len([i for i in set2 if i[:]])
 
-            if len([i for i in set1 if i[:]])>5:
-                for j in range(len(set1)):
-                #if s < nofile/2:
-                #while s < nofile:
-                    #print s,'inside first'
-                    data_1 += fits.getdata(set1[j],
-                                              header=False)[0,0,:,:]
-                    #data_1 += fits.getdata(myfiles[i],
-                    #                          header=False)[0,0,:,:]
+        if len([i for i in set1 if i[:]])>5:
+            for j in range(len(set1)):
+            #if s < nofile/2:
+            #while s < nofile:
+                #print s,'inside first'
+                print 'this is first file of set1', j, set1[j]
+                data_1 += fits.getdata(set1[j],
+                                          header=False)[0,0,:,:]
+                #data_1 += fits.getdata(myfiles[i],
+                #                          header=False)[0,0,:,:]
+                freqlist1.append(float(set1[j].split('-')[-2][1:6])) 
 
-                    #data_1 = data_1/(nofile/2)
-                    data_1 = data_1/(number_set1)
+                #data_1 = data_1/(nofile/2)
+            data_1 = data_1/(number_set1)
 
-                    #if nofile % 2 == 0:
-                    #    data_1 = data_1/((nofile/2))
+                #if nofile % 2 == 0:
+                #    data_1 = data_1/((nofile/2))
 
-                    #if nofile % 2 == 1:
-                     #   data_1 = data_1/(math.floor(nofile/2+1))
+                #if nofile % 2 == 1:
+                 #   data_1 = data_1/(math.floor(nofile/2+1))
 
-                    freqlist1.append(float(set1[j].split('-')[-2][1:6]))    
-                    #freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
-                    
-            if len([i for i in set2 if i[:]])>5:
+                #freqlist1.append(float(set1[j].split('-')[-2][1:6]))    
+                #freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
+
+        if len([i for i in set2 if i[:]])>5:
 
 
-                for k in range(len(set2)):
-                #if s >= nofile/2:
+            for k in range(len(set2)):
+                print 'this is first file of set1', j, set2[k]
+            #if s >= nofile/2:
+            
 
-                    #print 'second if', s
-                    data_2 += fits.getdata(set2[k],
-                                              header=False)[0,0,:,:]
-                    #data_2 += fits.getdata(myfiles[i],
-                   #                           header=False)[0,0,:,:]
-                    #data_2 = data_2/(nofile/2)
-                    data_2 = data_2/(number_set2)
+                #print 'second if', s
+                data_2 += fits.getdata(set2[k],
+                                          header=False)[0,0,:,:]
+                #data_2 += fits.getdata(myfiles[i],
+               #                           header=False)[0,0,:,:]
+                #data_2 = data_2/(nofile/2)
+                freqlist2.append(float(set2[k].split('-')[-2][1:6]))
+            data_2 = data_2/(number_set2)
 
-                    #if nofile % 2 == 0:
-                    #    data_2 = data_2/((nofile/2))
+                #if nofile % 2 == 0:
+                #    data_2 = data_2/((nofile/2))
 
-                    #if nofile % 2 == 1:
-                    #    data_2 = data_2/(math.floor(nofile/2))
-                    freqlist2.append(float(set2[k].split('-')[-2][1:6]))
-                    print k, 'SEEETTTTTTTT2'
-                    print i, "iiiiiiii"
-                    #freqlist2.append(float(myfiles[i].split('-')[-2][1:6]))
-                    #s += 1
-                    #print 'end if', s
+                #if nofile % 2 == 1:
+                #    data_2 = data_2/(math.floor(nofile/2))
+                #freqlist2.append(float(set2[k].split('-')[-2][1:6]))
+                #print k, 'SEEETTTTTTTT2'
+                #print i, "iiiiiiii"
+                #freqlist2.append(float(myfiles[i].split('-')[-2][1:6]))
+                #s += 1
+                #print 'end if', s
         print 'this is i:',i
         #try:
         #filenum1=int(math.floor(len(set1)/2.+1))
@@ -189,7 +195,7 @@ def img_averager(list_sametimestamps):
 
         #valuefreqlst1=round(np.mean(freqlist1)*0.195,3)
         #valuefreqlst2=round(np.mean(freqlist2)*0.195,3)
-        
+
         #valuefreqlst1=np.mean(freqlist1)*0.195
         #valuefreqlst2=np.mean(freqlist2)*0.195
 
@@ -205,7 +211,7 @@ def img_averager(list_sametimestamps):
         try:
             DIR=set1[0].split('/')[6]
             #filenum1=int(math.floor(len(set1)/2.+1))
-            
+
             valuefreqlst1=np.mean(freqlist1)*0.195
             fitsimg1 = fits.open(set1[0])[0]
             fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
@@ -239,7 +245,7 @@ def img_averager(list_sametimestamps):
             fitsimg2.data=data_2
             datetime2=set2[0].split('/')[-1][:19]
             notgetSB2=round(valuefreqlst2,0)
-            
+
             filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
         except Exception:
             pass
@@ -276,21 +282,21 @@ def img_averager(list_sametimestamps):
         #filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
         #filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
 
-        print 'wrting path'
+        #print 'wrting path'
 
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
         try:
-            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
+            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)
             if os.path.exists(_path):
                 print 'writing images' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename2, overwrite=True)
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename2, overwrite=True)
             if not os.path.exists(_path):
                 os.makedirs(_path)
                 print 'writing images, dir created' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR) +'/' + filename2, overwrite=True)
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR) +'/' + filename2, overwrite=True)
         except Exception:
             pass 
         
