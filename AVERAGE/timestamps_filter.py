@@ -93,7 +93,7 @@ for i in sorted(set(DTofimagepaths)):
     print 'printing DT of:', i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
-file_name = "home/idayan/test_timestamps_imgsin70.pkl"
+file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
 
 open_file = open(file_name, "wb")
 print 'dumping file...'
