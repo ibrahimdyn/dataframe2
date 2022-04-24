@@ -90,13 +90,16 @@ for i in sorted(imagepaths):
     DTofimagepaths.append(i.split('/')[7][:19])
 matching=[]
 for i in sorted(set(DTofimagepaths)):
-#print i
+    print 'printing DT of:', i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
 file_name = "home/idayan/test_timestamps_imgsin70.pkl"
 
 open_file = open(file_name, "wb")
+print 'dumping file...'
 pickle.dump(matching, open_file)
+#print 'file closing'
+
 open_file.close()
 
 #######  how to read :
