@@ -133,11 +133,11 @@ def img_averager(list_sametimestamps):
             data1_template= fits.getdata(set1[0],
                                       header=False)[0,0,:,:] -fits.getdata(set1[0],
                                       header=False)[0,0,:,:] 
-            data2_template= fits.getdata(set1[0],
+            data2_template= fits.getdata(set2[0],
                                       header=False)[0,0,:,:] -fits.getdata(set2[0],
                                       header=False)[0,0,:,:] 
-        except Exception:
-            pass
+        #except Exception:
+        #    pass
       
         if len([i for i in set1 if i[:]])>5:
             for j in range(len(set1)):
@@ -224,22 +224,22 @@ def img_averager(list_sametimestamps):
         #fitsimg2 = fits.open(myfiles[math.floor(nofile/2.+1)])[0]
         #fitsimg1.data=data_1
         #fitsimg2.data=data_2
-        try:
-            DIR=set1[0].split('/')[6]
-            #filenum1=int(math.floor(len(set1)/2.+1))
+        #try:
+        DIR=set1[0].split('/')[6]
+        #filenum1=int(math.floor(len(set1)/2.+1))
 
-            valuefreqlst1=np.mean(freqlist1)*0.195
-            fitsimg1 = fits.open(set1[0])[0]
-            fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
-            fits.setval(set1[0],'RESTFRQ', value=valuefreqlst1)
-            fits.setval(set1[0],'RESTFREQ', value=valuefreqlst1)
-            fitsimg1.data=data1_template
-            #fitsimg1.data=data_1
-            datetime1=set1[0].split('/')[-1][:19]
-            notgetSB1=round(valuefreqlst1,0)
-            filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
-        except Exception:
-            pass
+        valuefreqlst1=np.mean(freqlist1)*0.195
+        fitsimg1 = fits.open(set1[0])[0]
+        fits.setval(set1[0],'CRVAL3', value=valuefreqlst1)
+        fits.setval(set1[0],'RESTFRQ', value=valuefreqlst1)
+        fits.setval(set1[0],'RESTFREQ', value=valuefreqlst1)
+        fitsimg1.data=data1_template
+        #fitsimg1.data=data_1
+        datetime1=set1[0].split('/')[-1][:19]
+        notgetSB1=round(valuefreqlst1,0)
+        filename1= '%s.fits' % (datetime1 + "-S" + str(notgetSB1))
+        #except Exception:
+        #    pass
 
         #fits.setval(myfiles[filenum1],'CRVAL3', value=valuefreqlst1)
         #fits.setval(myfiles[filenum1],'RESTFRQ', value=valuefreqlst1)
@@ -252,21 +252,21 @@ def img_averager(list_sametimestamps):
 
         #print 'firs valufreqlist',valuefreqlst1
         #print valuefreqlst2, freqlist2
-        try:
-            #filenum2=int(math.floor(len(set2)/2.+1))
-            valuefreqlst2=np.mean(freqlist2)*0.195  
-            fitsimg2 = fits.open(set2[0])[0]
-            fits.setval(set2[0],'CRVAL3', value=valuefreqlst2)
-            fits.setval(set2[0],'RESTFRQ', value=valuefreqlst2)
-            fits.setval(set2[0],'RESTFREQ', value=valuefreqlst2)
-            fitsimg2.data=data2_template
-            #fitsimg2.data=data_2
-            datetime2=set2[0].split('/')[-1][:19]
-            notgetSB2=round(valuefreqlst2,0)
+        #try:
+        #filenum2=int(math.floor(len(set2)/2.+1))
+        valuefreqlst2=np.mean(freqlist2)*0.195  
+        fitsimg2 = fits.open(set2[0])[0]
+        fits.setval(set2[0],'CRVAL3', value=valuefreqlst2)
+        fits.setval(set2[0],'RESTFRQ', value=valuefreqlst2)
+        fits.setval(set2[0],'RESTFREQ', value=valuefreqlst2)
+        fitsimg2.data=data2_template
+        #fitsimg2.data=data_2
+        datetime2=set2[0].split('/')[-1][:19]
+        notgetSB2=round(valuefreqlst2,0)
 
-            filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
-        except Exception:
-            pass
+        filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
+        #except Exception:
+        #    pass
         #fits.setval(myfiles[filenum2],'CRVAL3', value=valuefreqlst2)
         #fits.setval(myfiles[filenum2],'RESTFRQ', value=valuefreqlst2)
         #fits.setval(myfiles[filenum2],'RESTFREQ', value=valuefreqlst2)
@@ -304,17 +304,17 @@ def img_averager(list_sametimestamps):
 
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
         #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
-        try:
-            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)
-            if os.path.exists(_path):
-                print 'writing images' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename2, overwrite=True)
-            if not os.path.exists(_path):
-                os.makedirs(_path)
-                print 'writing images, dir created' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR) +'/' + filename2, overwrite=True)
+        #try:
+        _path='/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)
+        if os.path.exists(_path):
+            print 'writing images' 
+            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename1, overwrite=True)
+            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename2, overwrite=True)
+        if not os.path.exists(_path):
+            os.makedirs(_path)
+            print 'writing images, dir created' 
+            fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR)+ '/' + filename1, overwrite=True)
+            fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED3/%s' % (DIR) +'/' + filename2, overwrite=True)
         except Exception:
             pass 
         
