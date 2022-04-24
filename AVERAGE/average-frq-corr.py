@@ -170,7 +170,7 @@ def img_averager(list_sametimestamps):
 
 
             for k in range(len(set2)):
-                print 'this is first file of set1', j, set2[k]
+                print 'this is first file of set1', k, set2[k]
             #if s >= nofile/2:
             
 
