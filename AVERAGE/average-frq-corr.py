@@ -83,19 +83,23 @@ from bokeh.models import DatetimeTickFormatter
 #query_loglevel = logging.WARNING 
 
 
-with open('/home/idayan/imgsin70.txt','r') as f:
-    lines=f.read().splitlines()
-imagepaths = sorted(lines)   
+#with open('/home/idayan/imgsin70.txt','r') as f:
+#    lines=f.read().splitlines()
+#imagepaths = sorted(lines)   
 
-DTofimagepaths=[]
-for i in sorted(imagepaths):
+#DTofimagepaths=[]
+#for i in sorted(imagepaths):
     #print i.split('/')[7][:19]
-    DTofimagepaths.append(i.split('/')[7][:19])
+#    DTofimagepaths.append(i.split('/')[7][:19])
 
-matching=[]
-for i in sorted(set(DTofimagepaths)):
+#matching=[]
+#for i in sorted(set(DTofimagepaths)):
     #print i
-    matching.append([s for s in imagepaths if "{}".format(i) in s])
+#    matching.append([s for s in imagepaths if "{}".format(i) in s])
+file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
+open_file = open(file_name, "rb")
+#loaded_list = pickle.load(open_file)
+matching = pickle.load(open_file)
 
 
 
