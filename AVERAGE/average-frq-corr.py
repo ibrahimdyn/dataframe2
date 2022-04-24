@@ -287,7 +287,7 @@ def img_averager(list_sametimestamps):
 
             #datetime1=set1[0].split('/')[-1][:19]
             #datetime2=set2[0].split('/')[-1][:19]
-        #except:
+            #except:
 
 
             #datetime1=myfiles[filenum1].split('/')[-1][:19]
@@ -306,22 +306,31 @@ def img_averager(list_sametimestamps):
             #filename2= '%s.fits' % (datetime2 + "-S" + str(notgetSB2))
 
             #print 'wrting path'
-
+            
             #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED2/%s' % (DIR)
             #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED/%s' % (DIR)
-            #try:
-            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED-imgsin70/%s' % (DIR)
+        except Exception as e:
+            print 'first exception', e
+        pass 
+            
+            
+        try:
+
+            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)
             if os.path.exists(_path):
                 print 'writing images' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-imgsin70/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-imgsin70/%s' % (DIR)+ '/' + filename2, overwrite=True)
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)+ '/' + filename2, overwrite=True)
             if not os.path.exists(_path):
                 os.makedirs(_path)
                 print 'writing images, dir created' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-imgsin70/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-imgsin70/%s' % (DIR) +'/' + filename2, overwrite=True)
-        except Exception:
-            pass 
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR) +'/' + filename2, overwrite=True)
+        except Exception as p:
+            print 'second exception', p
+        pass
+        #except Exception:
+        #    pass 
         
 
     return
