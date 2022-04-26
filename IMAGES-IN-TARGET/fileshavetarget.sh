@@ -77,7 +77,7 @@ do
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
     ###!!!!!! tobeaveraged101102 NOT YET check first the ones in 70 deg !!!!!!!
-    ### /zfs/helios/filer1/idayan/tobeaveraged101102.txt
+    ### /zfs/helios/filer1/idayan/tobeaveraged101102.txt 540540
     LINE=$(sed -n "$N"p /zfs/helios/filer1/idayan/tobeaveraged101102.txt)
     #LINE=$(sed -n "$N"p ~/REMAINIGDATES-GPs10110204up.txt) ###LINE=$(sed -n "$N"p ~/testsearchGPlist.txt)
     #LINE=$(sed -n "$N"p ~/imgsin60.txt)
