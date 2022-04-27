@@ -74,12 +74,14 @@ import pickle
 
 import tkp.db.alchemy
 from pandas import DataFrame
-from bokeh.plotting import figure, output_notebook, show
-from bokeh.models import DatetimeTickFormatter
+#from bokeh.plotting import figure, output_notebook, show
+#from bokeh.models import DatetimeTickFormatter
 
 
 #with open(path_,'r') as f:
-with open('/home/idayan/imgsin70.txt','r') as f:
+
+with open('/home/idayan/2-imgsin70-101102.txt','r') as f:
+#with open('/home/idayan/imgsin70.txt','r') as f:
     lines=f.read().splitlines()
 imagepaths = sorted(lines) 
 
@@ -93,7 +95,8 @@ for i in sorted(set(DTofimagepaths)):
     print 'printing DT of:', i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
-file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
+file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
+#file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
 
 open_file = open(file_name, "wb")
 print 'dumping file...'
