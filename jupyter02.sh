@@ -2,7 +2,7 @@
 ## #####SBATCH --partition neutron-star
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 12
+#SBATCH --cpus-per-task 2
 #SBATCH --mem 20G
 #SBATCH --time 120:00:00
 #SBATCH -w helios-cn002
