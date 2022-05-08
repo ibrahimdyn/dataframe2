@@ -66,9 +66,10 @@ def IN60(IMG, source):
     targetcoord = SkyCoord(source[0],source[1], unit='deg')
     sep = imgcentrecoord.separation(targetcoord).deg
     print sep
-    if sep < 69.9:
+    if sep < 70.1:
     #if sep<50.1:
-      with open(r'/home/idayan/2-imgsin70-101102.txt', 'a') as f:  # /zfs/helios/filer1/idayan/tobeaveraged101102.txt
+      with open(r'/home/idayan/202012in70.txt', 'a')  # pray for more than 3 hours; calc from; 19066 /home/idayan/202012calcdurat.txt
+      #with open(r'/home/idayan/2-imgsin70-101102.txt', 'a') as f:  # /zfs/helios/filer1/idayan/tobeaveraged101102.txt
       #with open(r'/home/idayan/imgsin50.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin70.txt', 'a') as f:
       #with open(r'/home/idayan/imgsin60-3-10110204.txt', 'a') as f:
