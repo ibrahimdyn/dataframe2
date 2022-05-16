@@ -97,7 +97,8 @@ from bokeh.models import DatetimeTickFormatter
     #print i
 #    matching.append([s for s in imagepaths if "{}".format(i) in s])
 
-file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
+file_name = "/home/idayan/202006051431timestampstoavrg.pkl"
+#file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
 #file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
 open_file = open(file_name, "rb")
 #loaded_list = pickle.load(open_file)
