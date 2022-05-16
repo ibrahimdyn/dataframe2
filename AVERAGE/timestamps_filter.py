@@ -79,8 +79,8 @@ from pandas import DataFrame
 
 
 #with open(path_,'r') as f:
-
-with open('/home/idayan/2-imgsin70-101102.txt','r') as f:
+with open('/home/idayan/imgs202006051431toavrg.txt ','r') as f: # two sec seperated imgs; check if they really like that; 87577
+#with open('/home/idayan/2-imgsin70-101102.txt','r') as f:
 #with open('/home/idayan/imgsin70.txt','r') as f:
     lines=f.read().splitlines()
 imagepaths = sorted(lines) 
@@ -95,7 +95,8 @@ for i in sorted(set(DTofimagepaths)):
     print 'printing DT of:', i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
-file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
+file_name = "/home/idayan/202006051431timestampstoavrg.pkl"
+#file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
 #file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
 
 open_file = open(file_name, "wb")
