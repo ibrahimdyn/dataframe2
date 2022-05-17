@@ -19,6 +19,7 @@ from astropy.io import fits
 from astropy.io.fits.hdu.hdulist import HDUList
 from astropy.time import Time
 
+import logging
 logging.basicConfig(level=logging.INFO)
 
 # In[ ]:
