@@ -5,7 +5,7 @@
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
-#SBATCH --array=1-110%30
+#SBATCH --array=1-255%50
 ### #SBATCH --array=1-650%100
 ### #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
@@ -40,7 +40,7 @@ echo "echoED sed command!!!"
 
 
 START=$SLURM_ARRAY_TASK_ID
-NUMLINES=100
+NUMLINES=1000
 #NUMLINES=1000
 STOP=$((SLURM_ARRAY_TASK_ID*NUMLINES))
 START="$(($STOP - $(($NUMLINES - 1))))"
