@@ -54,8 +54,9 @@ do
     echo $N
     #LINE=$(sed -n "$N"p ~/3Dates.txt)
     #ALL3Dates
-    /home/idayan
-    LINE=$(sed -n "$N"p /home/idayan/202012in70toCAL.txt)
+    #/home/idayan
+    LINE=$(sed -n "$N"p /home/idayan/imgpathstofluxcal202009290730.txt)
+    #LINE=$(sed -n "$N"p /home/idayan/202012in70toCAL.txt)
     #LINE=$(sed -n "$N"p ~/REMAINIGDATES.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     
