@@ -19,6 +19,7 @@ from astropy.io import fits
 from astropy.io.fits.hdu.hdulist import HDUList
 from astropy.time import Time
 
+logging.basicConfig(level=logging.INFO)
 
 # In[ ]:
 obs=(sys.argv[1]).split("/")[5]
