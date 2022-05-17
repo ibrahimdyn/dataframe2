@@ -202,7 +202,9 @@ def process(cfg):
                                        ref_cat["f_int_err"])
 
         fields=[slope_cor,slope_err, intercept_cor,int_err, N_match]
-        with open(r'/home/idayan/fit2_results.csv', 'a') as f:
+	202009290730
+	with open(r'/home/idayan/fit2_202009290730_results.csv', 'a') as f:
+        #with open(r'/home/idayan/fit2_results.csv', 'a') as f:
             writer = csv.writer(f)
             writer.writerow(fields)
 
