@@ -3,7 +3,7 @@
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 20G
-#SBATCH --time 120:00:00
+#SBATCH --time 5-00:00:00
 #SBATCH -w helios-cn003
 #SBATCH --output=/home/idayan/jupyter03.log
 # #SBATCH --array=1-128%32
