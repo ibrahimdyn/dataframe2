@@ -79,7 +79,8 @@ from pandas import DataFrame
 
 
 #with open(path_,'r') as f:
-with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # two sec seperated imgs; check if they really like that; 87577
+with open('/home/idayan/tbavrgd202009290730.txt','r') as f: # /home/idayan/tbavrgd202009290730.txt 218459
+#with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # two sec seperated imgs; check if they really like that; 87577
 #with open('/home/idayan/2-imgsin70-101102.txt','r') as f:
 #with open('/home/idayan/imgsin70.txt','r') as f:
     lines=f.read().splitlines()
