@@ -321,17 +321,19 @@ def img_averager(list_sametimestamps):
             
             
         try:
+            
 
-            _path='/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)
+            #_path='/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)
+            _path='/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/%s' % (DIR) # cal of this date not in "fllwp cal" folder; list arranged manually
             if os.path.exists(_path):
                 print 'writing images' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)+ '/' + filename2, overwrite=True)
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/%s' % (DIR)+ '/' + filename2, overwrite=True)
             if not os.path.exists(_path):
                 os.makedirs(_path)
                 print 'writing images, dir created' 
-                fitsimg1.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR)+ '/' + filename1, overwrite=True)
-                fitsimg2.writeto('/zfs/helios/filer1/idayan/CALed/AVERAGED-FINAL/%s' % (DIR) +'/' + filename2, overwrite=True)
+                fitsimg1.writeto('/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/%s' % (DIR)+ '/' + filename1, overwrite=True)
+                fitsimg2.writeto('/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/%s' % (DIR) +'/' + filename2, overwrite=True)
         except Exception as p:
             print 'second exception', p
         pass
