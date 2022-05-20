@@ -80,7 +80,9 @@ from pandas import DataFrame
 
 #with open(path_,'r') as f:
 #imgs202006051431toavrg.txt
-with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: #87577 imgs202006051431toavrg.txt FIRST FLLWP
+#rmngtoavrg202006051431.txt
+with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # 68243, in total is:71242
+#with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: #87577 imgs202006051431toavrg.txt FIRST FLLWP
 #with open('/home/idayan/tbavrgd202009290730.txt','r') as f: # /home/idayan/tbavrgd202009290730.txt 218459
 #with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # two sec seperated imgs; check if they really like that; 87577
 #with open('/home/idayan/2-imgsin70-101102.txt','r') as f:
@@ -98,7 +100,10 @@ for i in sorted(set(DTofimagepaths)):
     print 'printing DT of:', i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
-file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
+#202006051431
+
+file_name = "/home/idayan/202006051431tmstmpstoavrg.pkl"
+#file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202006051431timestampstoavrg.pkl"
 #file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
 #file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
