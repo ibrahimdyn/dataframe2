@@ -1,7 +1,7 @@
 #!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 15
+#SBATCH --cpus-per-task 10
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
@@ -56,7 +56,10 @@ do
     #ALL3Dates
     #/home/idayan
     #/home/idayan/imgs202006051431toavrg.txt
-    LINE=$(sed -n "$N"p /home/idayan/imgs202006051431toavrg.txt) # must be "to fluxcal"
+    #Send0_rmngimgstofluxcal202010030948.txt
+    LINE=$(sed -n "$N"p /home/idayan/Send0_rmngimgstofluxcal202010030948.txt) 
+    
+    #LINE=$(sed -n "$N"p /home/idayan/imgs202006051431toavrg.txt) # must be "to fluxcal"
     #LINE=$(sed -n "$N"p /home/idayan/imgpathstofluxcal202009290730.txt)
     #LINE=$(sed -n "$N"p /home/idayan/202012in70toCAL.txt)
     #LINE=$(sed -n "$N"p ~/REMAINIGDATES.txt)
