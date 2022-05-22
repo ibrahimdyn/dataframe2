@@ -25,7 +25,7 @@ echo "starting processing"
 trap-manage.py run  $1  -m "[[148.56,7.66], [148.56, 10.16],[148.56, 5.16],[151.06, 7.66],[146.06, 7.66]]"
 #trap-manage.py run  _2Averaged20K101102JOB  -m "[[148.56,7.66], [148.56, 10.16],[148.56, 5.16],[151.06, 7.66],[146.06, 7.66]]"
 
-python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py
+#python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py
 #python /home/idayan/dataframe2/AVERAGE/averager-meancorr.py
 #python /home/idayan/dataframe2/AVERAGE/average.py
 
