@@ -96,8 +96,8 @@ from bokeh.models import DatetimeTickFormatter
 #for i in sorted(set(DTofimagepaths)):
     #print i
 #    matching.append([s for s in imagepaths if "{}".format(i) in s])
-
-file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
+file_name = "/home/idayan/rmng202009290730tmstmpstoavrg.pkl"
+#file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202006051431timestampstoavrg.pkl" # this one stayed bcs of 2 sec issue
 #file_name = "/home/idayan/101102_2timestamps_imgsin70.pkl"
 #file_name = "/home/idayan/test_timestamps_imgsin70.pkl"
