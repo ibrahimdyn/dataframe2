@@ -13,7 +13,8 @@ SBATCH -w helios-cn003
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
-
+echo "database starting"
+/hddstore/idayan/pgsql/data/bin/pg_ctl -D /hddstore/idayan/pgsql/data/c -l logfile start # node 3
 #source /home/idayan/env/bin/activate
 #source /home/idayan/new_env/bin/activate
 source ~/envforTRAP/bin/activate
