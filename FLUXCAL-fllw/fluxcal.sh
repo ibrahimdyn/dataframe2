@@ -57,7 +57,9 @@ do
     #/home/idayan
     #/home/idayan/imgs202006051431toavrg.txt
     #Send0_rmngimgstofluxcal202010030948.txt
-    LINE=$(sed -n "$N"p /home/idayan/Send0_rmngimgstofluxcal202010030948.txt) 
+    #ALL202011080802tofluxcal.txt
+    LINE=$(sed -n "$N"p /home/idayan/ALL202011080802tofluxcal.txt)  #153077
+    #LINE=$(sed -n "$N"p /home/idayan/Send0_rmngimgstofluxcal202010030948.txt) 
     
     #LINE=$(sed -n "$N"p /home/idayan/imgs202006051431toavrg.txt) # must be "to fluxcal"
     #LINE=$(sed -n "$N"p /home/idayan/imgpathstofluxcal202009290730.txt)
@@ -71,8 +73,8 @@ do
     #echo $(wc -l ~/REMAINIGDATES.txt)
     #echo $(wc -l ~/ALL202007Dates2.txt)
     
-    
-    python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
+    python /home/idayan/dataframe2/FLUXCAL-fllw/fluxcal.sh --fitsfile=$LINE
+    #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
     #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
     echo "after processing, NoFiles"
