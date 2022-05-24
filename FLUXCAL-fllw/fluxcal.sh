@@ -16,7 +16,8 @@
 #source /home/idayan/env/bin/activate
 source /home/idayan/new_env/bin/activate
 
-echo "your cwd is:" $(pwd)
+echo "your cwd is:" 
+echo $(pwd)
 #for i in glob.glob("/zfs/helios/filer0/idayan/Calimgs/*.fits"):
 #b=`ls /zfs/helios/filer0/idayan/Calimgs/*.fits`
 #b=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
