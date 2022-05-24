@@ -1,4 +1,4 @@
- #!/bin/bash 
+#!/bin/bash 
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 10
@@ -29,9 +29,9 @@ source /home/idayan/new_env/bin/activate
 #c=`ls /zfs/helios/filer1/idayan/202006040630/*_all/SB*/imgs/*.fits`
 #c=`ls /zfs/helios/filer1/idayan/$1/*_all/SB*/imgs/*.fits`
 #ls $c > ~/test44.txt
-echo "echoing sed command; ready steady go"
+#echo "echoing sed command; ready steady go"
 #ls `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt`
-echo "echoED sed command!!!"
+#echo "echoED sed command!!!"
 #python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
 #Cal-All-automate.py
 #python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt` 
