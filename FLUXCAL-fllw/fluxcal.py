@@ -206,7 +206,10 @@ def process(cfg):
         fields=[slope_cor,slope_err, intercept_cor,int_err, N_match]
 	#202009290730
   #imgs202006051431toavrg.txt
-  with open(r'/home/idayan/fit2_202006051431_results.csv', 'a') as f:
+  #ALL202011080802tofluxcal.txt
+  #ALL202011080802tofluxcal.txt
+  with open(r'/home/idayan/fit2_202011080802_results.csv', 'a') as f:
+  #with open(r'/home/idayan/fit2_202006051431_results.csv', 'a') as f:
 	#with open(r'/home/idayan/fit2_202009290730_results.csv', 'a') as f:
         #with open(r'/home/idayan/fit2_results.csv', 'a') as f:
             writer = csv.writer(f)
