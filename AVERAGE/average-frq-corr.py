@@ -96,8 +96,10 @@ from bokeh.models import DatetimeTickFormatter
 #for i in sorted(set(DTofimagepaths)):
     #print i
 #    matching.append([s for s in imagepaths if "{}".format(i) in s])
+#/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/
 
-file_name = "/home/idayan/202005121735tmstmpstoavrg.pkl" 
+file_name = "/home/idayan/202011080802tmstmpstoavrg.pkl" #210780 comingfrom with open('/home/idayan/toAVRG202011080802.txt','r') as f: #100680
+#file_name = "/home/idayan/202005121735tmstmpstoavrg.pkl" 
 #file_name = "/home/idayan/rmng202009290730tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202006051431timestampstoavrg.pkl" # this one stayed bcs of 2 sec issue
