@@ -81,7 +81,10 @@ from pandas import DataFrame
 #with open(path_,'r') as f:
 #imgs202006051431toavrg.txt
 #rmngtoavrg202006051431.txt
-with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # 68243, in total is:71242
+
+
+with open('/home/idayan/toAVRG202011080802.txt','r') as f: #100680
+#with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # 68243, in total is:71242
 #with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: #87577 imgs202006051431toavrg.txt FIRST FLLWP
 #with open('/home/idayan/tbavrgd202009290730.txt','r') as f: # /home/idayan/tbavrgd202009290730.txt 218459
 #with open('/home/idayan/imgs202006051431toavrg.txt','r') as f: # two sec seperated imgs; check if they really like that; 87577
