@@ -129,7 +129,7 @@ def noisedist(img):
         #hdl=fits.open(i)
         #fitsimgdata= hdl[0].data[0,0,:,:]
     #imgdata=fits.getdata(img,header=False)[0,0,:,:]  # bug was here; no need to add dimensions
-    imgdata=fits.getdata(img,header=False)[0,0,:,:]
+    imgdata=fits.getdata(img,header=False)
 
         
     resultlist = []
