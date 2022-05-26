@@ -36,15 +36,22 @@ from joblib import Parallel, delayed
 
 import sys
 
-#fitslist=sorted(glob.glob("/zfs/helios/filer0/idayan/calw2ref-202009240800/*fits"))
-#fitsimg=fits.getdata(fitslist[3100])[0,0,:,:]
-#obs_dir = "/zfs/helios/filer1/idayan/"
-#fits_list=glob.glob(obs_dir+"202008122000/"+"*_all*"+"/*SB*/"+"imgs/"+"*")
-#fitslist=sorted(glob.glob(obs_dir+"202006051232/"+"*_all*"+"/*SB*/"+"imgs/"+"*.fits"))
 
-#fitslist=sorted(glob.glob(obs_dir+"202006061630/"+"*_all*"+"/*SB*/"+"imgs/"+"2*.fits"))
 
-#fitsimgsh=fits.getdata(fitslist[0])[0,0,:,:]
+obs_dir = "/zfs/helios/filer1/idayan/"
+print "assigning sys obs argv1"
+obs_folder= sys.argv[1]
+print "assignned sys obs argv1", obs_folder
+
+
+fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
+#print fitslist[0]
+#print "header info"
+#print fits.getdata(fitslist[0],header=False)[0,0,:,:]
+print "printing len fitslist"
+print len(fitslist)
+
+
 
 def rms(data):
     """Returns the RMS of the data about the median.
@@ -100,18 +107,7 @@ print "sttartinng parrallel noise .py"
 #column_names=['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10']
 #df = pd.DataFrame(columns = column_names)
 #dff=pd.DataFrame()
-obs_dir = "/zfs/helios/filer1/idayan/"
-print "assigning sys obs argv1"
-obs_folder= sys.argv[1]
-print "assignned sys obs argv1", obs_folder
 
-
-fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
-print fitslist[0]
-print "header info"
-print fits.getdata(fitslist[0],header=False)[0,0,:,:]
-print "printing len fitslist"
-print len(fitslist)
 
 #img_cntr=[1149,1149]
 #radius_inner=0.1
@@ -132,6 +128,7 @@ def noisedist(img):
     
         #hdl=fits.open(i)
         #fitsimgdata= hdl[0].data[0,0,:,:]
+    #imgdata=fits.getdata(img,header=False)[0,0,:,:]  # bug was here; no need to add dimensions
     imgdata=fits.getdata(img,header=False)[0,0,:,:]
 
         
