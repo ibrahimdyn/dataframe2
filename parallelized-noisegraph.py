@@ -100,7 +100,12 @@ print "sttartinng parrallel noise .py"
 #column_names=['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10']
 #df = pd.DataFrame(columns = column_names)
 #dff=pd.DataFrame()
-
+fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
+print fitslist[0]
+print "header info"
+print fits.getdata(fitslist[0],header=False)[0,0,:,:]
+print "printing len fitslist"
+print len(fitslist)
 
 #img_cntr=[1149,1149]
 #radius_inner=0.1
@@ -208,10 +213,7 @@ print "assignned sys obs argv1", obs_folder
 #fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
 print "first of fitlisst:"
 
-fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
-print fitslist[0]
-print "printing len fitslist"
-print len(fitslist)
+
 if __name__ == "__main__":
     #[(integrate(i)) for i in fitslist[0:3]]
     EDF=pd.DataFrame
