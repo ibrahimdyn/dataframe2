@@ -79,7 +79,9 @@ from pandas import DataFrame
 
 
 #toavrg202006051431.txt
-with open('/home/idayan/toavrg202006051431.txt','r') as f: # 71243
+#toavrg202010030948.txt
+with open('/home/idayan/toavrg202010030948.txt','r') as f: # 44395
+#with open('/home/idayan/toavrg202006051431.txt','r') as f: # 71243
 #with open('/home/idayan/toavrg202005121735.txt','r') as f: # wc -l  toavrg202005121735.txt 148906
 #with open('/home/idayan/rmngtoavrg202009290730.txt','r') as f: # wc -l rmngtoavrg202009290730.txt /home/idayan/tbavrgd202009290730.txt 102394
 #with open('/home/idayan/tbavrgd202009290730.txt','r') as f: # /home/idayan/tbavrgd202009290730.txt 218459
@@ -99,7 +101,8 @@ for i in sorted(set(DTofimagepaths)):
     print 'printing DT of:', i
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
-file_name = "/home/idayan/202006051431tmstmpstoavrg.pkl"
+#202010030948
+file_name = "/home/idayan/202010030948tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202005121735tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/rmng202009290730tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
