@@ -206,7 +206,8 @@ print "assignned sys obs argv1", obs_folder
 #fitslist=sorted(glob.glob(obs_dir+"202006051431/"+"*_all*"+"/*SB*/"+"imgs/"+"2*.fits"))
 #/zfs/helios/filer0/idayan/Cal60-202006061630/
 #fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
-fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED_FINAL/"+obs_folder+"/"+"*.fits"))
+
+fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
 print "printing len fitslist"
 print len(fitslist)
 if __name__ == "__main__":
