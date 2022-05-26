@@ -113,6 +113,8 @@ def noisedist(img):
     #global dff
     position = [(1150., 1150.)]
     #ranges=[0,100,200,300,400,500,600,700,800,900,1000]
+    #ranges=[0,50,100,150,200,250,300,350,400,450,500,550,
+    #        600,650,700,750,800,850,900,950,1000,1050,1097]
     ranges=[0,50,100,150,200,250,300,350,400,450,500,550,
             600,650,700,750,800,850,900,950,1000,1050,1097]
     
@@ -203,7 +205,8 @@ obs_folder= sys.argv[1]
 print "assignned sys obs argv1", obs_folder
 #fitslist=sorted(glob.glob(obs_dir+"202006051431/"+"*_all*"+"/*SB*/"+"imgs/"+"2*.fits"))
 #/zfs/helios/filer0/idayan/Cal60-202006061630/
-fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
+#fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
+fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED_FINAL/"+obs_folder+"/"+"*.fits"))
 print "printing len fitslist"
 print len(fitslist)
 if __name__ == "__main__":
@@ -212,7 +215,8 @@ if __name__ == "__main__":
     out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist)
     finalres=pd.DataFrame(out)
     #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
-    finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
+    finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfAVRGF-{}.pkl".format(obs_folder))
+    #finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
     #EDF.append(pd.DataFrame(out))
     #DF.append(pd.Series(out))
     #pd.DataFrame(out)
