@@ -100,6 +100,12 @@ print "sttartinng parrallel noise .py"
 #column_names=['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7', 'r8', 'r9', 'r10']
 #df = pd.DataFrame(columns = column_names)
 #dff=pd.DataFrame()
+obs_dir = "/zfs/helios/filer1/idayan/"
+print "assigning sys obs argv1"
+obs_folder= sys.argv[1]
+print "assignned sys obs argv1", obs_folder
+
+
 fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
 print fitslist[0]
 print "header info"
@@ -204,10 +210,7 @@ def noisedist(img):
     #dfff.to_pickle("noisegraphdfLAST0202006061630.pkl") 
     #return dfff
 #obs_dir = "/zfs/helios/filer0/idayan/"
-obs_dir = "/zfs/helios/filer1/idayan/"
-print "assigning sys obs argv1"
-obs_folder= sys.argv[1]
-print "assignned sys obs argv1", obs_folder
+
 #fitslist=sorted(glob.glob(obs_dir+"202006051431/"+"*_all*"+"/*SB*/"+"imgs/"+"2*.fits"))
 #/zfs/helios/filer0/idayan/Cal60-202006061630/
 #fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
