@@ -99,7 +99,8 @@ from bokeh.models import DatetimeTickFormatter
 #/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/
 
 
-file_name = "home/idayan/202006051431tmstmpstoavrg.pkl" #70k
+file_name = "/home/idayan/202010030948tmstmpstoavrg.pkl" #70k
+#file_name = "home/idayan/202006051431tmstmpstoavrg.pkl" #70k
 #file_name = "/home/idayan/202011080802tmstmpstoavrg.pkl" #210780 comingfrom with open('/home/idayan/toAVRG202011080802.txt','r') as f: #100680
 #file_name = "/home/idayan/202005121735tmstmpstoavrg.pkl" 
 #file_name = "/home/idayan/rmng202009290730tmstmpstoavrg.pkl"
