@@ -44,7 +44,8 @@ obs_folder= sys.argv[1]
 print "assignned sys obs argv1", obs_folder
 
 
-fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits"))
+#fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits")) # for crrection remove AVEERAGE --averaged files gettig flatter
+fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
 #print fitslist[0]
 #print "header info"
 #print fits.getdata(fitslist[0],header=False)[0,0,:,:]
@@ -220,7 +221,7 @@ if __name__ == "__main__":
     out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist)
     finalres=pd.DataFrame(out)
     #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
-    finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfAVRGF-NIT-{}.pkl".format(obs_folder))
+    finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfAVRGF-NITcr1-{}.pkl".format(obs_folder))
     #finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
     #EDF.append(pd.DataFrame(out))
     #DF.append(pd.Series(out))
