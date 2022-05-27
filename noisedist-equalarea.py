@@ -148,8 +148,9 @@ def noisedist2(img):
     resultlist2=[]
     for ind in range(len(ranges2)):
         
-        print "k is:"
-        print k
+        print "ind is:"
+        print ind
+        print ranges2[ind]
         annulus_aperture2 = CircularAnnulus(position, r_in=ranges2[ind], r_out=ranges2[ind+1])
 
         annulus_masks2 = annulus_aperture2.to_mask(method='center')
