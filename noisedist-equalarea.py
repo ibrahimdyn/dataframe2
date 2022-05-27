@@ -147,31 +147,32 @@ def noisedist2(img):
     #index=0
     resultlist2=[]
     for ind in range(len(ranges2)):
-            print "k is:"
-            print k
-            annulus_aperture2 = CircularAnnulus(position, r_in=ranges2[ind], r_out=ranges2[ind+1])
+        
+        print "k is:"
+        print k
+        annulus_aperture2 = CircularAnnulus(position, r_in=ranges2[ind], r_out=ranges2[ind+1])
 
-            annulus_masks2 = annulus_aperture2.to_mask(method='center')
+        annulus_masks2 = annulus_aperture2.to_mask(method='center')
 
-            annulus_data2=(annulus_masks2[0].multiply(imgdata))
+        annulus_data2=(annulus_masks2[0].multiply(imgdata))
 
-            mask2 = annulus_masks2[0].data
-            annulus_data_new2 = annulus_data[mask2 > 0]
+        mask2 = annulus_masks2[0].data
+        annulus_data_new2 = annulus_data[mask2 > 0]
 
-            result2=rms(clip(annulus_data_new2,3))
+        result2=rms(clip(annulus_data_new2,3))
 
-            print("result for j")
-            print(result2)
+        print("result for j")
+        print(result2)
 
-            resultlist2.append(result2)
+        resultlist2.append(result2)
 
-            newrs2=pd.Series(resultlist2)
-            #index +=1
-        #print resultlist, type(resultlist)
-        #df = pd.DataFrame([resultlist]) # absol
-        srs2=pd.Series(resultlist2)
+        newrs2=pd.Series(resultlist2)
+        #index +=1
+    #print resultlist, type(resultlist)
+    #df = pd.DataFrame([resultlist]) # absol
+    srs2=pd.Series(resultlist2)
 
-        return srs2
+    return srs2
 
  
 print "first of fitlisst:"
