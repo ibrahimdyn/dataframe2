@@ -158,7 +158,7 @@ def noisedist2(img):
         annulus_data2=(annulus_masks2[0].multiply(imgdata))
 
         mask2 = annulus_masks2[0].data
-        annulus_data_new2 = annulus_data[mask2 > 0]
+        annulus_data_new2 = annulus_data2[mask2 > 0]
 
         result2=rms(clip(annulus_data_new2,3))
 
