@@ -112,10 +112,10 @@ print "sttartinng parrallel noise .py"
 ls=[]
 for i in range(133):
     #100*np.sqrt(100)
-    print 10*np.sqrt(i)
+    #print 10*np.sqrt(i)
     ls.append(100*np.sqrt(i))
-print "len of ls is"
-print len(ls)
+#print "len of ls is"
+#print len(ls)
 
 def noisedist2(img):
     #global dff
@@ -146,7 +146,8 @@ def noisedist2(img):
     #resultlist = []
     #index=0
     resultlist2=[]
-    for ind in range(len(ranges2)):
+    #for ind in range(len(ranges2)):
+    for ind in range(len(ranges2)-1):
         
         print "ind is:"
         print ind
