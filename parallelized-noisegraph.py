@@ -155,7 +155,7 @@ def noisedist(img):
     for j in ranges:
         print "j is:"
         print j
-        annulus_aperture = CircularAnnulus(position, r_in=j, r_out=j+25)
+        annulus_aperture = CircularAnnulus(position, r_in=j, r_out=j+10)
         
         #skyregion = aperture.CircularAnnulus(position, r_in=j, r_out=j+100)
         #areaindeg = skyregion.area() * area1pix
