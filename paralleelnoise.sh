@@ -35,7 +35,7 @@ echo $1
 #python /home/idayan/dataframe2/noisegraph.py
 
 
-#python /home/idayan/dataframe2/parallelized-noisegraph.py $1
+python /home/idayan/dataframe2/parallelized-noisegraph.py $1
 
-python /home/idayan/dataframe2/noisedist-equalarea.py $1
+#python /home/idayan/dataframe2/noisedist-equalarea.py $1
 
