@@ -141,9 +141,8 @@ def noisedist2(img):
     #        575,600,625,650,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1122]
     
     
-    imgdata=fits.getdata(img,header=False)[0,0,:,:] 
-
-        
+    # imgdata=fits.getdata(img,header=False)[0,0,:,:] # this should be changed for images in AVERAGED-FINAL bcs they are in [1150,1150]
+    imgdata=fits.getdata(img,header=False) # removed [0,0,:,;]   bcs the ARRAY IS DIFFERENT!!!
     #resultlist = []
     #index=0
     resultlist2=[]
