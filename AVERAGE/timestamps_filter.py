@@ -80,7 +80,9 @@ from pandas import DataFrame
 
 #toavrg202006051431.txt
 #toavrg202010030948.txt
-with open('/home/idayan/toavrg202010030948.txt','r') as f: # 44395
+
+with open('/home/idayan/_Toavrg202010030948.txt','r') as f: # 31895
+#with open('/home/idayan/toavrg202010030948.txt','r') as f: # 44395 #in aAVErAGED-FINAL somehor half of this date is missing after 10:12
 #with open('/home/idayan/toavrg202006051431.txt','r') as f: # 71243
 #with open('/home/idayan/toavrg202005121735.txt','r') as f: # wc -l  toavrg202005121735.txt 148906
 #with open('/home/idayan/rmngtoavrg202009290730.txt','r') as f: # wc -l rmngtoavrg202009290730.txt /home/idayan/tbavrgd202009290730.txt 102394
