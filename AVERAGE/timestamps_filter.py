@@ -104,7 +104,8 @@ for i in sorted(set(DTofimagepaths)):
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
 #202010030948
-file_name = "/home/idayan/202010030948tmstmpstoavrg.pkl"
+file_name = "/home/idayan/rmng202010030948tmstmpstoavrg.pkl"
+#file_name = "/home/idayan/202010030948tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202005121735tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/rmng202009290730tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202009290730tmstmpstoavrg.pkl"
