@@ -45,7 +45,9 @@ print "assignned sys obs argv1", obs_folder
 
 
 #fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits")) # for crrection remove AVEERAGE --averaged files gettig flatter
-fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
+#fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
+fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S57*.fits"))
+fitslist2=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S62*.fits"))
 #print fitslist[0]
 #print "header info"
 #print fits.getdata(fitslist[0],header=False)[0,0,:,:]
@@ -241,9 +243,12 @@ if __name__ == "__main__":
     #[(integrate(i)) for i in fitslist[0:3]]
     EDF=pd.DataFrame
     out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist)
+    out2=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist2)
     finalres=pd.DataFrame(out)
+    finalres2=pd.DataFrame(out2)
     #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
-    finalres.to_pickle("/home/idayan/newnoisegrapDF/AVRnoisegraphdfAVRGF-NITcr10inc-{}.pkl".format(obs_folder))
+    finalres.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc57-{}.pkl".format(obs_folder))
+    finalres2.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc62-{}.pkl".format(obs_folder))
     #finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
     #EDF.append(pd.DataFrame(out))
     #DF.append(pd.Series(out))
