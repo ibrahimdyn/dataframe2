@@ -59,7 +59,9 @@ do
     #ALLimgpathstofluxcal202009290730.txt
     #ALLimgpathstofluxcal-202005121735.txt
     #ALLimgpathstofluxcal-202005052000.txt
-    LINE=$(sed -n "$N"p /home/idayan/ALL202005052000tofluxcal.txt)  # 45287
+    
+    LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal1-202005181400.txt)  # coulnnt check slow machine
+    #LINE=$(sed -n "$N"p /home/idayan/ALL202005052000tofluxcal.txt)  # 45287
     #LINE=$(sed -n "$N"p /home/idayan/ALL202011080802tofluxcal.txt)  #153077
     #LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal-202005121735.txt) # 202785
     #LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal202009290730.txt) #remaining of 202009290730 155288 
