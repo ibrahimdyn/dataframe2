@@ -80,8 +80,9 @@ from pandas import DataFrame
 
 #toavrg202006051431.txt
 #toavrg202010030948.txt
-
-with open('/home/idayan/_Toavrg202010030948.txt','r') as f: # 31895
+#~/toavrg202005181400.txt
+with open('/home/idayan/toavrg202005181400.txt','r') as f: # 65805
+#with open('/home/idayan/_Toavrg202010030948.txt','r') as f: # 31895
 #with open('/home/idayan/toavrg202010030948.txt','r') as f: # 44395 #in aAVErAGED-FINAL somehor half of this date is missing after 10:12
 #with open('/home/idayan/toavrg202006051431.txt','r') as f: # 71243
 #with open('/home/idayan/toavrg202005121735.txt','r') as f: # wc -l  toavrg202005121735.txt 148906
@@ -104,7 +105,9 @@ for i in sorted(set(DTofimagepaths)):
     matching.append([s for s in imagepaths if "{}".format(i) in s])
 #with open('/home/idayan/timestamps_imgsin70.txt','r') as f:
 #202010030948
-file_name = "/home/idayan/rmng202010030948tmstmpstoavrg.pkl"
+#202005181400
+file_name = "/home/idayan/rmng202005181400tmstmpstoavrg.pkl"
+#file_name = "/home/idayan/rmng202010030948tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202010030948tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/202005121735tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/rmng202009290730tmstmpstoavrg.pkl"
