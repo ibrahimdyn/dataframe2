@@ -148,8 +148,8 @@ def noisedist(img):
         #hdl=fits.open(i)
         #fitsimgdata= hdl[0].data[0,0,:,:]
     #imgdata=fits.getdata(img,header=False)[0,0,:,:]  # bug was here; no need to add dimensions # there is need otherwise ValueError: data must be a 2D array.
-    #imgdata=fits.getdata(img,header=False)  #there is need otherwise ValueError: data must be a 2D array.
-    imgdata=fits.getdata(img,header=False)[0,0,:,:] 
+    imgdata=fits.getdata(img,header=False)  #there is need otherwise ValueError: data must be a 2D array.
+    #imgdata=fits.getdata(img,header=False)[0,0,:,:] 
 
         
     resultlist = []
