@@ -96,7 +96,62 @@ from multiprocessing.pool import ThreadPool as Pool
 
 import time
 start=time.time()
+def cmpltcalqual(img):
+    ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
+    #ALL_STD=[]
+    print "prinnt imglist"
+    print img
+    flux_compare = []
+    flux_correct = []
 
+    fitsimg=fits.open(img)
+
+    configuration = {
+            "back_size_x": 64,
+            "back_size_y": 64,
+            "margin": 0,
+            "radius": 0}
+
+    img_HDU = fits.HDUList(fitsimg)
+    imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
+                                                               plane=0),
+                                                 **configuration)
+
+    sr = imagedata.extract(det=5, anl=3,
+                           labelled_data=None, labels=[],
+                           force_beam=True)
+
+    # Reference catalogue compare
+    slope_cor, intercept_cor, ref_match, image_match, index_match = compare_flux(sr,
+                                           ref_cat["ra"],
+                                           ref_cat["decl"],
+                                           ref_cat["f_int"],
+                                           ref_cat["f_int_err"])
+
+    flux_compare.append([np.array(ref_match),
+                             (np.array(image_match) - intercept_cor)/slope_cor,
+                            np.array(np.ravel(index_match))])
+
+    #flux_correct.append([i, slope_cor, intercept_cor])
+
+    test = pd.DataFrame([])
+
+    for i in range(len(flux_compare)):
+
+        if len(test) == 0:
+            test = pd.DataFrame({"reference":flux_compare[i][0],
+                                 "image":flux_compare[i][1]},
+                                index=flux_compare[i][2])
+
+        else:
+            test = pd.concat([test,
+                   pd.DataFrame({"reference":flux_compare[i][0],
+                                 "image":flux_compare[i][1]},
+                                index=flux_compare[i][2])])
+
+    STD=np.std(test.image/test.reference)
+    #ALL_STD.append(STD)
+    return #stdintegrator(STD)
 
 def distSquared(p0, p1):
     '''
@@ -170,62 +225,7 @@ def stdintegrator(args):
     print srs
     return srs
 
-def cmpltcalqual(img):
-    ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
-    #ALL_STD=[]
-    print "prinnt imglist"
-    print img
-    flux_compare = []
-    flux_correct = []
 
-    fitsimg=fits.open(img)
-
-    configuration = {
-            "back_size_x": 64,
-            "back_size_y": 64,
-            "margin": 0,
-            "radius": 0}
-
-    img_HDU = fits.HDUList(fitsimg)
-    imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
-                                                               plane=0),
-                                                 **configuration)
-
-    sr = imagedata.extract(det=5, anl=3,
-                           labelled_data=None, labels=[],
-                           force_beam=True)
-
-    # Reference catalogue compare
-    slope_cor, intercept_cor, ref_match, image_match, index_match = compare_flux(sr,
-                                           ref_cat["ra"],
-                                           ref_cat["decl"],
-                                           ref_cat["f_int"],
-                                           ref_cat["f_int_err"])
-
-    flux_compare.append([np.array(ref_match),
-                             (np.array(image_match) - intercept_cor)/slope_cor,
-                            np.array(np.ravel(index_match))])
-
-    #flux_correct.append([i, slope_cor, intercept_cor])
-
-    test = pd.DataFrame([])
-
-    for i in range(len(flux_compare)):
-
-        if len(test) == 0:
-            test = pd.DataFrame({"reference":flux_compare[i][0],
-                                 "image":flux_compare[i][1]},
-                                index=flux_compare[i][2])
-
-        else:
-            test = pd.concat([test,
-                   pd.DataFrame({"reference":flux_compare[i][0],
-                                 "image":flux_compare[i][1]},
-                                index=flux_compare[i][2])])
-
-    STD=np.std(test.image/test.reference)
-    #ALL_STD.append(STD)
-    return #stdintegrator(STD)
 
 
 #if __name__ == "__main__":
