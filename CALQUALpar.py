@@ -230,7 +230,11 @@ def stdintegrator(args):
 
 
 print "executig the function"
-cmpltcalqual(IMG)
+#cmpltcalqual(IMG)
+
+with open(r'/home/idayan/TESTforcalqual.csv', 'a') as f:
+                    writer = csv.writer(f)
+                    writer.writerow(cmpltcalqual(IMG))
 #if __name__ == "__main__":
   
 #fitslist=imgs
