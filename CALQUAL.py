@@ -228,17 +228,17 @@ def cmpltcalqual(img):
     return #stdintegrator(STD)
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
   
-  fitslist=imgs
-  #pool.apply_async(foo.work)
-  #out=Pool.apply_async(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
-  temp=[]
-  temp.append(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
+fitslist=imgs
+#pool.apply_async(foo.work)
+#out=Pool.apply_async(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
+temp=[]
+temp.append(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
 
-  #out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
-  finalres=pd.DataFrame(temp)
-  finalres.to_pickle("/home/idayan/STD1.pkl")
+#out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
+finalres=pd.DataFrame(temp)
+finalres.to_pickle("/home/idayan/STD1.pkl")
 
     #[(integrate(i)) for i in fitslist[0:3]]
     #EDF=pd.DataFrame
@@ -259,7 +259,7 @@ if __name__ == "__main__":
 
 
 
-  end=time.time()
-  print("processing time is:",end-start) 
+end=time.time()
+print("processing time is:",end-start) 
 
 
