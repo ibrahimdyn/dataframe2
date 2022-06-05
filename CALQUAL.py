@@ -230,8 +230,10 @@ def cmpltcalqual(img):
 if __name__ == "__main__":
   
   fitslist=imgs
+  #pool.apply_async(foo.work)
+  out=Pool.apply_async(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
 
-  out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
+  #out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
   finalres=pd.DataFrame(out)
   finalres.to_pickle("/home/idayan/STD.pkl")
 
