@@ -151,7 +151,7 @@ def cmpltcalqual(img):
 
     STD=np.std(test.image/test.reference)
     #ALL_STD.append(STD)
-    return #stdintegrator(STD)
+    return STD#stdintegrator(STD)
 
 def distSquared(p0, p1):
     '''
