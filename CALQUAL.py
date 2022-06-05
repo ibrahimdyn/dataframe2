@@ -167,7 +167,7 @@ def stdintegrator(args):
     print srs
     return srs
 
-def calqual(img):
+def cmpltcalqual(img):
     ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
     #ALL_STD=[]
     print "prinnt imglist"
