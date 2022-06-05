@@ -97,6 +97,36 @@ from multiprocessing.pool import ThreadPool as Pool
 import time
 start=time.time()
 
+def FUNCCALLER():
+    return cmpltcalqual()
+
+class Foo():
+    @staticmethod
+    def work(self):
+        
+        pass
+    
+class COMPLETECALQUAL():
+    @staticmethod
+    def cmpltcalqual(self):
+        
+        pass
+    
+if __name__ == '__main__':   
+    pool = mp.Pool()
+    foo = Foo()
+    CO=COMPLETECALQUAL()
+    pool.apply_async(CO.cmpltcalqual)
+    pool.close()
+    pool.join()
+
+def work(foo):
+foo.work()
+
+pool.apply_async(work,args=(foo,))
+pool.apply_async(cmpltcalqual,args=(imgs,))
+
+
 def distSquared(p0, p1):
     '''
     Calculate the distance between point p0, [x,y], and a list of points p1, [[x0..xn],[y0..yn]]. 
@@ -224,18 +254,20 @@ def cmpltcalqual(img):
 
     STD=np.std(test.image/test.reference)
     #ALL_STD.append(STD)
-    return stdintegrator(STD)
+    return #stdintegrator(STD)
 
 
 if __name__ == "__main__":
   
   fitslist=imgs
   #pool.apply_async(foo.work)
-  out=Pool.apply_async(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
+  #out=Pool.apply_async(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
+  temp=[]
+  temp.append(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) )
 
   #out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
-  finalres=pd.DataFrame(out)
-  finalres.to_pickle("/home/idayan/STD.pkl")
+  finalres=pd.DataFrame(temp)
+  finalres.to_pickle("/home/idayan/STD1.pkl")
 
     #[(integrate(i)) for i in fitslist[0:3]]
     #EDF=pd.DataFrame
