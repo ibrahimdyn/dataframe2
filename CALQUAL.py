@@ -97,35 +97,6 @@ from multiprocessing.pool import ThreadPool as Pool
 import time
 start=time.time()
 
-def FUNCCALLER():
-    return cmpltcalqual()
-
-class Foo():
-    @staticmethod
-    def work(self):
-        
-        pass
-    
-class COMPLETECALQUAL():
-    @staticmethod
-    def cmpltcalqual(self):
-        
-        pass
-    
-if __name__ == '__main__':   
-    pool = mp.Pool()
-    foo = Foo()
-    CO=COMPLETECALQUAL()
-    pool.apply_async(CO.cmpltcalqual)
-    pool.close()
-    pool.join()
-
-def work(foo):
-foo.work()
-
-pool.apply_async(work,args=(foo,))
-pool.apply_async(cmpltcalqual,args=(imgs,))
-
 
 def distSquared(p0, p1):
     '''
