@@ -234,7 +234,7 @@ print "executig the function"
 
 with open(r'/home/idayan/TESTforcalqual.csv', 'a') as f:
                     writer = csv.writer(f)
-                    writer.writerow(cmpltcalqual(IMG))
+                    writer.writerow([cmpltcalqual(IMG)])
 #if __name__ == "__main__":
   
 #fitslist=imgs
