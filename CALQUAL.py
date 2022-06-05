@@ -91,6 +91,8 @@ from scipy.optimize import curve_fit
 
 from astropy.modeling.powerlaws import SmoothlyBrokenPowerLaw1D as SBPL
 
+from multiprocessing.pool import ThreadPool as Pool
+
 
 import time
 start=time.time()
