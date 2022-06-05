@@ -231,7 +231,7 @@ if __name__ == "__main__":
 
   out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
   finalres=pd.DataFrame(out)
-  finalres.to_pickle("/home/idayan/STD.pkl".format(obs_folder))
+  finalres.to_pickle("/home/idayan/STD.pkl")
 
     #[(integrate(i)) for i in fitslist[0:3]]
     #EDF=pd.DataFrame
