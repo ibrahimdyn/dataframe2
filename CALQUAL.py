@@ -238,8 +238,8 @@ temp.append(Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmp
 
 #out=Parallel(n_jobs=5,backend="multiprocessing", verbose=10)(delayed(cmpltcalqual)(i) for i in fitslist) 
 finalres=pd.DataFrame(temp)
-finalres.to_pickle("/home/idayan/STD1.pkl")
-
+#finalres.to_pickle("/home/idayan/STD1.pkl")
+finalres.to_csv("/home/idayan/STDlast.csv")
     #[(integrate(i)) for i in fitslist[0:3]]
     #EDF=pd.DataFrame
     #out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist)
