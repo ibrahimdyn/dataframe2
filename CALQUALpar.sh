@@ -32,7 +32,8 @@ echo "your cwd is:" $(pwd)
 echo "echoing sed command; ready steady go:"
 #ls `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt`
 echo "echoED sed command!!!"
-ls /zfs/helios/filer1/idayan/CALed/202006040830/2*.fits > ~/filEE.txt
+#ls /zfs/helios/filer1/idayan/CALed/202006040830/2*.fits > ~/filEE.txt
+ls /zfs/helios/filer1/idayan/CALed/202009290730/2*.fits > ~/file202009290730.txt
 echo "echoing head of tthe file"
 head filee.txt
 #python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
@@ -66,7 +67,7 @@ do
     #ALLimgpathstofluxcal1-202005052000.txt
     #_intarALLimgpathstofluxcal1-202005052000.txt
     #~/filEE.txt
-    LINE=$(sed -n "$N"p /home/idayan/filEE.txt) # 89000
+    LINE=$(sed -n "$N"p /home/idayan/file202009290730.txt) # 89000
     #LINE=$(sed -n "$N"p /home/idayan/_intarALLimgpathstofluxcal1-202005052000.txt) # 89000
     #LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal1-202005052000.txt) #193222
     #LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal1-202005181400.txt)  # 141555
