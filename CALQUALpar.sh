@@ -5,7 +5,7 @@
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
-#SBATCH --array=1-255%50
+#SBATCH --array=1-320%50
 ### #SBATCH --array=1-650%100
 ### #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
@@ -33,7 +33,7 @@ echo "echoing sed command; ready steady go:"
 #ls `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt`
 echo "echoED sed command!!!"
 #ls /zfs/helios/filer1/idayan/CALed/202006040830/2*.fits > ~/filEE.txt
-ls /zfs/helios/filer1/idayan/CALed/202009290730/2*.fits > ~/file202009290730.txt
+#ls /zfs/helios/filer1/idayan/CALed/202009290730/2*.fits > ~/file202009290730.txt
 echo "echoing head of tthe file"
 head filee.txt
 #python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
@@ -67,7 +67,9 @@ do
     #ALLimgpathstofluxcal1-202005052000.txt
     #_intarALLimgpathstofluxcal1-202005052000.txt
     #~/filEE.txt
-    LINE=$(sed -n "$N"p /home/idayan/file202009290730.txt) # 89000
+    #319402 /home/idayan/toavrg202009290730.txt # 319402
+    LINE=$(sed -n "$N"p /home/idayan/toavrg202009290730.txt) # 319402
+    #LINE=$(sed -n "$N"p /home/idayan/file202009290730.txt) 
     #LINE=$(sed -n "$N"p /home/idayan/_intarALLimgpathstofluxcal1-202005052000.txt) # 89000
     #LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal1-202005052000.txt) #193222
     #LINE=$(sed -n "$N"p /home/idayan/ALLimgpathstofluxcal1-202005181400.txt)  # 141555
