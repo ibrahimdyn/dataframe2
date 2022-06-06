@@ -218,7 +218,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
     return fit[0], fit[1], x, y, cat_indexes
 
 
-imgs=sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202006040830/2*.fits"))
+#imgs=sorted(glob.glob("/zfs/helios/filer1/idayan/CALed/202006040830/2*.fits"))
 
 def stdintegrator(args):
     a=[]
@@ -232,9 +232,14 @@ def stdintegrator(args):
 print "executig the function"
 #cmpltcalqual(IMG)
 
-with open(r'/home/idayan/TESTforcalqual.csv', 'a') as f:
+with open(r'/home/idayan/forcalqual202009290730.csv', 'a+') as f:
                     writer = csv.writer(f)
                     writer.writerow([cmpltcalqual(IMG)])
+with open('/home/idayan/calqual202009290730.pkl', 'wb') as ff:
+    
+    #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
+    pickle.dump([cmpltcalqual(IMG)], ff)
+    
 #if __name__ == "__main__":
   
 #fitslist=imgs
