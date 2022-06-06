@@ -34,8 +34,8 @@ echo "echoing sed command; ready steady go:"
 echo "echoED sed command!!!"
 #ls /zfs/helios/filer1/idayan/CALed/202006040830/2*.fits > ~/filEE.txt
 #ls /zfs/helios/filer1/idayan/CALed/202009290730/2*.fits > ~/file202009290730.txt
-echo "echoing head of tthe file"
-head filee.txt
+#echo "echoing head of tthe file"
+#head filee.txt
 #python /home/idayan/dataframe2/TESTcalautomate.py `sed $SLURM_ARRAY_TASK_ID'q;d' test44.txt` 
 #Cal-All-automate.py
 #python /home/idayan/dataframe2/Cal-All-automate.py `sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt` 
