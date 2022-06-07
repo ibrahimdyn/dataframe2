@@ -262,7 +262,8 @@ def calqual(img):
   
 ALL=pd.DataFrame()
 ALL=ALL.append(calqual(IMG)
-print "dumping tto picklee of image:", IMG
+print "dumping tto picklee of image:"
+#IMG
                
 ALL.to_pickle("/home/idayan/test_SENSPLOT_202009290730.pkl")
 #imgs=sorted(glob.glob('/zfs/helios/filer1/idayan/CALed/202009290730/2*fits'))
