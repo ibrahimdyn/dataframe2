@@ -263,10 +263,12 @@ ALL=pd.DataFrame()
 ALL.append(calqual(IMG))    
 #with open("/home/idayan/test3_SENSPLOT_202009290730.pkl", 'a') as fp:
 #    pickle.dump(ALL,fp)
+
+ALL.to_csv('my_csv.csv', mode='a')
     
-with open('test4_SENSPLOT_202009290730.pkl', 'wb+') as f_:
-    pickle.dump(ALL, f_)
-quit()
+#with open('test4_SENSPLOT_202009290730.pkl', 'wb+') as f_:
+#    pickle.dump(ALL, f_)
+#quit()
 
 #ALL=pd.DataFrame()
 #ALL=ALL.append(calqual(IMG))    
