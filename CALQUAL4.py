@@ -261,8 +261,8 @@ def calqual(img):
 
   
 ALL=pd.DataFrame()
-ALL=ALL.append(calqual(IMG)
-print "dumping tto picklee of image:"
+ALL=ALL.append(calqual(IMG) 
+#print "dumping tto picklee of image:"
 #IMG
                
 ALL.to_pickle("/home/idayan/test_SENSPLOT_202009290730.pkl")
