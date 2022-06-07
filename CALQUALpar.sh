@@ -89,7 +89,7 @@ do
     #echo $(wc -l ~/ALL202007Dates2.txt)
     
     
-    python /home/idayan/dataframe2/CALQUAL4.py $LINE
+    python /home/idayan/dataframe2/CALQUAL5.py $LINE
     #python /home/idayan/dataframe2/CALQUALpar.py $LINE
     
     #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
