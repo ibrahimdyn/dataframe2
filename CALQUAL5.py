@@ -261,7 +261,7 @@ def calqual(img):
 
 ALL=pd.DataFrame()
 ALL=ALL.append(calqual(IMG))    
-with open("/home/idayan/test1_SENSPLOT_202009290730", 'a+') as fp:
+with open("/home/idayan/test1_SENSPLOT_202009290730.pkl", 'a+') as fp:
     pickle.dump(ALL,fp)
     
 #ALL=pd.DataFrame()
