@@ -259,3 +259,6 @@ def calqual(img):
                                                     "image":f_comp[i][1],"DIST2":f_comp[i][2]})])
     return testt
   
+ALL=pd.DataFrame()
+ALL=ALL.append(calqual(IMG))    
+ALL.to_pickle("/home/idayan/test_SENSPLOT_202009290730.pkl")
