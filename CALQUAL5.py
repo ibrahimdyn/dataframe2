@@ -264,7 +264,7 @@ ALL.append(calqual(IMG))
 #with open("/home/idayan/test3_SENSPLOT_202009290730.pkl", 'a') as fp:
 #    pickle.dump(ALL,fp)
 
-calqual(IMG).to_csv('/home/idayan/test11_.csv', mode='a',encoding='utf-8')
+calqual(IMG).to_csv('/home/idayan/test112_.csv', mode='a')
 #ALL.to_csv('GFG.csv', mode='a', index=False, header=False)
     
 #with open('test4_SENSPLOT_202009290730.pkl', 'wb+') as f_:
