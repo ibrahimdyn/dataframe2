@@ -90,6 +90,7 @@ do
     
     
     python /home/idayan/dataframe2/CALQUALpar.py $LINE
+    #python /home/idayan/dataframe2/CALQUALpar.py $LINE
     
     #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
     echo "after processing, NoFiles"
