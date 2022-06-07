@@ -259,13 +259,12 @@ def calqual(img):
                                                     "image":f_comp[i][1],"DIST2":f_comp[i][2]})])
     return testt
 
-  
+
+
 ALL=pd.DataFrame()
-ALL=ALL.append(calqual(IMG) 
-#print "dumping tto picklee of image:"
-#IMG
-               
+ALL=ALL.append(calqual(IMG)    
 ALL.to_pickle("/home/idayan/test_SENSPLOT_202009290730.pkl")
+               
 #imgs=sorted(glob.glob('/zfs/helios/filer1/idayan/CALed/202009290730/2*fits'))
 
 #A3=pd.DataFrame()
