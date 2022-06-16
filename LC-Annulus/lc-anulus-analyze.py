@@ -141,7 +141,9 @@ def lc_annulus(IM):
         wks = wcs.WCS(hdu_1)
         wkks = wks.dropaxis(-1).dropaxis(-1)
 
-        positionsky= [(148.56, 7.66)]
+        #positionsky= [(148.56, 7.66)]
+        positionsky= [(293.73, 21.90)]
+        
         pixposs=wkks.all_world2pix(positionsky,1)
         #positionspix=pixposs[0]
         aperture = CircularAperture(pixposs, r=12.78)
