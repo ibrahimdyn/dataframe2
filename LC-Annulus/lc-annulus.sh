@@ -54,7 +54,10 @@ do
     #ALL3Dates
     
     #LINE=$(sed -n "$N"p ~/imgsin60-3-10110204.txt)
-    LINE=$(sed -n "$N"p ~/imgsin60.txt)
+    
+    LINE=$(sed -n "$N"p /home/idayan/imgsalexsgrdd.txt)
+    #LINE=$(sed -n "$N"p ~/imgsin60.txt)
+    #LINE=$(sed -n "$N"p ~/imgsin60.txt)
     #LINE=$(sed -n "$N"p ~/ALL202007Dates2.txt)
     echo $LINE
     #echo "before processing, NoFiles"
