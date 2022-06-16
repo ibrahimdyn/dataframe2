@@ -123,7 +123,7 @@ def lc_annulus(IM):
    #     print count, "/", len(imagess)
     # Initial quality condition. 
     fitsimg = fits.open(IM)[0]
-    if (np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0) & (np.nanstd(fitsimg.data[0,0,:,:]) > 10.0):
+    if (np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0) & (np.nanstd(fitsimg.data[0,0,:,:]) > 1.0):
     #if np.nanstd(fitsimg.data[0,0,:,:]) < 1000.0:
         
         
@@ -182,14 +182,16 @@ def lc_annulus(IM):
         #fields=[IM,sr[i],templist]
         fields=[IM,Medofsrc,Maxofsrc,stdevback,Dateobs]
         
-        with open(r'/home/idayan/LC_ANNULUS_stdup.csv', 'a') as f:
+        with open(r'/home/idayan/SGRDD.csv', 'a') as f:
+        #with open(r'/home/idayan/LC_ANNULUS_stdup.csv', 'a') as f:
             writer = csv.writer(f)
             #writer.writerow(headerList)
             #writer.DictReader(f, fieldnames=headerList)
             writer.writerow(fields)
             #keys = ['name', 'age', 'job', 'city']
             #reader = csv.DictReader(f, fieldnames=keys)
-        with open('/home/idayan/LC_ANNULUS_stdup.pkl', 'a') as ff:
+        with open('/home/idayan/SGRDD.pkl', 'a') as ff:
+        #with open('/home/idayan/LC_ANNULUS_stdup.pkl', 'a') as ff:
             pickle.dump(listofres, ff)
             
         
