@@ -184,7 +184,7 @@ def lc_annulus(IM):
         #fields=[IM,sr[i],templist]
         fields=[IM,Medofsrc,Maxofsrc,stdevback,Dateobs]
         
-        with open(r'/home/idayan/SGRDD.csv', 'a') as f:
+        with open(r'/home/idayan/SGRDD2.csv', 'a') as f:
         #with open(r'/home/idayan/LC_ANNULUS_stdup.csv', 'a') as f:
             writer = csv.writer(f)
             #writer.writerow(headerList)
@@ -192,7 +192,7 @@ def lc_annulus(IM):
             writer.writerow(fields)
             #keys = ['name', 'age', 'job', 'city']
             #reader = csv.DictReader(f, fieldnames=keys)
-        with open('/home/idayan/SGRDD.pkl', 'a') as ff:
+        with open('/home/idayan/SGRDD2.pkl', 'a') as ff:
         #with open('/home/idayan/LC_ANNULUS_stdup.pkl', 'a') as ff:
             pickle.dump(listofres, ff)
             
