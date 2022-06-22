@@ -53,7 +53,7 @@ def get_configuration():
 
     parser.add_argument('--threshold', type=float, default=1000.0,
                         help="RMS Threshold to reject image.")
-    parser.add_argument('--outdir', type=str, default="/zfs/helios/filer1/idayan/CALed/{}/".format(obs),
+    parser.add_argument('--outdir', type=str, default="/zfs/helios/filer1/idayan/CALedwBC/{}/".format(obs),
                         help="Desitnation directory.")
     
     #parser.add_argument('--outdir', type=str, default="./",
