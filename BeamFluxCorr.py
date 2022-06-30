@@ -200,6 +200,16 @@ def process(cfg):
     t = Time(fitsimg.header['DATE-OBS'])
     frq = fitsimg.header['RESTFRQ']
     bw = fitsimg.header['RESTBW']
+	
+    
+    
+    #print fitsimg.data[:,:], "BEFORE"
+    
+    
+    #bg_data, bg_f =fits.getdata(img[0], header=True)
+    bg_data, bg_f = fits.getdata(cfg.indir+cfg.fitsfile, header=True)
+    #print fitsimg.data[0,0,:,:]
+    beam_model = get_beam(bg_f[" CRVAL3"]/1e6)
 
 
     # Initial quality condition. 
