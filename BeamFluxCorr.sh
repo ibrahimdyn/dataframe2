@@ -61,7 +61,9 @@ do
     #ALLimgpathstofluxcal-202005052000.txt
     #ALLimgpathstofluxcal1-202005052000.txt
     #_intarALLimgpathstofluxcal1-202005052000.txt
-    LINE=$(sed -n "$N"p /home/idayan/BFcal202009.txt) # 363842 ~/toavrg202009290730.txt
+    
+    LINE=$(sed -n "$N"p /home/idayan/imgpathsbeamcal202005181400.txt) # 141554 
+    #LINE=$(sed -n "$N"p /home/idayan/BFcal202009.txt) # 363842 ~/toavrg202009290730.txt
     
     #LINE=$(sed -n "$N"p /home/idayan/toavrg202009290730.txt) # 319K ~/toavrg202009290730.txt
     #LINE=$(sed -n "$N"p /home/idayan/20200929tobeamcorrandcal.txt) # ~/20200929tobeamcorrandcal.txt 319403
