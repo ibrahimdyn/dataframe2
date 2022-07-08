@@ -330,7 +330,9 @@ def process(cfg):
 
         # Slope set to 1e9 if line fit fails
         if slope_cor < 1e8:
-            filename = '%s.fits' % (fitsimg.header['DATE-OBS'])
+            filename = '%s.fits' % (fitsimg.header['DATE-OBS']) + \
+	                           "-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))
+	                          
             #filename = '%s.fits' % (datetime.fromtimestamp(t.unix).strftime('%Y-%m-%dT%H:%M:%S')+ \
 				    #"-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))+ \
 				    #"-B"+str(int(np.ceil(bw /lofarBW))))
