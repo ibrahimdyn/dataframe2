@@ -246,7 +246,7 @@ BB=[]
 CC=[]
 
 #!!! print i
-print img
+print IMG
 print "IMAGE PRINTED"
 
 #for i,img in enumerate(img): 
@@ -256,8 +256,8 @@ print "IMAGE PRINTED"
 
 #fitsimg=fits.open(imglst[7])
 #fitsimg=fits.open(img)
-fitsimg=fits.open(img)[0]
-print img
+fitsimg=fits.open(IMG)[0]
+
 #print fitsimg.data[:,:], "BEFORE"
 
 
