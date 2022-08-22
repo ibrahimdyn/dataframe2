@@ -238,110 +238,112 @@ BB=[]
 #for i,img in enumerate(imgs1814caledwbc[50:53]):
 #for i,img in enumerate(imgs0605[50:53]):
 #for i,img in enumerate(imgs1003[60:70]):
-for img in IMG: #!!! for i,img in enumerate(imgs1003[60:70]):
-    CC=[]
-    
-    #!!! print i
-    print img
-    
+
+### YOU SHOULD DEFINE A FUNCTION 
+#def imgcalqual():
+#for img in IMG: #!!! for i,img in enumerate(imgs1003[60:70]):
+#for img in IMG: #!!! for i,img in enumerate(imgs1003[60:70]):
+CC=[]
+
+#!!! print i
+print img
+print "IMAGE PRINTED"
+
 #for i,img in enumerate(img): 
 #for i,img in enumerate(imglst[10:20]):  
-    
+
 #for i,img in enumerate(imgss[10:20]):  
-    
-    #fitsimg=fits.open(imglst[7])
-    #fitsimg=fits.open(img)
-    fitsimg=fits.open(img)[0]
-    print img
-    #print fitsimg.data[:,:], "BEFORE"
-    
-    
-    #bg_data, bg_f =fits.getdata(img[0], header=True)
-    bg_data, bg_f =fits.getdata(img, header=True)
-    print fitsimg.data[0,0,:,:]
-    #beam_model = get_beam(bg_f["CRVAL3"]/1e6)
-    
-    #fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
-    #print fitsimg.data[0,0,:,:]
-  
 
-    ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
-    flux_compare=[]
-    configuration = {
-            "back_size_x": 64,
-            "back_size_y": 64,
-            "margin": 0,
-            "radius": 0}
+#fitsimg=fits.open(imglst[7])
+#fitsimg=fits.open(img)
+fitsimg=fits.open(img)[0]
+print img
+#print fitsimg.data[:,:], "BEFORE"
 
-    img_HDU = fits.HDUList(fitsimg)
-    imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
-                                                               plane=0),
-                                                 **configuration)
-    #print fitsimg.data[:,:], "AFTER"
-    sr = imagedata.extract(det=3, anl=3,
-                               labelled_data=None, labels=[],
-                               force_beam=True)
 
-        # Reference catalogue compare
-    slope_cor, intercept_cor, ref_match, image_match, index_match, DST2,SR_err,CAT_err = compare_flux3(sr,
-                                               ref_cat["ra"],
-                                               ref_cat["decl"],
-                                               ref_cat["f_int"],
-                                               ref_cat["f_int_err"], img)
-    flux_compare.append([np.array(ref_match),
+#bg_data, bg_f =fits.getdata(img[0], header=True)
+bg_data, bg_f =fits.getdata(img, header=True)
+print fitsimg.data[0,0,:,:]
+#beam_model = get_beam(bg_f["CRVAL3"]/1e6)
+
+#fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+#print fitsimg.data[0,0,:,:]
+
+
+ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
+flux_compare=[]
+configuration = {
+        "back_size_x": 64,
+        "back_size_y": 64,
+        "margin": 0,
+        "radius": 0}
+
+img_HDU = fits.HDUList(fitsimg)
+imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
+                                                           plane=0),
+                                             **configuration)
+#print fitsimg.data[:,:], "AFTER"
+sr = imagedata.extract(det=3, anl=3,
+                           labelled_data=None, labels=[],
+                           force_beam=True)
+
+    # Reference catalogue compare
+slope_cor, intercept_cor, ref_match, image_match, index_match, DST2,SR_err,CAT_err = compare_flux3(sr,
+                                           ref_cat["ra"],
+                                           ref_cat["decl"],
+                                           ref_cat["f_int"],
+                                           ref_cat["f_int_err"], img)
+flux_compare.append([np.array(ref_match),
+                      #  (np.array(image_match))/slope_cor,
+                        (np.array(image_match) - intercept_cor)/slope_cor,
+                 #(np.array(image_match)* slope_cor ) + intercept_cor,
+                        np.array(np.ravel(index_match)),np.array(image_match), 
+                 DST2, SR_err, CAT_err ])
+
+#flux_compare.append([ np.array(ref_match),
                           #  (np.array(image_match))/slope_cor,
-                            (np.array(image_match) - intercept_cor)/slope_cor,
+#                            (np.array(image_match) - intercept_cor)/slope_cor,
                      #(np.array(image_match)* slope_cor ) + intercept_cor,
-                            np.array(np.ravel(index_match)),np.array(image_match), 
-                     DST2, SR_err, CAT_err ])
+#                            np.array(np.ravel(index_match)),np.array(image_match), 
+ #                    DST2, SR_err, CAT_err ])
 
-    #flux_compare.append([ np.array(ref_match),
-                              #  (np.array(image_match))/slope_cor,
-    #                            (np.array(image_match) - intercept_cor)/slope_cor,
-                         #(np.array(image_match)* slope_cor ) + intercept_cor,
-    #                            np.array(np.ravel(index_match)),np.array(image_match), 
-     #                    DST2, SR_err, CAT_err ])
+    #flux_correct.append([i, slope_cor, intercept_cor])
 
-        #flux_correct.append([i, slope_cor, intercept_cor])
+test = pd.DataFrame([])
 
-    test = pd.DataFrame([])
+for i in range(len(flux_compare)):
 
-    for i in range(len(flux_compare)):
+    if len(test) == 0:
+        test = pd.DataFrame({"reference":flux_compare[i][0],
+                             "image":flux_compare[i][1],
+                            "IMnorm":flux_compare[i][3],
+                            "DST":flux_compare[i][4],
+                            "SR-ERR":flux_compare[i][5],
+                            "CAT-ERR":flux_compare[i][6]},
+                            index=flux_compare[i][2])
 
-        if len(test) == 0:
-            test = pd.DataFrame({"reference":flux_compare[i][0],
-                                 "image":flux_compare[i][1],
-                                "IMnorm":flux_compare[i][3],
-                                "DST":flux_compare[i][4],
-                                "SR-ERR":flux_compare[i][5],
-                                "CAT-ERR":flux_compare[i][6]},
-                                index=flux_compare[i][2])
+    else:
+        test = pd.concat([test,
+               pd.DataFrame({"reference":flux_compare[i][0],
+                             "image":flux_compare[i][1],
+                            "IMnorm":flux_compare[i][3],
+                            "DST":flux_compare[i][4],
+                            "SR-ERR":flux_compare[i][5],
+                            "CAT-ERR":flux_compare[i][6]},
+                            index=flux_compare[i][2])])
+AA=pd.concat([AA,test])
+BB.append(test)
+CC.append(test)
+with open('/home/idayan/calqualNEW-CC.pkl', 'ab') as f0:  
+#with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
+    pickle.dump(CC, ff)
 
-        else:
-            test = pd.concat([test,
-                   pd.DataFrame({"reference":flux_compare[i][0],
-                                 "image":flux_compare[i][1],
-                                "IMnorm":flux_compare[i][3],
-                                "DST":flux_compare[i][4],
-                                "SR-ERR":flux_compare[i][5],
-                                "CAT-ERR":flux_compare[i][6]},
-                                index=flux_compare[i][2])])
-    AA=pd.concat([AA,test])
-    BB.append(test)
-    CC.append(test)
-    with open('/home/idayan/calqualNEW-CC.pkl', 'ab') as ff:
-      
-    
-    #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-      pickle.dump(CC, ff)
+    #STD=np.std(test.image/test.reference)
+    #ALL_STD.append(STD)
+    #return STD, test.index
 
-        #STD=np.std(test.image/test.reference)
-        #ALL_STD.append(STD)
-        #return STD, test.index
-        
-with open('/home/idayan/calqualNEW.pkl', 'wb') as ff:
-    
-    #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
+with open('/home/idayan/calqualNEW.pkl', 'ab') as f1:
+#with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(BB, ff)
 
 
