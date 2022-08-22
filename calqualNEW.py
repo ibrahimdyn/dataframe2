@@ -331,6 +331,13 @@ for i in range(len(flux_compare)):
                             "SR-ERR":flux_compare[i][5],
                             "CAT-ERR":flux_compare[i][6]},
                             index=flux_compare[i][2])])
+
+STD=np.std(test.image/test.reference)
+with open('/home/idayan/calqualNEWWW.pkl', 'wb') as f00:
+    
+    #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
+    pickle.dump([STD], f00)
+
 AA=pd.concat([AA,test])
 BB.append(test)
 CC.append(test)
@@ -344,7 +351,10 @@ with open('/home/idayan/calqualNEW-CC.pkl', 'rb+') as f0:
 
 with open('/home/idayan/calqualNEW.pkl', 'rb') as f1:
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump(BB, f1)
+    pickle.dump([BB], f1)
 
+with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
+#with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
+    pickle.dump(test, f2)
 
 
