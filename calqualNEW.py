@@ -333,7 +333,7 @@ for i in range(len(flux_compare)):
                             index=flux_compare[i][2])])
 
 STD=np.std(test.image/test.reference)
-with open('/home/idayan/calqualNEWWW.pkl', 'wb') as f00:
+with open('/home/idayan/calqualNEWWW.pkl', 'wb+') as f00:
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump([STD], f00)
