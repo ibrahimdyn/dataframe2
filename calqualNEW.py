@@ -262,7 +262,7 @@ fitsimg=fits.open(IMG)[0]
 
 
 #bg_data, bg_f =fits.getdata(img[0], header=True)
-bg_data, bg_f =fits.getdata(img, header=True)
+bg_data, bg_f =fits.getdata(IMG, header=True)
 print fitsimg.data[0,0,:,:]
 #beam_model = get_beam(bg_f["CRVAL3"]/1e6)
 
