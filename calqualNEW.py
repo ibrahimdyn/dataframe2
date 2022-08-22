@@ -334,7 +334,7 @@ for i in range(len(flux_compare)):
 AA=pd.concat([AA,test])
 BB.append(test)
 CC.append(test)
-with open('/home/idayan/calqualNEW-CC.pkl', 'ab') as f0:  
+with open('/home/idayan/calqualNEW-CC.pkl', 'wb+') as f0:  
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(CC, f0)
 
@@ -342,7 +342,7 @@ with open('/home/idayan/calqualNEW-CC.pkl', 'ab') as f0:
     #ALL_STD.append(STD)
     #return STD, test.index
 
-with open('/home/idayan/calqualNEW.pkl', 'ab') as f1:
+with open('/home/idayan/calqualNEW.pkl', 'wb') as f1:
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(BB, f1)
 
