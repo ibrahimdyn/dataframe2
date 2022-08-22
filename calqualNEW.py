@@ -336,7 +336,7 @@ BB.append(test)
 CC.append(test)
 with open('/home/idayan/calqualNEW-CC.pkl', 'ab') as f0:  
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump(CC, ff)
+    pickle.dump(CC, f0)
 
     #STD=np.std(test.image/test.reference)
     #ALL_STD.append(STD)
@@ -344,7 +344,7 @@ with open('/home/idayan/calqualNEW-CC.pkl', 'ab') as f0:
 
 with open('/home/idayan/calqualNEW.pkl', 'ab') as f1:
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump(BB, ff)
+    pickle.dump(BB, f1)
 
 
 
