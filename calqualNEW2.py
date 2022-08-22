@@ -337,10 +337,10 @@ def qualcalculator():
   STD=np.std(test.image/test.reference)
   
   return STD
-with open('/home/idayan/calqualNEWWW.pkl', 'wb+') as f00:
+#with open('/home/idayan/calqualNEWWW.pkl', 'wb+') as f00:
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump([STD], f00)
+#    pickle.dump([STD], f00)
 with open('/home/idayan/calqualNEWWWW.pkl', 'wb+') as f00W:
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
