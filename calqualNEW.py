@@ -292,7 +292,7 @@ slope_cor, intercept_cor, ref_match, image_match, index_match, DST2,SR_err,CAT_e
                                            ref_cat["ra"],
                                            ref_cat["decl"],
                                            ref_cat["f_int"],
-                                           ref_cat["f_int_err"], img)
+                                           ref_cat["f_int_err"], IMG)
 flux_compare.append([np.array(ref_match),
                       #  (np.array(image_match))/slope_cor,
                         (np.array(image_match) - intercept_cor)/slope_cor,
