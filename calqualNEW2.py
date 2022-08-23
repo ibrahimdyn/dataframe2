@@ -367,5 +367,5 @@ with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
 
 with open(r'/home/idayan/calqualNEWcsv.csv', 'a+') as f22:
     writer = csv.writer(f22)
-    writer.writerow(qualcalculator(IMG))
+    writer.writerow([qualcalculator(IMG)])
 
