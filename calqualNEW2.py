@@ -341,7 +341,7 @@ def qualcalculator(pIMG):
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
 #    pickle.dump([STD], f00)
-with open('/home/idayan/calqualNEWWWW.pkl', 'ab') as f00W:
+with open('/home/idayan/calqualNEWWWW.pkl', 'wb') as f00W:
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump([qualcalculator(IMG)], f00W)
