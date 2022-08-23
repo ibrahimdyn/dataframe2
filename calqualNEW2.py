@@ -266,9 +266,9 @@ def qualcalculator(pIMG):
   #bg_data, bg_f =fits.getdata(img[0], header=True)
   bg_data, bg_f =fits.getdata(pIMG, header=True)
   print fitsimg.data[0,0,:,:]
-  #beam_model = get_beam(bg_f["CRVAL3"]/1e6)
+  beam_model = get_beam(bg_f["CRVAL3"]/1e6)
 
-  #fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+  fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
   #print fitsimg.data[0,0,:,:]
 
 
