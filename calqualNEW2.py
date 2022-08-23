@@ -365,4 +365,7 @@ with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(test, f2)
 
+with open(r'/home/idayan/calqualNEWcsv.csv', 'a+') as f22:
+    writer = csv.writer(f22)
+    writer.writerow(qualcalculator(IMG))
 
