@@ -256,15 +256,15 @@ print "IMAGE PRINTED"
 
 #fitsimg=fits.open(imglst[7])
 #fitsimg=fits.open(img)
-def qualcalculator():
+def qualcalculator(pIMG):
   
-  fitsimg=fits.open(IMG)[0]
+  fitsimg=fits.open(pIMG)[0]
 
   #print fitsimg.data[:,:], "BEFORE"
 
 
   #bg_data, bg_f =fits.getdata(img[0], header=True)
-  bg_data, bg_f =fits.getdata(IMG, header=True)
+  bg_data, bg_f =fits.getdata(pIMG, header=True)
   print fitsimg.data[0,0,:,:]
   #beam_model = get_beam(bg_f["CRVAL3"]/1e6)
 
