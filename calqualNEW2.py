@@ -357,9 +357,9 @@ with open('/home/idayan/calqualNEW-CC.pkl', 'rb+') as f0:
     #ALL_STD.append(STD)
     #return STD, test.index
 
-with open('/home/idayan/calqualNEW.pkl', 'rb') as f1:
+#with open('/home/idayan/calqualNEW.pkl', 'rb') as f1: # rb is for only reading
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump([BB], f1)
+#    pickle.dump([BB], f1)
 
 with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
