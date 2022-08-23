@@ -341,7 +341,7 @@ def qualcalculator(pIMG):
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
 #    pickle.dump([STD], f00)
-with open('/home/idayan/calqualNEWWWW.pkl', 'wb') as f00W:
+with open('/home/idayan/calqualNEWWWWB.pkl', 'wb') as f00W:
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump([qualcalculator(IMG)], f00W)
@@ -349,7 +349,7 @@ with open('/home/idayan/calqualNEWWWW.pkl', 'wb') as f00W:
 #AA=pd.concat([AA,test])
 BB.append(qualcalculator(IMG))
 CC.append(qualcalculator(IMG))
-with open('/home/idayan/calqualNEW-CC.pkl', 'rb+') as f0:  
+with open('/home/idayan/calqualNEW-CCB.pkl', 'rb+') as f0:  
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(CC, f0)
 
@@ -365,7 +365,7 @@ with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(BB, f2)
 
-with open(r'/home/idayan/calqualNEWcsv.csv', 'a+') as f22:
+with open(r'/home/idayan/calqualNEWcsvB.csv', 'a+') as f22:
     writer = csv.writer(f22)
     writer.writerow([qualcalculator(IMG)])
 
