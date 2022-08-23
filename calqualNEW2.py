@@ -349,9 +349,9 @@ with open('/home/idayan/calqualNEWWWWB.pkl', 'wb') as f00W:
 #AA=pd.concat([AA,test])
 BB.append(qualcalculator(IMG))
 CC.append(qualcalculator(IMG))
-with open('/home/idayan/calqualNEW-CCB.pkl', 'rb+') as f0:  
+#with open('/home/idayan/calqualNEW-CCB.pkl', 'rb+') as f0:  
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump(CC, f0)
+#    pickle.dump(CC, f0)
 
     #STD=np.std(test.image/test.reference)
     #ALL_STD.append(STD)
