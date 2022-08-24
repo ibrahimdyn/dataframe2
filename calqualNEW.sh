@@ -69,7 +69,9 @@ do
     #~/filEE.txt
     #319402 /home/idayan/toavrg202009290730.txt # 319402
     #tocalqualNEW202010030948.txt
-    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202010030948.txt) # 11399 tocalqualNEW202010030948.txt
+    
+    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202010030948.txt) # 56528 tocalqualNEW202006041232.txt
+    #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202010030948.txt) # 11399 tocalqualNEW202010030948.txt !!! cal qual result of 8k images 0.35
     #LINE=$(sed -n "$N"p /home/idayan/toavrg202009290730.txt) # 319402
     #LINE=$(sed -n "$N"p /home/idayan/file202009290730.txt) 
     #LINE=$(sed -n "$N"p /home/idayan/_intarALLimgpathstofluxcal1-202005052000.txt) # 89000
