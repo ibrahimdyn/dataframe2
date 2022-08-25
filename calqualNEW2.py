@@ -268,7 +268,7 @@ def qualcalculator(pIMG):
   print fitsimg.data[0,0,:,:]
   beam_model = get_beam(bg_f["CRVAL3"]/1e6)
 
-  fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+  #fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
   #print fitsimg.data[0,0,:,:]
 
 
@@ -342,7 +342,8 @@ def qualcalculator(pIMG):
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
 #    pickle.dump([STD], f00)
 #with open('/home/idayan/calqualNEWWWWB.pkl', 'wb') as f00W:
-with open('/home/idayan/calqualNEWWWWB0604.pkl', 'wb') as f00W:
+#with open('/home/idayan/calqualNEWWWWB0604.pkl', 'wb') as f00W:  # ! this was with beam correc
+with open('/home/idayan/calqualNEWWWWB0604woB.pkl', 'wb') as f00W: # this is wo beam correction woB
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump([qualcalculator(IMG)], f00W)
@@ -363,12 +364,14 @@ CC.append(qualcalculator(IMG))
 #    pickle.dump([BB], f1)
 
 #with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
-with open('/home/idayan/calqualNEWW0604.pkl', 'a+') as f2:
+#with open('/home/idayan/calqualNEWW0604.pkl', 'a+') as f2:
+with open('/home/idayan/calqualNEWW0604woB.pkl', 'a+') as f2: # woB
 #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
     pickle.dump(BB, f2)
 
 #with open(r'/home/idayan/calqualNEWcsvB.csv', 'a+') as f22:
-with open(r'/home/idayan/calqualNEWcsvB0604.csv', 'a+') as f22:
+#with open(r'/home/idayan/calqualNEWcsvB0604.csv', 'a+') as f22:
+with open(r'/home/idayan/calqualNEWcsvB0604woB.csv', 'a+') as f22: #woB
     writer = csv.writer(f22)
     writer.writerow([qualcalculator(IMG)])
 
