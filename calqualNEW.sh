@@ -70,7 +70,8 @@ do
     #319402 /home/idayan/toavrg202009290730.txt # 319402
     #tocalqualNEW202010030948.txt
     
-    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 56528 tocalqualNEW202006041232.txt
+    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 56528 tocalqualNEW202006041232.txt !!! cal qual result of 19k images 1.67
+    # now i will try same 0604 without beam correction
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202010030948.txt) # 11399 tocalqualNEW202010030948.txt !!! cal qual result of 8735 images 0.35
     #LINE=$(sed -n "$N"p /home/idayan/toavrg202009290730.txt) # 319402
     #LINE=$(sed -n "$N"p /home/idayan/file202009290730.txt) 
