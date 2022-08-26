@@ -93,7 +93,7 @@ do
     #echo $(wc -l ~/ALL3Dates.txt)
     #echo $(wc -l ~/REMAINIGDATES.txt)
     #echo $(wc -l ~/ALL202007Dates2.txt)
-    python /home/idayan/dataframe2/calqualNEW2.py $LINE
+    python /home/idayan/dataframe2/calqualNEW3.py $LINE
     #python /home/idayan/dataframe2/calqualNEW2.py $LINE
     #python /home/idayan/dataframe2/calqualNEW.py $LINE
     #python /home/idayan/dataframe2/CALQUAL5.py $LINE
