@@ -351,6 +351,7 @@ with open('/home/idayan/calqualNEWWWWB0604woB.pkl', 'wb') as f00W: # this is wo 
     pickle.dump([qualcalculator(IMG)], f00W)
 
 #AA=pd.concat([AA,test])
+print "append starting"
 BB.append(qualcalculator(IMG))
 CC.append(qualcalculator(IMG))
 print "appended"
