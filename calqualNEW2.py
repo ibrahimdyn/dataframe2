@@ -98,6 +98,7 @@ from multiprocessing.pool import ThreadPool as Pool
 
 import time
 
+print "starting calqualNEW2.py"
 
 start=time.time()
 
