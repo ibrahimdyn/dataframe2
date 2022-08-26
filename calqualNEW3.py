@@ -345,10 +345,10 @@ print "function defined"
 #    pickle.dump([STD], f00)
 #with open('/home/idayan/calqualNEWWWWB.pkl', 'wb') as f00W:
 #with open('/home/idayan/calqualNEWWWWB0604.pkl', 'wb') as f00W:  # ! this was with beam correc
-with open('/home/idayan/calqualNEWWWWB0604woB.pkl', 'wb') as f00W: # this is wo beam correction woB
-    
+
+# with open('/home/idayan/calqualNEWWWWB0604woB.pkl', 'wb') as f00W: # this is wo beam correction woB
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
-    pickle.dump([qualcalculator(IMG)], f00W)
+#    pickle.dump([qualcalculator(IMG)], f00W)
 
 #AA=pd.concat([AA,test])
 print "append starting"
