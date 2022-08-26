@@ -338,6 +338,7 @@ def qualcalculator(pIMG):
   STD=np.std(test.image/test.reference)
   
   return STD
+print "function defined"
 #with open('/home/idayan/calqualNEWWW.pkl', 'wb+') as f00:
     
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
