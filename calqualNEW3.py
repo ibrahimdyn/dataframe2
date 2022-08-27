@@ -373,14 +373,15 @@ if __name__ == "__main__":
     #with open('/home/idayan/calqualNEWW.pkl', 'a+') as f2:
     #with open('/home/idayan/calqualNEWW0604.pkl', 'a+') as f2:
     print "first writing"
-    with open('/home/idayan/calqualNEWW0604woB.pkl', 'a+') as f2: # woB
+    #with open('/home/idayan/calqualNEWW0604woB.pkl', 'a+') as f2: # woB. # a+ not appending try ab
+    with open('/home/idayan/calqualNEWW0604woBab.pkl', 'ab') as f2: # woB # a+ not appending try ab
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
         pickle.dump(BB, f2)
     print "first writing done"
     #with open(r'/home/idayan/calqualNEWcsvB.csv', 'a+') as f22:
     #with open(r'/home/idayan/calqualNEWcsvB0604.csv', 'a+') as f22:
     print "2 writing "
-    with open(r'/home/idayan/calqualNEWcsvB0604woB.csv', 'a+') as f22: #woB
+    with open(r'/home/idayan/calqualNEWcsvB0604woBab.csv', 'a+') as f22: #woB
         writer = csv.writer(f22)
         writer.writerow([qualcalculator(IMG)])
     print "2 writing done"
