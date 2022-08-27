@@ -352,7 +352,7 @@ print "function defined"
 
 #AA=pd.concat([AA,test])
 print "append starting"
-if __name__ = "__main__":
+if __name__ == "__main__":
     
     
     BB.append(qualcalculator(IMG))
