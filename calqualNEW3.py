@@ -361,10 +361,11 @@ if __name__ == "__main__":
         
         ddf=pd.DataFrame([qualcalculator(IMG)])
         
-        ddf.to_csv("myy.csv", mode='a')
-    except Exception as E:
+        ddf.to_csv("/home/idayan/myy.csv", mode='a')
+    except Exception as e:
         print "exception occured"
-        print E
+        
+        print e
         pass
     print "appended"
     #with open('/home/idayan/calqualNEW-CCB.pkl', 'rb+') as f0:  
