@@ -361,7 +361,7 @@ if __name__ == "__main__":
         
         ddf=pd.DataFrame([qualcalculator(IMG)])
         
-        ddf.to_csv("/home/idayan/myy.csv", mode='a', index=False, header=False)
+        ddf.to_csv("/home/idayan/myy0.csv", mode='a', index=False, header=False)
     except Exception as e:
         print "exception occured"
         
@@ -391,7 +391,8 @@ if __name__ == "__main__":
     #with open(r'/home/idayan/calqualNEWcsvB.csv', 'a+') as f22:
     #with open(r'/home/idayan/calqualNEWcsvB0604.csv', 'a+') as f22:
     print "2 writing "
-    with open(r'/home/idayan/calqualNEWcsvB0604woBabBBB.csv', 'a+') as f22: #woB
+    with open(r'/home/idayan/calqualNEWcsvB0604woBabBBB!!.csv', 'a+') as f22: #woB
         writer = csv.writer(f22)
-        writer.writerow([qualcalculator(IMG)])
+        #writer.writerow([qualcalculator(IMG)])
+        writer.writerow(qualcalculator(IMG))
     print "2 writing done"
