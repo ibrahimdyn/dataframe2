@@ -383,7 +383,7 @@ if __name__ == "__main__":
     #with open(r'/home/idayan/calqualNEWcsvB.csv', 'a+') as f22:
     #with open(r'/home/idayan/calqualNEWcsvB0604.csv', 'a+') as f22:
     print "2 writing "
-    with open(r'/home/idayan/calqualNEWcsvB0604woBab.csv', 'a+') as f22: #woB
+    with open(r'/home/idayan/calqualNEWcsvB0604woBabBBB.csv', 'a+') as f22: #woB
         writer = csv.writer(f22)
         writer.writerow([qualcalculator(IMG)])
     print "2 writing done"
