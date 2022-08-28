@@ -361,7 +361,7 @@ if __name__ == "__main__":
         
         ddf=pd.DataFrame([qualcalculator(IMG)])
         
-        ddf.to_csv("/home/idayan/myy0WOB0604.csv", mode='a', index=False, header=False)
+        ddf.to_csv("/home/idayan/myy0WOB0604WB.csv", mode='a', index=False, header=False)
     except Exception as e:
         print "exception occured"
         
