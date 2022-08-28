@@ -359,11 +359,12 @@ if __name__ == "__main__":
     CC.append(qualcalculator(IMG))
     try:
         
-        ddf=pd.DataFrame(qualcalculator(IMG))
+        ddf=pd.DataFrame([qualcalculator(IMG)])
         
         ddf.to_csv("myy.csv", mode='a')
-    except Exception:
+    except Exception as E:
         print "exception occured"
+        print E
         pass
     print "appended"
     #with open('/home/idayan/calqualNEW-CCB.pkl', 'rb+') as f0:  
