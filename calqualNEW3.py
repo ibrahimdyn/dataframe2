@@ -357,8 +357,12 @@ if __name__ == "__main__":
     
     BB.append(qualcalculator(IMG))
     CC.append(qualcalculator(IMG))
-    ddf=pd.DataFrame(qualcalculator(IMG))
-    ddf.to_csv("myy.csv", mode='a')
+    try:
+        
+        ddf=pd.DataFrame(qualcalculator(IMG))
+        ddf.to_csv("myy.csv", mode='a')
+    except Exception:
+        pass
     print "appended"
     #with open('/home/idayan/calqualNEW-CCB.pkl', 'rb+') as f0:  
     #with open('/home/idayan/GPsearch07DF1-5.pkl', 'wb') as ff:
