@@ -141,7 +141,7 @@ def distSquared3(p0, p1):
     Calculate the distance between point p0, [x,y], and a list of points p1, [[x0..xn],[y0..yn]]. 
     '''
     distance  = np.sqrt((p0[0] - p1[0,:])**2 + (p0[1] - p1[1,:])**2)
-    if np.min(distance) < 1.0:
+    if np.min(distance) < 0.5:
         print distance
         print "POSIIONNNNNN"
         #print np.where(distance == np.min(distance))
@@ -360,8 +360,9 @@ if __name__ == "__main__":
     try:
         
         ddf=pd.DataFrame([qualcalculator(IMG)])
-        
-        ddf.to_csv("/home/idayan/calqual051217woB-WB.csv", mode='a', index=False, header=False)
+        # try with 0.5 degree distance
+        ddf.to_csv("/home/idayan/calqual051217woB-WB-05.csv", mode='a', index=False, header=False)
+        #ddf.to_csv("/home/idayan/calqual051217woB-WB.csv", mode='a', index=False, header=False)# 1675 image with median of 0.75 witth 1 degree distance
     except Exception as e:
         print "exception occured"
         
