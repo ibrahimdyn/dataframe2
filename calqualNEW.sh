@@ -70,7 +70,9 @@ do
     #319402 /home/idayan/toavrg202009290730.txt # 319402
     #tocalqualNEW202010030948.txt
     echo "0 getting LINE"
-    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 31k rows std is 0.526 without beam correction (check again whether 1.67 is true)
+    
+    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202005121735.txt) # check first withoutt beam correct
+    #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 31k rows std is 0.526 without beam correction (check again whether 1.67 is true) ! nope it is 1
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 56528 tocalqualNEW202006041232.txt !!! cal qual result of 19k images 1.67
     echo "1 got the LINE"
     # now i will try same 0604 without beam correction
