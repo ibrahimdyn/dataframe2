@@ -363,7 +363,7 @@ if __name__ == "__main__":
         # try. 0.5 degre WO beam
         ddf.to_csv("/home/idayan/calqual051217-05-WOB.csv", mode='a', index=False, header=False)
         # try with 0.5 degree distance
-        ddf.to_csv("/home/idayan/calqual051217woB-WB-05.csv", mode='a', index=False, header=False) # 0.39 849 images 0.5 degree with BeamCorr
+        #ddf.to_csv("/home/idayan/calqual051217woB-WB-05.csv", mode='a', index=False, header=False) # 0.39 849 images 0.5 degree with BeamCorr
         #ddf.to_csv("/home/idayan/calqual051217woB-WB.csv", mode='a', index=False, header=False)# 1675 image with median of 0.75 witth 1 degree distance
     except Exception as e:
         print "exception occured"
