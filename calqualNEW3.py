@@ -269,7 +269,7 @@ def qualcalculator(pIMG):
   print fitsimg.data[0,0,:,:]
   beam_model = get_beam(bg_f["CRVAL3"]/1e6)
 
-  #fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+  fitsimg.data[0,0,:,:]=fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
   #print fitsimg.data[0,0,:,:]
 
 
@@ -361,7 +361,7 @@ if __name__ == "__main__":
         
         ddf=pd.DataFrame([qualcalculator(IMG)])
         
-        ddf.to_csv("/home/idayan/calqual051217woB.csv", mode='a', index=False, header=False)
+        ddf.to_csv("/home/idayan/calqual051217woB-WB.csv", mode='a', index=False, header=False)
     except Exception as e:
         print "exception occured"
         
