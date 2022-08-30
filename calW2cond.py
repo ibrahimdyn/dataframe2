@@ -307,13 +307,14 @@ def process(cfg):
         else:
 		
        		print "slope fail", slope_cor, "<", "1e8"
+		print "STD 1 is:", _STD_ 
             	os.remove(cfg.indir+cfg.fitsfile)
                 return
     else:
 	
 	
         print "image QC fail", np.nanstd(fitsimg.data[0,0,:,:]), "<", cfg.threshold
-        print "STD is:", _STD_ 
+        print "STD 2 is:", _STD_ 
         os.remove(cfg.indir+cfg.fitsfile)
         return
 
