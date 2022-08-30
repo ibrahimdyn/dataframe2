@@ -210,8 +210,16 @@ def process(cfg):
     # Initial quality condition. 
     #if np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold:
     if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 5) :
+	
         flux_compare=[]
+	
+	
 	# APPLY BEAM CORRECTION, then check quality with flux scaling
+	#bg_data, bg_f =fits.getdata(img, header=True)
+	print "PRINTING IMAGE"
+	print cfg.fitsfile
+	bg_data, bg_f =fits.getdata(cfg.fitsfile, header=True)
+    	beam_model = get_beam(bg_f["CRVAL3"]/1e6)
 	fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
 
         # Source find 
