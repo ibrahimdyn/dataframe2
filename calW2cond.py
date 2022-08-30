@@ -230,6 +230,12 @@ def process(cfg):
                                        ref_cat["decl"],
                                        ref_cat["f_int"],
                                        ref_cat["f_int_err"])
+	
+	flux_compare.append([np.array(ref_match),
+                           # (np.array(image_match))/slope_cor,
+                            (np.array(image_match) - intercept_cor)/slope_cor,
+                     #(np.array(image_match)* slope_cor ) + intercept_cor,
+                            np.array(np.ravel(index_match)),np.array(image_match)])
 
 
         #slope_cor, intercept_cor, ref_match, image_match, index_match, DST2,SR_err,CAT_err
@@ -247,23 +253,20 @@ def process(cfg):
         for i in range(len(flux_compare)):
             
             if len(test) == 0:
+			
+			
                 
-                test = pd.DataFrame({"reference":flux_compare[i][0],
-                                   "image":flux_compare[i][1],
-                                  "IMnorm":flux_compare[i][3],
-                                  "DST":flux_compare[i][4],
-                                  "SR-ERR":flux_compare[i][5],
-                                  "CAT-ERR":flux_compare[i][6]},
-                                  index=flux_compare[i][2])
+			test = pd.DataFrame({"reference":flux_compare[i][0],
+					   "image":flux_compare[i][1],
+					  "IMnorm":flux_compare[i][3]},
+					  index=flux_compare[i][2])
 
             else:
+		
                 test = pd.concat([test,
                          pd.DataFrame({"reference":flux_compare[i][0],
                                        "image":flux_compare[i][1],
-                                      "IMnorm":flux_compare[i][3],
-                                      "DST":flux_compare[i][4],
-                                      "SR-ERR":flux_compare[i][5],
-                                      "CAT-ERR":flux_compare[i][6]},
+                                      "IMnorm":flux_compare[i][3]},
                                       index=flux_compare[i][2])])
 
         _STD_=np.std(test.image/test.reference)
@@ -273,6 +276,7 @@ def process(cfg):
 	#202005181400
     #ALLimgpathstofluxcal1-202005052000.txt
         with open(r'/home/idayan/fit_results_051217.csv', 'a') as f:
+		
 		
     #with open(r'/home/idayan/fit2_202005181400_results.csv', 'a') as f:
     #with open(r'/home/idayan/fit2_202009290730_results.csv', 'a') as f:
@@ -288,6 +292,9 @@ def process(cfg):
 	        filename = '%s.fits' % (datetime.fromtimestamp(t.unix).strftime('%Y-%m-%dT%H:%M:%S')+ \
 		    "-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))+ \
 		    "-B"+str(int(np.ceil(bw /lofarBW))))
+		
+		# APPLY BEAM CORRECTION 
+		fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
 
 		fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
 		#            fitsimg.writeto(cfg.outdir+filename,overwrite=True)
