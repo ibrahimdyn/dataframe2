@@ -83,7 +83,8 @@ do
     #echo $(wc -l ~/ALL202007Dates2.txt)
     
     
-    python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
+    python /home/idayan/dataframe2/calW2cond.py --fitsfile=$LINE
+    #python /home/idayan/dataframe2/Cal-All-automate.py --fitsfile=$LINE
     
     #python /home/idayan/dataframe2/testconfautomate.py --fitsfile=$LINE
     echo "after processing, NoFiles"
