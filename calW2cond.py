@@ -164,7 +164,10 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
             else:
                 continue
 
-        if (len(x) > 2) and (x[0]-x[1]!=0):    
+        #if (len(x) > 2) and (x[0]-x[1]!=0):
+        # slope cor reaches 1e9, remove second condition
+	if (len(x) > 2):
+		
             w = np.array(w,dtype=float)
             fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
         else:
