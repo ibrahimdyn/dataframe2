@@ -271,7 +271,10 @@ def process(cfg):
 
         _STD_=np.std(test.image/test.reference)
         
-        fields=[slope_cor,slope_err, intercept_cor,int_err, N_match, _STD_]
+	fields=[slope_cor, intercept_cor, ref_match, image_match, index_match, _STD_ ]
+        #fields=[slope_cor,slope_err, intercept_cor,int_err, N_match, _STD_]
+	#slope_cor, intercept_cor, ref_match, image_match, index_match
+	
 	#202009290730
 	#202005181400
     #ALLimgpathstofluxcal1-202005052000.txt
