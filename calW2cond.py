@@ -138,7 +138,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
 
 
     for i in range(len(sr)):
-        print sr[i]flux_value
+        #print sr[i].flux_value
         
         if (sr[i].flux.value>10.) & (sr[i].flux.value<1600):
             
