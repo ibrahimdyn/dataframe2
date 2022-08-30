@@ -211,6 +211,8 @@ def process(cfg):
     #if np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold:
     if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 5) :
         flux_compare=[]
+	# APPLY BEAM CORRECTION, then check quality with flux scaling
+	fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
 
         # Source find 
         configuration = {
@@ -301,7 +303,7 @@ def process(cfg):
 		    "-B"+str(int(np.ceil(bw /lofarBW))))
 		
 		# APPLY BEAM CORRECTION 
-		fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+		#fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
 
 		fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
 		#            fitsimg.writeto(cfg.outdir+filename,overwrite=True)
@@ -311,6 +313,7 @@ def process(cfg):
         else:
 		
        		print "slope fail", slope_cor, "<", "1e8"
+		#print
 		print "STD 1 is:", _STD_ 
             	os.remove(cfg.indir+cfg.fitsfile)
                 return
