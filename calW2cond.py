@@ -209,7 +209,7 @@ def process(cfg):
 
     # Initial quality condition. 
     #if np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold:
-    if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 8) :
+    if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 5) :
         flux_compare=[]
 
         # Source find 
@@ -318,7 +318,8 @@ def process(cfg):
 	
 	
         print "image QC fail", np.nanstd(fitsimg.data[0,0,:,:]), "<", cfg.threshold
-        print "STD 2 is:", _STD_ 
+	#there is no _STD_ here!!!
+        #print "STD 2 is:", _STD_ 
         os.remove(cfg.indir+cfg.fitsfile)
         return
 
