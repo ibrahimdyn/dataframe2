@@ -295,12 +295,16 @@ def process(cfg):
         print "writing", cfg.outdir+filename
         fitsimg.writeto(cfg.outdir+filename,overwrite=True)
         else:
-        print "slope fail", slope_cor, "<", "1e8"
-            os.remove(cfg.indir+cfg.fitsfile)
-            return
+		
+		
+       		print "slope fail", slope_cor, "<", "1e8"
+            	os.remove(cfg.indir+cfg.fitsfile)
+                return
     else:
-    print "image QC fail", np.nanstd(fitsimg.data[0,0,:,:]), "<", cfg.threshold
-    print "STD is:", _STD_ 
+	
+	
+        print "image QC fail", np.nanstd(fitsimg.data[0,0,:,:]), "<", cfg.threshold
+        print "STD is:", _STD_ 
         os.remove(cfg.indir+cfg.fitsfile)
         return
 
