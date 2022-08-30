@@ -22,6 +22,9 @@ from astropy.time import Time
 import logging
 logging.basicConfig(level=logging.INFO)
 
+import h5py
+from scipy import interpolate
+
 # In[ ]:
 obs=(sys.argv[1]).split("/")[5]
 #fitsf=str(sys.argv[1:])
