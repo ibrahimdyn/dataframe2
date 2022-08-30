@@ -272,16 +272,18 @@ def process(cfg):
 	#202009290730
 	#202005181400
     #ALLimgpathstofluxcal1-202005052000.txt
-    with open(r'/home/idayan/fit_results_051217.csv', 'a') as f:
+        with open(r'/home/idayan/fit_results_051217.csv', 'a') as f:
+		
     #with open(r'/home/idayan/fit2_202005181400_results.csv', 'a') as f:
     #with open(r'/home/idayan/fit2_202009290730_results.csv', 'a') as f:
   #with open(r'/home/idayan/fit2_results.csv', 'a') as f:
-        writer = csv.writer(f)
-        writer.writerow(fields)
+		writer = csv.writer(f)
+		writer.writerow(fields)
 
         # Slope set to 1e9 if line fit fails
         # Slope set to 1e9 if line fit fails AND std of ratios excess some threshold say 0.45
-        if slope_cor < 1e8:
+	
+        #if slope_cor < 1e8:
         if (slope_cor < 1e8) and ( _STD_ < 0.45):
             filename = '%s.fits' % (datetime.fromtimestamp(t.unix).strftime('%Y-%m-%dT%H:%M:%S')+ \
                     "-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))+ \
