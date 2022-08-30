@@ -169,16 +169,17 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
 
         #if (len(x) > 2) and (x[0]-x[1]!=0):
         # slope cor reaches 1e9, remove second condition
-	if (len(x) > 2):
-		
-            w = np.array(w,dtype=float)
-            fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
-        else:
-            fit = [1e9,1e9,1e9,1e9,0]
-            cov = np.array([[1e9, 1e9], [1e9, 1e9]])
+    if (len(x) > 2):
+	
+        w = np.array(w,dtype=float)
+        fit,cov = np.polyfit(x,y,1,w=1./w,cov=True)
+    else:
+	
+	fit = [1e9,1e9,1e9,1e9,0]
+	cov = np.array([[1e9, 1e9], [1e9, 1e9]])
 
         #return fit[0], cov[0,0], fit[1], cov[1,1], len(x)
-        return fit[0], fit[1], x, y, cat_indexes
+    return fit[0], fit[1], x, y, cat_indexes
 
     #if len(x) > 2 and (x[0]-x[1]!=0):       
     #    w = np.array(w,dtype=float)
