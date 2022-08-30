@@ -205,7 +205,8 @@ def process(cfg):
 
 
     # Initial quality condition. 
-    if np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold:
+    #if np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold:
+    if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 8) :
         flux_compare=[]
 
         # Source find 
