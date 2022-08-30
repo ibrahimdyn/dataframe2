@@ -285,17 +285,16 @@ def process(cfg):
 	
         #if slope_cor < 1e8:
         if (slope_cor < 1e8) and ( _STD_ < 0.45):
-            filename = '%s.fits' % (datetime.fromtimestamp(t.unix).strftime('%Y-%m-%dT%H:%M:%S')+ \
-                    "-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))+ \
-                    "-B"+str(int(np.ceil(bw /lofarBW))))
+	        filename = '%s.fits' % (datetime.fromtimestamp(t.unix).strftime('%Y-%m-%dT%H:%M:%S')+ \
+		    "-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))+ \
+		    "-B"+str(int(np.ceil(bw /lofarBW))))
 
-            fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
-#            fitsimg.writeto(cfg.outdir+filename,overwrite=True)
-            os.remove(cfg.indir+cfg.fitsfile)
-        print "writing", cfg.outdir+filename
-        fitsimg.writeto(cfg.outdir+filename,overwrite=True)
+		fitsimg.data[0,0,:,:] = (fitsimg.data[0,0,:,:]-intercept_cor)/slope_cor
+		#            fitsimg.writeto(cfg.outdir+filename,overwrite=True)
+		os.remove(cfg.indir+cfg.fitsfile)
+		print "writing", cfg.outdir+filename
+		fitsimg.writeto(cfg.outdir+filename,overwrite=True)
         else:
-		
 		
        		print "slope fail", slope_cor, "<", "1e8"
             	os.remove(cfg.indir+cfg.fitsfile)
