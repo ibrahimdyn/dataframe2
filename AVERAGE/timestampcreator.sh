@@ -13,4 +13,4 @@
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 FILE =$1
 
-python /home/idayan/dataframe2/AVERAGE/timestamps_filter_TEST.py FILE
+python /home/idayan/dataframe2/AVERAGE/timestamps_filter_TEST.py $FILE
