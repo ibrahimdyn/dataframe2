@@ -11,7 +11,7 @@
 ### ###SBATCH --output=/home/idayan/LOGALL/AVERAGE-PROCESS.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
-F = $1
+F = "$1"
 echo "ECHOING"
 echo $F
 
