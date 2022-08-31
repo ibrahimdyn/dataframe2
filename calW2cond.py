@@ -311,7 +311,8 @@ def process(cfg):
         # Slope set to 1e9 if line fit fails AND std of ratios excess some threshold say 0.45
 	
         #if slope_cor < 1e8:
-        if (slope_cor < 1e8) and ( _STD_ < 0.40): # for the date 202006041232 only 1 percent pass the 0.40 std filter
+	# try with 0.45; for the date 202006041232 only 1 percent pass the 0.40 std filter
+        if (slope_cor < 1e8) and ( _STD_ < 0.45): # for the date 202006041232 only 1 percent pass the 0.40 std filter
 	        filename = '%s.fits' % (datetime.fromtimestamp(t.unix).strftime('%Y-%m-%dT%H:%M:%S')+ \
 		    "-S"+str(round((frq-lofarfrequencyOffset)/lofarBW,1))+ \
 		    "-B"+str(int(np.ceil(bw /lofarBW))))
