@@ -7,7 +7,7 @@ print pathsofimages
 
 print "SECOND PHASE"
 with open(pathsofimages, 'r') as ff:
-  lines=f.read().splitlines()
+  lines=ff.read().splitlines()
 imagepaths = sorted(lines) 
 print imagepaths
 
