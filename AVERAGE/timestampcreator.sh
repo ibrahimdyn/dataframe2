@@ -15,4 +15,4 @@ F = $1
 echo "ECHOING"
 echo $F
 
-python /home/idayan/dataframe2/AVERAGE/timestamps_filter_TEST.py $FILE
+#python /home/idayan/dataframe2/AVERAGE/timestamps_filter_TEST.py $FILE
