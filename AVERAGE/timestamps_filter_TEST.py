@@ -6,10 +6,10 @@ print "PRINTING IMAGE PATHS"
 print pathsofimages
 
 print "SECOND PHASE"
-with open(pathsofimages, 'r') as ff:
-  lines=ff.read().splitlines()
-imagepaths = sorted(lines) 
-print imagepaths
+#with open(pathsofimages, 'r') as ff:
+#  lines=ff.read().splitlines()
+#imagepaths = sorted(lines) 
+#print imagepaths
 
 #with open('/home/idayan/TOtimestamp202005121735.txt','r') as f:  #81531 from UCALED 
   
