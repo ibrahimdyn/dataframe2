@@ -11,6 +11,6 @@
 ### ###SBATCH --output=/home/idayan/LOGALL/AVERAGE-PROCESS.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
+FILE =$1
 
-
-python /home/idayan/dataframe2/AVERAGE/timestamps_filter_TEST.py
+python /home/idayan/dataframe2/AVERAGE/timestamps_filter_TEST.py FILE
