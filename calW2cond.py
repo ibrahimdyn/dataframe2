@@ -298,7 +298,9 @@ def process(cfg):
     #ALLimgpathstofluxcal1-202005052000.txt
 
         #with open(r'/home/idayan/fit_results_051217.csv', 'a') as f:
-        with open(r'/home/idayan/fit_results_202006041232.csv', 'a') as f:
+        #with open(r'/home/idayan/fit_results_202006041232.csv', 'a') as f:
+ 	with open(r'/home/idayan/fit_results_202006051232.csv', 'a') as f:
+        
 		
 		
     #with open(r'/home/idayan/fit2_202005181400_results.csv', 'a') as f:
