@@ -18,7 +18,7 @@ echo "cwd is"
 echo $(pwd)
 
 echo "database starting"
-/hddstore/idayan/pgsql/data/bin/pg_ctl -D /hddstore/idayan/pgsql/data/d4 -l logfile start # node 3
+/hddstore/idayan/pgsql/data/bin/pg_ctl -D /hddstore/idayan/pgsql/data/c -l logfile start # node 3
 #source /home/idayan/env/bin/activate
 #source /home/idayan/new_env/bin/activate
 source ~/envforTRAP/bin/activate
