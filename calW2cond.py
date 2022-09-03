@@ -143,7 +143,7 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
     for i in range(len(sr)):
         #print sr[i].flux_value
         
-        if (sr[i].flux.value>10.) & (sr[i].flux.value<1600):
+        if (sr[i].flux.value>5) & (sr[i].flux.value<1600):
             
 
             sr_x, sr_y = pol2cart(np.abs(90-sr[i].dec.value),
@@ -213,7 +213,7 @@ def process(cfg):
 
     # Initial quality condition. 
     #if np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold:
-    if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 5) :
+    if  (np.nanstd(fitsimg.data[0,0,:,:]) < cfg.threshold) and (np.nanstd(fitsimg.data[0,0,:,:]) > 2) :
 	
         flux_compare=[]
 	
@@ -299,7 +299,8 @@ def process(cfg):
 
         #with open(r'/home/idayan/fit_results_051217.csv', 'a') as f:
         #with open(r'/home/idayan/fit_results_202006041232.csv', 'a') as f:
- 	with open(r'/home/idayan/fit_results_202006051232.csv', 'a') as f:
+ 	#with open(r'/home/idayan/fit_results_202006051232.csv', 'a') as f:
+	with open(r'/home/idayan/fit_results_202009290730.csv', 'a') as f:
         
 		
 		
