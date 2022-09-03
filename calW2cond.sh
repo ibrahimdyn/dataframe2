@@ -64,7 +64,8 @@ do
     #tocalqualNEW202006041232.txt
     
     
-    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006051232.txt) # 56621 
+    LINE=$(sed -n "$N"p /home/idayan/imgpathstofluxcal202009290730.txt) # 254798 imgpathstofluxcal202009290730.txt
+    #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006051232.txt) # 56621 
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 56528 tocalqualNEW202006041232.txt # wtih 0.45 std only 1 percent pass the filter
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202005121735UP1.txt) #198167
     
