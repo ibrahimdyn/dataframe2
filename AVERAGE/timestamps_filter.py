@@ -82,7 +82,9 @@ from pandas import DataFrame
 #toavrg202010030948.txt
 #~/toavrg202005181400.txt
 
-with open('/home/idayan/TOtimestamp202005121735.txt','r') as f:  #81531 from UCALED 
+#~/ucaledimgs202009290730.txt
+with open('/home/idayan/ucaledimgs202009290730.txt.txt','r') as f:  #130578 UCALED -bash-4.2$ printf "%s\n" $PWD/* > ucaledimgs202009290730.txt
+#with open('/home/idayan/TOtimestamp202005121735.txt','r') as f:  #81531 from UCALED 
 #with open('/home/idayan/toavrg202005181400.txt','r') as f: # 65805
 #with open('/home/idayan/_Toavrg202010030948.txt','r') as f: # 31895
 #with open('/home/idayan/toavrg202010030948.txt','r') as f: # 44395 #in aAVErAGED-FINAL somehor half of this date is missing after 10:12
@@ -109,7 +111,9 @@ for i in sorted(set(DTofimagepaths)):
 #202010030948
 #202005181400
 #202005121735
-file_name = "/home/idayan/UCALED202005121735tmstmpstoavrg.pkl"
+#202009290730
+#file_name = "/home/idayan/UCALED202005121735tmstmpstoavrg.pkl"
+file_name = "/home/idayan/UCALED202009290730tmstmpstoavrg.pkl"
 
 #file_name = "/home/idayan/rmng202005181400tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/rmng202010030948tmstmpstoavrg.pkl"
