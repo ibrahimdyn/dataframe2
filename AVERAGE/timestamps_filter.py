@@ -83,7 +83,7 @@ from pandas import DataFrame
 #~/toavrg202005181400.txt
 
 #~/ucaledimgs202009290730.txt
-with open('/home/idayan/ucaledimgs202009290730.txt.txt','r') as f:  #130578 UCALED -bash-4.2$ printf "%s\n" $PWD/* > ucaledimgs202009290730.txt
+with open('/home/idayan/ucaledimgs202009290730.txt','r') as f:  #130578 UCALED -bash-4.2$ printf "%s\n" $PWD/* > ucaledimgs202009290730.txt
 #with open('/home/idayan/TOtimestamp202005121735.txt','r') as f:  #81531 from UCALED 
 #with open('/home/idayan/toavrg202005181400.txt','r') as f: # 65805
 #with open('/home/idayan/_Toavrg202010030948.txt','r') as f: # 31895
