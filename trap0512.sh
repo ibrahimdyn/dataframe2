@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --partition all
+### ## #SBATCH --partition all
 #SBATCH -N -1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 10
