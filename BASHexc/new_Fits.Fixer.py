@@ -38,7 +38,7 @@ def fix_fits(img):
     
     hdulist.flush()
     
-    if os.path.basename(img)[:3] == "000":
+    if (os.path.basename(img)[:3] == "000") or (os.path.basename(img)[:2] == "00"):
         newname = os.path.dirname(img)\
         +"/"+str(hdulist[0].header["DATE-OBS"])\
         +"-"+os.path.basename(img)[6:11]+".fits"
