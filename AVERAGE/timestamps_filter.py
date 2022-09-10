@@ -83,7 +83,9 @@ from pandas import DataFrame
 #~/toavrg202005181400.txt
 
 #~/ucaledimgs202009290730.txt
-with open('/home/idayan/ucaledimgs202009290730.txt','r') as f:  #130578 UCALED -bash-4.2$ printf "%s\n" $PWD/* > ucaledimgs202009290730.txt
+
+with open('/home/idayan/ucaledimgs-202010030948.txt','r') as f:   # 44176 /home/idayan/ucaledimgs-202010030948.txt
+#with open('/home/idayan/ucaledimgs202009290730.txt','r') as f:  #130578 UCALED -bash-4.2$ printf "%s\n" $PWD/* > ucaledimgs202009290730.txt
 #with open('/home/idayan/TOtimestamp202005121735.txt','r') as f:  #81531 from UCALED 
 #with open('/home/idayan/toavrg202005181400.txt','r') as f: # 65805
 #with open('/home/idayan/_Toavrg202010030948.txt','r') as f: # 31895
@@ -113,7 +115,9 @@ for i in sorted(set(DTofimagepaths)):
 #202005121735
 #202009290730
 #file_name = "/home/idayan/UCALED202005121735tmstmpstoavrg.pkl"
-file_name = "/home/idayan/UCALED202009290730tmstmpstoavrg.pkl"
+#file_name = "/home/idayan/UCALED202009290730tmstmpstoavrg.pkl"
+file_name = "/home/idayan/tmstmpstoavrg-ucaledimgs-202010030948.pkl" # 44176
+
 
 #file_name = "/home/idayan/rmng202005181400tmstmpstoavrg.pkl"
 #file_name = "/home/idayan/rmng202010030948tmstmpstoavrg.pkl"
