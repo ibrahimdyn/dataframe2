@@ -62,8 +62,10 @@ do
     #ALLimgpathstofluxcal1-202005052000.txt
     #_intarALLimgpathstofluxcal1-202005052000.txt
     #tocalqualNEW202006041232.txt
+    #56504 tocalqualNEW-202010030948.txt
     
-    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202005181400.txt) # 141552 202005181400 tocalqualNEW202005181400
+    LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW-202010030948.txt) # 56504 tocalqualNEW-202010030948.txt
+    #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202005181400.txt) # 141552 202005181400 tocalqualNEW202005181400
     #LINE=$(sed -n "$N"p /home/idayan/imgpathstofluxcal202009290730.txt) # 254798 imgpathstofluxcal202009290730.txt
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006051232.txt) # 56621 
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202006041232.txt) # 56528 tocalqualNEW202006041232.txt # wtih 0.45 std only 1 percent pass the filter
