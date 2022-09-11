@@ -2,7 +2,7 @@
 ### ### #SBATCH --partition neutron-star
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 5
+#SBATCH --cpus-per-task 7
 #SBATCH --mem 60G
 ### ## #SBATCH --time 240:00:00
 ##### ###SBATCH --array=13-17
