@@ -23,8 +23,8 @@ echo "database starting"
 #source /home/idayan/env/bin/activate
 #source /home/idayan/new_env/bin/activate
 source ~/envforTRAP/bin/activate
-trap-manage.py initdb
-yes y | ./home/idayan/dataframe/trap0512.sh
+#trap-manage.py initdb
+#yes y | ./home/idayan/dataframe/trap0512.sh
 #JOBNAME = $2
 echo "jobname is:"
 echo $1
