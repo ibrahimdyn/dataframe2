@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task 10
 #SBATCH --mem 60G
 #SBATCH --time 480:00:00
-#SBATCH -w helios-cn003
+#SBATCH -w helios-cn009
 ##### ###SBATCH --array=13-17
 #### #SBATCH --array=1-650%200
 #### #SBATCH --exclude=helios-cn[016-020]
