@@ -63,7 +63,9 @@ do
     #_intarALLimgpathstofluxcal1-202005052000.txt
     #tocalqualNEW202006041232.txt
     #56504 tocalqualNEW-202010030948.txt
-    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202010131201.txt) # 56504
+    #~/ALL-TXT/tocalqualNEW-202102181807.txt
+    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202102181807.txt) # 11487
+    #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202010131201.txt) # 56504
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW-202010031118.txt) # 68024 tocalqualNEW-202010031118.txt
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW-202010030948.txt) # 56504 tocalqualNEW-202010030948.txt
     #LINE=$(sed -n "$N"p /home/idayan/tocalqualNEW202005181400.txt) # 141552 202005181400 tocalqualNEW202005181400
