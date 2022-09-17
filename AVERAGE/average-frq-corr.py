@@ -163,7 +163,7 @@ def img_averager(list_sametimestamps):
         #except Exception:
         #    pass
       
-            if len([i for i in set1 if i[:]])>5:
+            if len([i for i in set1 if i[:]])>4:
                 for j in range(len(set1)):
                 #if s < nofile/2:
                 #while s < nofile:
