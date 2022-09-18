@@ -306,7 +306,10 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202010131201.csv', 'a') as f:
 	#202010201005
 	#with open(r'/home/idayan/fit_results_202102181807.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202010201005.csv', 'a') as f:
+	#with open(r'/home/idayan/fit_results_202010201005.csv', 'a') as f: # 1130 was written to here
+	with open(r'/home/idayan/fit_results_202010031250.csv', 'a') as f:
+	
+	
 	
 		
 	#tocalqualNEW-202010031118.txt
