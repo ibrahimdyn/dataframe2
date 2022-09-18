@@ -127,8 +127,9 @@ set1_subbands=['S281', 'S284', 'S287', 'S291', 'S294', 'S298', 'S301', 'S304']
 set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
 
 
-def img_averager(list_sametimestamps):    
-    if len(list_sametimestamps)>7:    
+def img_averager(list_sametimestamps):   
+    if len(list_sametimestamps)>4:  
+    #if len(list_sametimestamps)>7:    
         set1=[]
         set2=[]
         myfiles = list_sametimestamps
