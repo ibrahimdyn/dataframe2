@@ -191,7 +191,7 @@ def img_averager(list_sametimestamps):
                     #freqlist1.append(float(set1[j].split('-')[-2][1:6]))    
                     #freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
 
-            if len([i for i in set2 if i[:]])>5:
+            if len([i for i in set2 if i[:]])>2:
 
 
                 for k in range(len(set2)):
