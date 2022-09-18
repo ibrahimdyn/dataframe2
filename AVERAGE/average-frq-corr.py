@@ -128,7 +128,7 @@ set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
 
 
 def img_averager(list_sametimestamps):   
-    if len(list_sametimestamps)>4:  
+    if len(list_sametimestamps)>2:  
     #if len(list_sametimestamps)>7:    
         set1=[]
         set2=[]
