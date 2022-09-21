@@ -86,7 +86,7 @@ from pandas import DataFrame
 #6159 /home/idayan/ALL-TXT/toAverage-202010201130-.txt
 # 39030 
 #10997 /home/idayan/ALL-TXT/toAVERAGE-202006051431-.txt
-with open('/home/idayan/ALL-TXT/tocalqualNEW-202006051431.txt','r') as f: # 10997
+with open('/home/idayan/ALL-TXT/ALL-TXT/toAVERAGE-202006051431-.txt','r') as f: # 10997
 #with open('/home/idayan/ALL-TXT/tocalqualNEW-202006051431.txt','r') as f: # 53759 !!!!
 #with open('/home/idayan/ALL-TXT/toaverage-2020101310211-.txt','r') as f: # 39030
 #with open('/home/idayan/ALL-TXT/toAverage-202010201130-.txt','r') as f: # 6159
