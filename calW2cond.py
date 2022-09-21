@@ -309,10 +309,11 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202010201005.csv', 'a') as f: # 1130 was written to here
 	#with open(r'/home/idayan/fit_results_202010031250.csv', 'a') as f:
 	
-	with open(r'/home/idayan/fit_results_202006051431.csv', 'a') as f:
+	#with open(r'/home/idayan/fit_results_202006051431.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202010131021.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202010060710.csv', 'a') as f:
-	#	202010060710
+	with open(r'/home/idayan/fit_results_202011021014.csv', 'a') as f:
+	
 	
 	
 	
