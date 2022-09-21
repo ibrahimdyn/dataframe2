@@ -132,7 +132,7 @@ set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
 
 
 def img_averager(list_sametimestamps):   
-    if len(list_sametimestamps)>2:  
+    if len(list_sametimestamps)>1:  
     #if len(list_sametimestamps)>7:    
         set1=[]
         set2=[]
@@ -169,7 +169,7 @@ def img_averager(list_sametimestamps):
         #except Exception:
         #    pass
       
-            if len([i for i in set1 if i[:]])>2:
+            if len([i for i in set1 if i[:]])>1:
                 for j in range(len(set1)):
                 #if s < nofile/2:
                 #while s < nofile:
@@ -196,7 +196,7 @@ def img_averager(list_sametimestamps):
                     #freqlist1.append(float(set1[j].split('-')[-2][1:6]))    
                     #freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
 
-            if len([i for i in set2 if i[:]])>2:
+            if len([i for i in set2 if i[:]])>1:
 
 
                 for k in range(len(set2)):
