@@ -169,7 +169,7 @@ def img_averager(list_sametimestamps):
         #except Exception:
         #    pass
       
-            if len([i for i in set1 if i[:]])>1:
+            if len([i for i in set1 if i[:]])>0:
                 for j in range(len(set1)):
                 #if s < nofile/2:
                 #while s < nofile:
@@ -196,7 +196,7 @@ def img_averager(list_sametimestamps):
                     #freqlist1.append(float(set1[j].split('-')[-2][1:6]))    
                     #freqlist1.append(float(myfiles[i].split('-')[-2][1:6]))
 
-            if len([i for i in set2 if i[:]])>1:
+            if len([i for i in set2 if i[:]])>0:
 
 
                 for k in range(len(set2)):
