@@ -5,7 +5,7 @@
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
-#SBATCH --array=1-800%32
+#SBATCH --array=1-800%90
 ### #SBATCH --array=1-650%100
 ### #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
