@@ -69,8 +69,10 @@ do
     #56504 /home/idayan/ALL-TXT/tocalqualNEW-202010201130.txt
     #~/ALL-TXT/tocalqualNEW-202010060710.txt
     # -bash-4.2$ wc -l  ~/ALL-TXT/tocalqualNEW-202011080802.txt
+    
+    LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/fluxcal-remaining202011080802.txt) # 89496
  
-    LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202011080802.txt) # 169494
+    #LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202011080802.txt) # 169494
     #LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202006061232.txt) # 70769
     #LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202011021014.txt) # 56504
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202006051431.txt) # 53759
