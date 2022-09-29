@@ -5,7 +5,7 @@
 #SBATCH --mem 40G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
-#SBATCH --array=1-910%90
+#SBATCH --array=1-610%90
 ### #SBATCH --array=1-650%100
 ### #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
@@ -71,7 +71,9 @@ do
     # -bash-4.2$ wc -l  ~/ALL-TXT/tocalqualNEW-202011080802.txt
     #56622 
     #56504 /home/idayan/ALL-TXT/tocalqualNEW-202011161001.txt
-    LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202011161001.txt) # 56504
+     
+    LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202006061630.txt) # 14163
+    #LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202011161001.txt) # 56504
     #LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202011100907.txt) # 56504
     
     #LINE=$(sed -n "$N"p  /home/idayan/ALL-TXT/tocalqualNEW-202006041232.txt) # 56622
