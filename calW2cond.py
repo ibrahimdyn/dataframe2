@@ -318,7 +318,9 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202006041232.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202006061232.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202011100907.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202011161001.csv', 'a') as f:
+	
+	#with open(r'/home/idayan/fit_results_202011161001.csv', 'a') as f: !!!!! 202006061630 written in here
+	with open(r'/home/idayan/fit_results_202006061731.csv', 'a') as f:
 	
 	
 	
