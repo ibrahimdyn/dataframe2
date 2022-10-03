@@ -87,7 +87,8 @@ from pandas import DataFrame
 # 39030 
 #10997 /home/idayan/ALL-TXT/toAVERAGE-202006051431-.txt
  
-with open('/home/idayan/ALL-TXT/toAVEARGE-202011100907-.txt','r') as f: # 33151  
+with open('/home/idayan/ALL-TXT/toAVERAGE-202006231232-.txt','r') as f: # 18337  
+#with open('/home/idayan/ALL-TXT/toAVEARGE-202011100907-.txt','r') as f: # 33151  
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202011080802-.txt','r') as f: # 93926  
 #with open('/home/idayan/ALL-TXT/tocalqualNEW-202006061232.txt','r') as f: # 70769  !!!!
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202011021014-.txt','r') as f: # 10142 
@@ -142,7 +143,9 @@ for i in sorted(set(DTofimagepaths)):
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202011021014.pkl" # 10142
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202006061232.pkl" # 70769
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202011080802.pkl" # 93926
-file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202011100907.pkl" # 33151
+#file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202011100907.pkl" # 33151
+file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202006231232.pkl" # 18337
+
 
 
 
