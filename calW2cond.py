@@ -321,9 +321,9 @@ def process(cfg):
 	
 	#with open(r'/home/idayan/fit_results_202011161001.csv', 'a') as f: !!!!! 202006061630 written in here
 	#with open(r'/home/idayan/fit_results_202006061731.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202006231232.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202006201232.csv', 'a') as f:
+	#with open(r'/home/idayan/fit_results_202006201232.csv', 'a') as f:
+	with open(r'/home/idayan/fit_results_202011270912.csv', 'a') as f:
 	
 	
 	
