@@ -330,7 +330,9 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202010191408.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202010030719.csv', 'a') as f: # problem # have to image cal again --itt is half an hour record
 	#with open(r'/home/idayan/fit_results_202010191408.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202010030719.csv', 'a') as f:
+	
+	#with open(r'/home/idayan/fit_results_202010030719.csv', 'a') as f:
+	with open(r'/home/idayan/fit_results_202006041433.csv', 'a') as f:
 		
 	#tocalqualNEW-202010031118.txt
 	#tocalqualNEW-202010030948.txt
