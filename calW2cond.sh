@@ -2,10 +2,10 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 1
-#SBATCH --mem 4G
+#SBATCH --mem 3G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
-#SBATCH --array=1-610%50
+#SBATCH --array=1-610%150
 ### #SBATCH --array=1-650%100
 ### #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
