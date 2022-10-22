@@ -86,8 +86,11 @@ from pandas import DataFrame
 #6159 /home/idayan/ALL-TXT/toAverage-202010201130-.txt
 # 39030 
 #10997 /home/idayan/ALL-TXT/toAVERAGE-202006051431-.txt
-   
-with open('/home/idayan/ALL-TXT/toAVERAGE-202005052000-.txt','r') as f: # 41427
+ 
+
+
+with open('/home/idayan/ALL-TXT/toAVERAGE-202005131530-.txt','r') as f: # 37315
+#with open('/home/idayan/ALL-TXT/toAVERAGE-202005052000-.txt','r') as f: # 41427
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202007231100-.txt','r') as f: # 31374
 #with open('/home/idayan/ALL-TXT/tocalqualNEW-202010030719.txt','r') as f: # 42415
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202006201232-.txt','r') as f: # 17311 
@@ -152,7 +155,8 @@ for i in sorted(set(DTofimagepaths)):
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202006201232.pkl" # 17311
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202010030719.pkl" # 42415
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202007231100.pkl" # 42415
-file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005052000.pkl" # 41427
+#file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005052000.pkl" # 41427
+file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005131530.pkl" # 37315
 
 
 
