@@ -2,8 +2,8 @@
 #SBATCH -N 1
 ## #SBATCH --partition neutron-star
 #SBATCH --ntasks-per-node 1
-#SBATCH --cpus-per-task 10
-#SBATCH --mem 40G
+#SBATCH --cpus-per-task 1
+#SBATCH --mem 5G
 ### ## ##SBATCH --time 05:00:00
 ## ####SBATCH --output=/home/idayan/noisedist.log
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
