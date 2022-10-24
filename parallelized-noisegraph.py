@@ -46,8 +46,13 @@ print "assignned sys obs argv1", obs_folder
 
 #fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*.fits")) # for crrection remove AVEERAGE --averaged files gettig flatter
 #fitslist=sorted(glob.glob(obs_dir+"CALed/"+obs_folder+"/"+"*.fits"))
-fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S57*.fits"))
-fitslist2=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S62*.fits"))
+
+#fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S57*.fits"))
+#fitslist2=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S62*.fits"))
+
+fitslist=sorted(glob.glob(obs_dir+"UCALED/AVERAGED-UCAL/"+obs_folder+"/"+"*S57*.fits"))
+fitslist2=sorted(glob.glob(obs_dir+"CALed/AVERAGED-UCAL/"+obs_folder+"/"+"*S62*.fits"))
+
 #print fitslist[0]
 #print "header info"
 #print fits.getdata(fitslist[0],header=False)[0,0,:,:]
@@ -116,6 +121,7 @@ for i in range(133):
     #100*np.sqrt(100)
     print 10*np.sqrt(i)
     ls.append(100*np.sqrt(i))
+    
 #img_cntr=[1149,1149]
 #radius_inner=0.1
 #radius_outer=100
@@ -126,15 +132,15 @@ for i in range(133):
 def noisedist(img):
     #global dff
     position = [(1150., 1150.)]
-    #ranges=[0,100,200,300,400,500,600,700,800,900,1000]
+    ranges=[0,100,200,300,400,500,600,700,800,900,1000]
     #ranges=[0,50,100,150,200,250,300,350,400,450,500,550,
     #        600,650,700,750,800,850,900,950,1000,1050,1097]
     #ranges=[0,25,50,75,100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,
     #        575,600,625,650,700,725,750,775,800,825,850,875,900,925,950,975,1000,1025,1050,1075,1100,1122]
-    ranges=[0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,
-            350,360,370,380,390,400,410,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,600,610,620,630,640,650,660,670,
-            680,690,700,710,720,730,740,750,760,770,780,790,800,810,820,830,840,850,860,870,880,890,900,910,920,930,940,950,960,970,980,990,1000,
-            1010,1020,1030,1040,1050,1060,1070,1080,1090,1100,1110,1120,1130,1139]
+    #ranges=[0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,
+    #        350,360,370,380,390,400,410,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,600,610,620,630,640,650,660,670,
+    #        680,690,700,710,720,730,740,750,760,770,780,790,800,810,820,830,840,850,860,870,880,890,900,910,920,930,940,950,960,970,980,990,1000,
+    #        1010,1020,1030,1040,1050,1060,1070,1080,1090,1100,1110,1120,1130,1139]
     #ranges2=[np.cos(np.radians(90))*1150,np.cos(np.radians(85))*1150,np.cos(np.radians(84))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,
     #        np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,
     #        np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,np.cos(np.radians(80))*1150,
@@ -157,7 +163,7 @@ def noisedist(img):
     for j in ranges:
         print "j is:"
         print j
-        annulus_aperture = CircularAnnulus(position, r_in=j, r_out=j+10)
+        annulus_aperture = CircularAnnulus(position, r_in=j, r_out=j+100)
         
         #skyregion = aperture.CircularAnnulus(position, r_in=j, r_out=j+100)
         #areaindeg = skyregion.area() * area1pix
@@ -247,8 +253,8 @@ if __name__ == "__main__":
     finalres=pd.DataFrame(out)
     finalres2=pd.DataFrame(out2)
     #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
-    finalres.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc57-{}.pkl".format(obs_folder))
-    finalres2.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc62-{}.pkl".format(obs_folder))
+    finalres.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc57-NEW-{}.pkl".format(obs_folder))
+    finalres2.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc62-NEW-{}.pkl".format(obs_folder))
     #finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
     #EDF.append(pd.DataFrame(out))
     #DF.append(pd.Series(out))
