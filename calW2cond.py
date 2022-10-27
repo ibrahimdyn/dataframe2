@@ -336,15 +336,12 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202007231100.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202010201417.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202010271137.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202005052000.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202005121735.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202005131530.csv', 'a') as f:
-	#202005181400
 	#with open(r'/home/idayan/fit_results_202005181400.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202005181400-REMAINIG_50k.csv', 'a') as f:
+	#with open(r'/home/idayan/fit_results_202005181400-REMAINIG_50k.csv', 'a') as f:
+	with open(r'/home/idayan/fit_results_202005192025.csv', 'a') as f:
 		
 		
 		
