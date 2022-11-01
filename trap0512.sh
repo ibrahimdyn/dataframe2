@@ -3,7 +3,7 @@
 #SBATCH -N -1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 6
-#SBATCH --mem 70G
+#SBATCH --mem 10G
 #SBATCH -w helios-cn009
 ##### ###SBATCH --array=13-17
 #### #SBATCH --array=1-650%200
