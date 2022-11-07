@@ -76,7 +76,8 @@ do
      
     #tocalqualNEW-202005181400-REMAINING-.txt
      
-    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005192025.txt) #42463
+    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005291110.txt) # 226474
+    #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005192025.txt) #42463
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005181400-REMAINING-.txt) #54k - remaining
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005181400.txt) #141552
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005131530.txt) # 104360
