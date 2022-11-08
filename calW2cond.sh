@@ -2,7 +2,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 1
 #SBATCH --cpus-per-task 1
-#SBATCH --mem 3G
+#SBATCH --mem 6G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
 #SBATCH --array=1-500%500
@@ -75,8 +75,9 @@ do
     #  /home/idayan/ALL-TXT/tocalqualNEW-202007231100.txt
      
     #tocalqualNEW-202005181400-REMAINING-.txt
-      
-    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202009280800.txt) # 147641
+    # /home/idayan/ALL-TXT/tocalqualNEW-202009290730.txt
+    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202009290730.txt) # 316366
+    #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202009280800.txt) # 147641
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005291110.txt) # 226474
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005192025.txt) #42463
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202005181400-REMAINING-.txt) #54k - remaining
