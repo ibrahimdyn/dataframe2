@@ -88,8 +88,8 @@ from pandas import DataFrame
 #10997 /home/idayan/ALL-TXT/toAVERAGE-202006051431-.txt
  
 
-
-with open('/home/idayan/ALL-TXT/toAVERAGE-202005131530-.txt','r') as f: # 37315
+with open('/home/idayan/ALL-TXT/toTRAP-202009290730-woAVERAGE.txt','r') as f: # 152214
+#with open('/home/idayan/ALL-TXT/toAVERAGE-202005131530-.txt','r') as f: # 37315
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202005052000-.txt','r') as f: # 41427
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202007231100-.txt','r') as f: # 31374
 #with open('/home/idayan/ALL-TXT/tocalqualNEW-202010030719.txt','r') as f: # 42415
@@ -156,7 +156,9 @@ for i in sorted(set(DTofimagepaths)):
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202010030719.pkl" # 42415
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202007231100.pkl" # 42415
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005052000.pkl" # 41427
-file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005131530.pkl" # 37315
+#file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005131530.pkl" # 37315
+file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202009290730.pkl" # 152k
+
 
 
 
