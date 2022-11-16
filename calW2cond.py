@@ -342,14 +342,11 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202005181400.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202005181400-REMAINIG_50k.csv', 'a') as f:
 	#with open(r'/home/idayan/fit_results_202005192025.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202005291110.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202009280800.csv', 'a') as f:
-	
 	#with open(r'/home/idayan/fit_results_202009290730.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202102230245.csv', 'a') as f:
-		
+	#with open(r'/home/idayan/fit_results_202102230245.csv', 'a') as f:
+	with open(r'/home/idayan/fit_results_202102230145.csv', 'a') as f:
 		
 		
 	#tocalqualNEW-202010031118.txt
