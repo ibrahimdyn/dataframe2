@@ -78,7 +78,9 @@ do
     # /home/idayan/ALL-TXT/tocalqualNEW-202009290730.txt
     
     #~/ALL-TXT/tocalqualNEW-202012140600.txt
-    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012140600.txt) # 51341
+    
+    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012131600.txt) # 50968
+    #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012140600.txt) # 51341
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202102230145.txt) # 60384
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202102230245.txt) # 60400
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202009290730.txt) # 316366
