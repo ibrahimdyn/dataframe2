@@ -27,6 +27,9 @@ from scipy import interpolate
 
 # In[ ]:
 obs=(sys.argv[1]).split("/")[5]
+
+print "printing obs"
+print obs
 #fitsf=str(sys.argv[1:])
 #--fitsfile=/zfs/helios/filer1/idayan/202005051300/2020-05-05T13:02:02-13:05:12_all/SB281-2020-05-05T13:02:02-13:05:12/imgs/2020-05-05T13:02:02.0-SB281.fits/
 
@@ -352,7 +355,9 @@ def process(cfg):
 	#with open(r'/home/idayan/fit_results_202012140600.csv', 'a') as f:
 	
 	#with open(r'/home/idayan/fit_results_202012131600.csv', 'a') as f:
-	with open(r'/home/idayan/fit_results_202012131700.csv', 'a') as f:
+	#with open(r'/home/idayan/fit_results_202012131700.csv', 'a') as f:
+	with open(r'/home/idayan/fit_results_%s.csv' % obs , 'a') as f:
+		
 		
 		
 	#tocalqualNEW-202010031118.txt
