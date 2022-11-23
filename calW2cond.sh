@@ -38,6 +38,12 @@ echo "echoED sed command!!!"
 #--fitsfile="$i"
 #python /home/idayan/dataframe2/Cal-All-automate.py  --fitsfile=`sed $SLURM_ARRAY_TASK_ID'q;d' ~/test44.txt`
 
+echo "getting date variable"
+DATE = $1
+echo "printing date variable"
+echo $DATE
+
+
 
 START=$SLURM_ARRAY_TASK_ID
 NUMLINES=500
@@ -79,7 +85,9 @@ do
     
     #~/ALL-TXT/tocalqualNEW-202012140600.txt
     
-    LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012131700.txt) # 
+    #/home/idayan/ALL-TXT/tocalqualNEW-202101031339.txt
+    LINE=$(sed -n "$N"p $1) # 
+    #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012131700.txt) # 
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012131600.txt) # 50968
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202012140600.txt) # 51341
     #LINE=$(sed -n "$N"p /home/idayan/ALL-TXT/tocalqualNEW-202102230145.txt) # 60384
