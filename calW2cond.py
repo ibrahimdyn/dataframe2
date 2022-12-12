@@ -226,8 +226,8 @@ def process(cfg):
 	print "PRINTING IMAGE"
 	print cfg.fitsfile
 	bg_data, bg_f =fits.getdata(cfg.fitsfile, header=True)
-    	#beam_model = get_beam(bg_f["CRVAL3"]/1e6)
-	#fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+    	beam_model = get_beam(bg_f["CRVAL3"]/1e6)
+	fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
 
         # Source find 
         configuration = {
