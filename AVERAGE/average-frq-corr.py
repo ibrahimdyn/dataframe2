@@ -97,7 +97,8 @@ from bokeh.models import DatetimeTickFormatter
     #print i
 #    matching.append([s for s in imagepaths if "{}".format(i) in s])
 #/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/
-file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202009290730.pkl" # 152k
+file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" #20k
+#file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202009290730.pkl" # 152k
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005131530.pkl" # 37315
 ##file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005052000.pkl" # 41427
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202007231100.pkl" # 42415
@@ -140,9 +141,11 @@ open_file = open(file_name, "rb")
 matching = pickle.load(open_file)
 
 
+set1_subbands=['S250', 'S263', 'S267', 'S273', 'S278', 'S284', 'S292', 'S296']
+set2_subbands=['S299', 'S310', 'S318', 'S322', 'S327', 'S330', 'S335', 'S356']
 
-set1_subbands=['S281', 'S284', 'S287', 'S291', 'S294', 'S298', 'S301', 'S304']
-set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
+#set1_subbands=['S281', 'S284', 'S287', 'S291', 'S294', 'S298', 'S301', 'S304']
+#set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
 
 
 def img_averager(list_sametimestamps):   
