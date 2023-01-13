@@ -87,8 +87,10 @@ from pandas import DataFrame
 # 39030 
 #10997 /home/idayan/ALL-TXT/toAVERAGE-202006051431-.txt
  
-
-with open('/home/idayan/ALL-TXT/toaverage-202102230045-.txt','r') as f: # 36873
+imglst_toaverage=sys.argv[1]
+dateoffile=sys.argv[2]
+with open('%s' % imglst_toaverage ,'r') as f: # 36873
+#with open('/home/idayan/ALL-TXT/toaverage-202102230045-.txt','r') as f: # 36873
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202102230045-.txt','r') as f: # 20495
 #with open('/home/idayan/ALL-TXT/toTRAP-202009290730-woAVERAGE.txt','r') as f: # 152214
 #with open('/home/idayan/ALL-TXT/toAVERAGE-202005131530-.txt','r') as f: # 37315
@@ -162,7 +164,8 @@ for i in sorted(set(DTofimagepaths)):
 
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202009290730.pkl" # 152k
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" # 20k
-file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" # 36k
+#file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" # 36k
+file_name = "%s" % dateoffile # 36k
 
 
 
