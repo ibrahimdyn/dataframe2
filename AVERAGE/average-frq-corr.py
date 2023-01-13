@@ -97,7 +97,9 @@ from bokeh.models import DatetimeTickFormatter
     #print i
 #    matching.append([s for s in imagepaths if "{}".format(i) in s])
 #/zfs/helios/filer1/idayan/fllwpDATES/AVERAGED/
-file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" #36k
+filename= sys.argv[1]
+file_name = "%s" % filename
+#file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" #36k
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202102230045.pkl" #20k
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202009290730.pkl" # 152k
 #file_name = "/home/idayan/TMSTMPStoavrg-ucaledimgs-202005131530.pkl" # 37315
