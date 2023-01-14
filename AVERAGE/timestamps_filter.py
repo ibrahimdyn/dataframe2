@@ -193,8 +193,8 @@ open_file.close()
 source /home/idayan/new_env/bin/activate
 
 
-
-python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name
+os.sysyem('python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name')
+#python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name
 #######  how to read :
 ####     open_file = open(file_name, "rb")
 ####     loaded_list = pickle.load(open_file)
