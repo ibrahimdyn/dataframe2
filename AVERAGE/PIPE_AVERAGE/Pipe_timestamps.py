@@ -189,6 +189,9 @@ pickle.dump(matching, open_file)
 
 open_file.close()
 
+
+python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py $1
+
 #######  how to read :
 ####     open_file = open(file_name, "rb")
 ####     loaded_list = pickl
