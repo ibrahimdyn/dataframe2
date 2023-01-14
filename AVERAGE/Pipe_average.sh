@@ -15,6 +15,10 @@
 filename=$1
 date=$2
 
-echo "executing average-frq-corr"
 
-python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py $1
+echo "executing timestampsfilter"
+
+python ~/dataframe2/AVERAGE/timestamps_filter.py $1 $2
+
+echo "doneee"
+#python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py $1
