@@ -191,9 +191,9 @@ open_file.close()
 
 
 #source /home/idayan/new_env/bin/activate
+print("spwaning...")
 
-
-os.sysyem('python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name')
+os.system('python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name')
 #python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name
 #######  how to read :
 ####     open_file = open(file_name, "rb")
