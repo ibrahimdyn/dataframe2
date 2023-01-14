@@ -190,7 +190,7 @@ pickle.dump(matching, open_file)
 open_file.close()
 
 
-source /home/idayan/new_env/bin/activate
+#source /home/idayan/new_env/bin/activate
 
 
 os.sysyem('python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name')
