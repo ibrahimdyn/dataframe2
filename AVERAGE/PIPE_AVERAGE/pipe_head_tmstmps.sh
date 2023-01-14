@@ -12,6 +12,7 @@
 ###  #### SBATCH --output=/zfs/helios/filer0/idayan/Cal60-20200812/calibration.log
 ###  #### ((SBATCH --output=/home/idayan/CALwith60Mhz/calibration.log))
 
+source /home/idayan/new_env/bin/activate
 python ~/dataframe2/AVERAGE/PIPE_AVERAGE/Pipe_timestamps.py $1 $2
 
 #source /home/idayan/new_env/bin/activate
