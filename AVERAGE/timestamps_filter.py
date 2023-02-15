@@ -192,8 +192,8 @@ open_file.close()
 
 #source /home/idayan/new_env/bin/activate
 print("spwaning...")
-cmd= "/home/idayan/dataframe2/AVERAGE/average-frq-corr.py %s " % file_name
-#cmd= "/home/idayan/dataframe2/AVERAGE/average-frq156-corr.py %s " % file_name
+#cmd= "/home/idayan/dataframe2/AVERAGE/average-frq-corr.py %s " % file_name
+cmd= "/home/idayan/dataframe2/AVERAGE/average-frq156-corr.py %s " % file_name
 os.system('python ' + cmd)
 #os.system('python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py %s' % file_name)
 #python /home/idayan/dataframe2/AVERAGE/average-frq-corr.py file_name
