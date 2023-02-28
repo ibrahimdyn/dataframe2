@@ -145,13 +145,13 @@ matching = pickle.load(open_file)
 
 
 
-set1_subbands=['S156', 'S165', 'S174', 'S187', 'S195', 'S213', 'S221', 'S231']
-set2_subbands=['S243', 'S256', 'S257', 'S267', 'S278', 'S284', 'S296', 'S320']
+#set1_subbands=['S156', 'S165', 'S174', 'S187', 'S195', 'S213', 'S221', 'S231']
+#set2_subbands=['S243', 'S256', 'S257', 'S267', 'S278', 'S284', 'S296', 'S320']
 #set1_subbands=['S250', 'S263', 'S267', 'S273', 'S278', 'S284', 'S292', 'S296']
 #set2_subbands=['S299', 'S310', 'S318', 'S322', 'S327', 'S330', 'S335', 'S356']
 
-#set1_subbands=['S281', 'S284', 'S287', 'S291', 'S294', 'S298', 'S301', 'S304']
-#set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
+set1_subbands=['S281', 'S284', 'S287', 'S291', 'S294', 'S298', 'S301', 'S304']
+set2_subbands=['S308', 'S311', 'S315', 'S318', 'S321', 'S325', 'S328', 'S332']
 
 
 def img_averager(list_sametimestamps):   
