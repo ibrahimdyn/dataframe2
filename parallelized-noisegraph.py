@@ -50,8 +50,24 @@ print "assignned sys obs argv1", obs_folder
 #fitslist=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S57*.fits"))
 #fitslist2=sorted(glob.glob(obs_dir+"CALed/AVERAGED-FINAL/"+obs_folder+"/"+"*S62*.fits"))
 
-fitslist=sorted(glob.glob(obs_dir+"UCALED/AVERAGED-UCAL/"+obs_folder+"/"+"*S57*.fits"))
-fitslist2=sorted(glob.glob(obs_dir+"CALed/AVERAGED-UCAL/"+obs_folder+"/"+"*S62*.fits"))
+#fitslist=sorted(glob.glob(obs_dir+"/UCALED/AVERAGED-UCAL/"+obs_folder+"/"+"*S57*.fits"))
+#fitslist2=sorted(glob.glob(obs_dir+"/UCALED/AVERAGED-UCAL/"+obs_folder+"/"+"*S62*.fits"))
+with open("/home/idayan/ALL-TXT/avrgucal202009290730.txt",'r') as f: # 12k
+    lines=f.read().splitlines()
+images = sorted(lines)
+
+#images = images[4220:8440]
+#images = images[6330:8440]
+images = images[8440:10550]
+
+srimages=pd.Series(images)
+srimages_57=srimages[srimages.str.contains("-S57.0") | srimages.str.contains("-S58.0") | srimages.str.contains("-S56.0")]
+srimages_62=srimages[srimages.str.contains("-S62.0") | srimages.str.contains("-S63.0") | srimages.str.contains("-S60.0")]
+
+print(len(srimages_57))
+print(len(srimages_62))
+
+# Optionally, whatever standard 
 
 #print fitslist[0]
 #print "header info"
