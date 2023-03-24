@@ -73,7 +73,7 @@ print(len(srimages_62))
 #print "header info"
 #print fits.getdata(fitslist[0],header=False)[0,0,:,:]
 print "printing len fitslist"
-print len(fitslist)
+#print len(fitslist)
 
 
 
@@ -269,7 +269,9 @@ if __name__ == "__main__":
     finalres=pd.DataFrame(out)
     finalres2=pd.DataFrame(out2)
     #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
+    print "writing images 57"
     finalres.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc57-NEW-{}.pkl".format(obs_folder))
+    print "writing images 62"
     finalres2.to_pickle("/home/idayan/newnoisegrapDF/AVRimgs10inc62-NEW-{}.pkl".format(obs_folder))
     #finalres.to_pickle("/home/idayan/newnoisegrapDF/noisegraphdfLAST000Co-{}.pkl".format(obs_folder)) 
     #EDF.append(pd.DataFrame(out))
