@@ -264,8 +264,8 @@ print "first of fitlisst:"
 if __name__ == "__main__":
     #[(integrate(i)) for i in fitslist[0:3]]
     EDF=pd.DataFrame
-    out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist)
-    out2=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in fitslist2)
+    out=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in srimages_57)
+    out2=Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(noisedist)(i) for i in srimages_62)
     finalres=pd.DataFrame(out)
     finalres2=pd.DataFrame(out2)
     #finalres.to_pickle("/home/idayan/noisegraphdfLAST000Co202005051300.pkl") 
