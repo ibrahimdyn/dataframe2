@@ -278,7 +278,7 @@ A9_57=A9_57.append(Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(del
 #A9_62=A9_62.append(Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(calqual)(i) for i in srimages_62[100:700]))
 #A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
 
-if __name__ == '__main__':
-    print "inside if "
-    A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
+#if __name__ == '__main__':
+#    print "inside if "
+#    A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
     #A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
