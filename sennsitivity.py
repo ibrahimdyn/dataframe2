@@ -269,17 +269,26 @@ srimages_57=srimages[srimages.str.contains("-S57.0") | srimages.str.contains("-S
 srimages_62=srimages[srimages.str.contains("-S62.0") | srimages.str.contains("-S63.0") | srimages.str.contains("-S60.0")| srimages.str.contains("-S61.0")]
 
 
-#A9_57=pd.DataFrame()
+A9_57=pd.DataFrame()
 #A9_57=A9_57.append(Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(calqual)(i) for i in srimages_57[100:700]))
 #A9_57.to_pickle('/home/idayan/B0950+08_figs/senstivity1_57_git.pkl')
 
 
-#A9_62=pd.DataFrame()
+A9_62=pd.DataFrame()
 #A9_62=A9_62.append(Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(calqual)(i) for i in srimages_62[100:700]))
 #A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
 
-if __name__ == '__main__':
-    Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(calqual)(i) for i in srimages_57[100:700])
+#if __name__ == '__main__':
+#    Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(calqual)(i) for i in srimages_57[100:700])
 #    print "inside if "
 #    A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
     #A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
+
+for i in srimages_57[100:700]:
+    A9_57=A9_57.append((calqual)(i))
+    
+for i in srimages_62[100:700]:
+    A9_62=A9_62.append((calqual)(i))
+    
+A9_57.to_pickle('/home/idayan/B0950+08_figs/senstivity1_57_git.pkl')
+A9_62.to_pickle('/home/idayan/B0950+08_figs/senstivity1_62_git.pkl')
