@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import os
 import sys
 import csv
@@ -104,7 +106,7 @@ import matplotlib
 import matplotlib.gridspec as gridspec
 
 import matplotlib.dates as mdates
-matplotlib.use('Agg')
+
 
 
 
