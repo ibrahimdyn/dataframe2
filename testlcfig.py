@@ -104,7 +104,7 @@ import matplotlib
 import matplotlib.gridspec as gridspec
 
 import matplotlib.dates as mdates
-
+matplotlib.use('Agg')
 
 
 
