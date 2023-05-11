@@ -47,7 +47,7 @@ srimages_62=srimages[srimages.str.contains("-S62.0")]
 
 
 
-fitslist=srimages_57_new
+fitslist_57=srimages_57_new
 fitsimg=fits.getdata(srimages_62.iloc[1])[:,:]
 
 
@@ -114,7 +114,7 @@ dff=pd.DataFrame()
 #radius_outer=100
 #area1pix=0.00612
 
-for i in fitslist[0:90]:
+for i in fitslist_57:
     
     
         #hdl=fits.open(i)
@@ -189,7 +189,9 @@ for i in fitslist[0:90]:
 
     #pd.Series(reesultlist)    
     dff=dff.append(newrs,ignore_index=True)
-    dff.to_pickle("noisegraphdf-test62_2_test-202011080802.pkl")
+    namedyn=x[0][-11:-7]
+    dff.to_pickle("noisegraphdftest-namedyn.pkl")
+    #dff.to_pickle("noisegraphdf-test62_2_test-202011080802.pkl")
     #dff.to_pickle("noisegraphdf-calw2ref-202006061630.pkl")
         
     #print "bottom i ", df
@@ -199,12 +201,12 @@ for i in fitslist[0:90]:
         #hdl.close()
     
     
-end=time.time()
-print(end-start) 
+#end=time.time()
+#print(end-start) 
 
 
 
-dddf_62=pd.read_pickle("/home/idayan/JUPYTER/Article1/noisegraphdf-test62_gh1-202011080802.pkl")
-dddf_57=pd.read_pickle("/home/idayan/JUPYTER/Article1/noisegraphdf-test57_gh1-202011080802.pkl")
+#dddf_62=pd.read_pickle("/home/idayan/JUPYTER/Article1/noisegraphdf-test62_gh1-202011080802.pkl")
+#dddf_57=pd.read_pickle("/home/idayan/JUPYTER/Article1/noisegraphdf-test57_gh1-202011080802.pkl")
 
 
