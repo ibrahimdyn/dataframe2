@@ -192,7 +192,7 @@ def noisedist(x):
         #dff.to_pickle("noisegraphdf-test62_2_testJUP1-202011080802.pkl")
         #dff.to_pickle("noisegraphdf-{%s}.pkl".format(x))
         namedyn=x[0][-11:-7]
-        dff.to_pickle("noisegraphdftest-namedyn.pkl")
+        dff.to_pickle("noisegraphdftest-{}.pkl".format(namedyn))
         #dff.to_pickle("noisegraphdf-calw2ref-202006061630.pkl")
 
         #print "bottom i ", df
@@ -204,6 +204,16 @@ def noisedist(x):
 
     #end=time.time()
     #print(end-start)
-main_image_list= [srimages_57_new, srimages_62_new]
-for i in main_image_list:
-    noisedist(i)
+    
+#####                        #####   
+##### this gives key error 0 #####
+#####                        #####             
+
+# main_image_list= [srimages_57_new, srimages_62_new]
+# for i in main_image_list:
+#    noisedist(i)
+noisedist(srimages_57_new)
+noisedist(srimages_62_new)
+
+
+
