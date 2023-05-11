@@ -116,7 +116,7 @@ dff=pd.DataFrame()
 def noisedist(x):
     print x[0][-11:-7]
     dff=pd.DataFrame()
-    for i in x[0:30]:
+    for i in x:
         #fitslist_57=srimages_57_new
         fitsimg=fits.getdata(i)[:,:]
     
