@@ -114,7 +114,7 @@ dff=pd.DataFrame()
 #area1pix=0.00612
 
 def noisedist(x):
-    print x[0][-11:-7]
+    print x.iloc[0][-11:-7]
     dff=pd.DataFrame()
     for i in x:
         #fitslist_57=srimages_57_new
@@ -191,7 +191,7 @@ def noisedist(x):
         dff=dff.append(newrs,ignore_index=True)
         #dff.to_pickle("noisegraphdf-test62_2_testJUP1-202011080802.pkl")
         #dff.to_pickle("noisegraphdf-{%s}.pkl".format(x))
-        namedyn=x[0][-11:-7]
+        namedyn=x.iloc[0][-11:-7]
         dff.to_pickle("noisegraphdftest-{}.pkl".format(namedyn))
         #dff.to_pickle("noisegraphdf-calw2ref-202006061630.pkl")
 
