@@ -277,7 +277,7 @@ srimages_62=srimages[srimages.str.contains("-S62.0") | srimages.str.contains("-S
 
 A9_57=pd.DataFrame()
 a8_57=[calqual(i) for i in srimages_57[100:103]]
-A9_57=A9_57.append(a8)
+A9_57=A9_57.append(a8_57)
 A9_57.to_pickle("/home/idayan/noisedist_test1_A9_57_topickle.pkl")
 
 with open("/home/idayan/senstivity_medperimageout.csv", "w") as f:
