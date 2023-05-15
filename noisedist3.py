@@ -92,6 +92,80 @@ from scipy.optimize import curve_fit
 from astropy.modeling.powerlaws import SmoothlyBrokenPowerLaw1D as SBPL
 
 
+def calqual(img):
+    ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
+    #ALL_STD=[]
+    print "prinnt imglist"
+    print img
+    flux_compare = []
+    f_comp=[]
+    flux_correct = []
+
+    fitsimg=fits.open(img)
+
+    configuration = {
+            "back_size_x": 64,
+            "back_size_y": 64,
+            "margin": 0,
+            "radius": 0}
+
+    img_HDU = fits.HDUList(fitsimg)
+    imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
+                                                               plane=0),
+                                                 **configuration)
+
+    sr = imagedata.extract(det=5, anl=3,
+                           labelled_data=None, labels=[],
+                           force_beam=True)
+
+    # Reference catalogue compare
+    slope_cor, intercept_cor, ref_match, image_match, index_match, DISTs, STD_, DSTs2= compare_flux(sr,
+                                           ref_cat["ra"],
+                                           ref_cat["decl"],
+                                           ref_cat["f_int"],
+                                           ref_cat["f_int_err"],img)
+    
+    #P0=ZZ
+    #P1=[1150.,1150.]
+    #Distance  = np.sqrt((P0[0] - P1[0])**2 + (P0[1] - P1[1])**2)
+    
+    #ref_flux=np.array(ref_match)
+    #sr_corr_flux=(np.array(image_match) - intercept_cor)/slope_cor
+    #print np.array(ref_match)
+    #print "ref_flux"
+    #print ref_flux
+    #print sr_corr_flux
+    #std_=np.std(ref_flux/sr_corr_flux)
+    f_comp.append([np.array(ref_match),np.array(image_match),DSTs2])
+    
+    #flux_compare.append([np.array(ref_match),
+     #                        (np.array(image_match) - intercept_cor)/slope_cor,
+     #                       np.array(np.ravel(index_match)), np.array(DISTs), STD_,DSTs2])
+
+    #flux_compare.append([np.array(ref_match),
+    #                         (np.array(image_match) - intercept_cor)/slope_cor,
+    #                        np.array(np.ravel(index_match))])
+
+    #flux_correct.append([i, slope_cor, intercept_cor])
+    testt = pd.DataFrame([])
+
+    for i in range(len(f_comp)):
+        
+        if len(testt) == 0:
+            
+            testt = pd.DataFrame({"reference":f_comp[i][0],
+                                 "image":f_comp[i][1],
+                                "DIST2":f_comp[i][2]})
+
+        else:
+            
+            testt = pd.concat([testt, pd.DataFrame({"reference":f_comp[i][0],
+                                                    "image":f_comp[i][1],"DIST2":f_comp[i][2]})])
+    
+    return testt
+
+
+
 def distSquared(p0, p1):
     '''
     Calculate the distance between point p0, [x,y], and a list of points p1, [[x0..xn],[y0..yn]]. 
@@ -184,78 +258,8 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
     return fit[0], fit[1], x, y, cat_indexes, distances_, STDev,distances_2 
 
 
-global calqual
-def calqual(img):
-    ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
-    #ALL_STD=[]
-    print "prinnt imglist"
-    print img
-    flux_compare = []
-    f_comp=[]
-    flux_correct = []
+#global calqual
 
-    fitsimg=fits.open(img)
-
-    configuration = {
-            "back_size_x": 64,
-            "back_size_y": 64,
-            "margin": 0,
-            "radius": 0}
-
-    img_HDU = fits.HDUList(fitsimg)
-    imagedata = sourcefinder_image_from_accessor(open_accessor(fits.HDUList(fitsimg),
-                                                               plane=0),
-                                                 **configuration)
-
-    sr = imagedata.extract(det=5, anl=3,
-                           labelled_data=None, labels=[],
-                           force_beam=True)
-
-    # Reference catalogue compare
-    slope_cor, intercept_cor, ref_match, image_match, index_match, DISTs, STD_, DSTs2= compare_flux(sr,
-                                           ref_cat["ra"],
-                                           ref_cat["decl"],
-                                           ref_cat["f_int"],
-                                           ref_cat["f_int_err"],img)
-    
-    #P0=ZZ
-    #P1=[1150.,1150.]
-    #Distance  = np.sqrt((P0[0] - P1[0])**2 + (P0[1] - P1[1])**2)
-    
-    #ref_flux=np.array(ref_match)
-    #sr_corr_flux=(np.array(image_match) - intercept_cor)/slope_cor
-    #print np.array(ref_match)
-    #print "ref_flux"
-    #print ref_flux
-    #print sr_corr_flux
-    #std_=np.std(ref_flux/sr_corr_flux)
-    f_comp.append([np.array(ref_match),np.array(image_match),DSTs2])
-    
-    #flux_compare.append([np.array(ref_match),
-     #                        (np.array(image_match) - intercept_cor)/slope_cor,
-     #                       np.array(np.ravel(index_match)), np.array(DISTs), STD_,DSTs2])
-
-    #flux_compare.append([np.array(ref_match),
-    #                         (np.array(image_match) - intercept_cor)/slope_cor,
-    #                        np.array(np.ravel(index_match))])
-
-    #flux_correct.append([i, slope_cor, intercept_cor])
-    testt = pd.DataFrame([])
-
-    for i in range(len(f_comp)):
-        
-        if len(testt) == 0:
-            
-            testt = pd.DataFrame({"reference":f_comp[i][0],
-                                 "image":f_comp[i][1],
-                                "DIST2":f_comp[i][2]})
-
-        else:
-            
-            testt = pd.concat([testt, pd.DataFrame({"reference":f_comp[i][0],
-                                                    "image":f_comp[i][1],"DIST2":f_comp[i][2]})])
-    
-    return testt
 
 
 with open("/home/idayan/ALL-TXT/avrgucal202009290730.txt",'r') as f: # 12k
