@@ -268,8 +268,11 @@ srimages=pd.Series(images)
 srimages_57=srimages[srimages.str.contains("-S57.0") | srimages.str.contains("-S58.0") | srimages.str.contains("-S56.0")]
 srimages_62=srimages[srimages.str.contains("-S62.0") | srimages.str.contains("-S63.0") | srimages.str.contains("-S60.0")| srimages.str.contains("-S61.0")]
 
+print "creating df"
 A9_57=pd.DataFrame()
+print "created a9 data frame"
 A9_57=A9_57.append(Parallel(n_jobs=10,backend="multiprocessing", verbose=10)(delayed(calqual)(i) for i in srimages_57[:600]))
+print "multiprocessing"
 A9_57.to_pickle("/home/idayan/noisedist_testA9_57_topickle.pkl")
 
 #A9_62=pd.DataFrame()
