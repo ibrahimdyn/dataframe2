@@ -276,9 +276,15 @@ srimages_62=srimages[srimages.str.contains("-S62.0") | srimages.str.contains("-S
 
 
 A9_57=pd.DataFrame()
-a8_57=[calqual(i) for i in srimages_57[100:103]]
+a8_57=[calqual(i) for i in srimages_57[:600]]
 A9_57=A9_57.append(a8_57)
-A9_57.to_pickle("/home/idayan/noisedist_test1_A9_57_topickle.pkl")
+A9_57.to_pickle("/home/idayan/noisedist_test1_A9_57_topickle_1.pkl")
+
+
+A9_62=pd.DataFrame()
+a8_62=[calqual(i) for i in srimages_62[:600]]
+A9_62=A9_62.append(a8_62)
+A9_62.to_pickle("/home/idayan/noisedist_test1_A9_62_topickle_1.pkl")
 
 ####### this gives key error 0; why?? #######
 #with open("/home/idayan/senstivity_medperimageout.csv", "w+") as f:
@@ -287,8 +293,11 @@ A9_57.to_pickle("/home/idayan/noisedist_test1_A9_57_topickle.pkl")
 ##########        
 
 # instead try this:
-with open("testofnoisedistmedperimage_57", "wb") as fp:
-    pickle.dump(a8_57, fp)
+with open("/home/idayan/testofnoisedistmedperimage_57", "wb") as fpp:
+    pickle.dump(a8_57, fpp)
+    
+with open("/home/idayan/testofnoisedistmedperimage_62_1", "wb") as fp:
+    pickle.dump(a8_62, fp)
 
 #if __name__ == "__main__":
 #    
