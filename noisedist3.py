@@ -183,6 +183,8 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
 
     return fit[0], fit[1], x, y, cat_indexes, distances_, STDev,distances_2 
 
+
+global calqual
 def calqual(img):
     ref_cat = pd.read_csv("~/AARTFAAC_catalogue.csv")
     #ALL_STD=[]
