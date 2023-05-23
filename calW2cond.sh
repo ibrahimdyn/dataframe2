@@ -5,7 +5,7 @@
 #SBATCH --mem 6G
 #SBATCH --time 240:00:00
 #### ###SBATCH --array=13-17
-#SBATCH --array=1-500%500
+#SBATCH --array=1-30%30
 ### #SBATCH --array=1-650%100
 ### #SBATCH --exclude=helios-cn[016-020]
 #### #SBATCH --output=/home/idayan/TESTCALaut.log
@@ -46,7 +46,8 @@ echo $DATE
 
 
 START=$SLURM_ARRAY_TASK_ID
-NUMLINES=550
+NUMLINES=30
+#NUMLINES=550
 #NUMLINES=1000
 STOP=$((SLURM_ARRAY_TASK_ID*NUMLINES))
 START="$(($STOP - $(($NUMLINES - 1))))"
