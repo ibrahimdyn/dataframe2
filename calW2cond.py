@@ -57,7 +57,7 @@ def get_configuration():
     #parser.add_argument('--fitsfile', type=str, default="./",
     #                    help="Target fits file.")
 
-    parser.add_argument('--threshold', type=float, default = 2000.0,
+    parser.add_argument('--threshold', type=float, default = 2000000.0,
                         help="RMS Threshold to reject image.")
     parser.add_argument('--outdir', type=str, default="/zfs/helios/filer1/idayan/UCALED/{}/".format(obs),
                         help="Desitnation directory.")
@@ -145,8 +145,8 @@ def compare_flux(sr, catalog_ras, catalog_decs, catalog_fluxs, catalog_flux_errs
 
     for i in range(len(sr)):
         #print sr[i].flux_value
-        
-        if (sr[i].flux.value>5) & (sr[i].flux.value<1600):
+        if (sr[i].flux.value>0.1) & (sr[i].flux.value<16000):
+        #if (sr[i].flux.value>5) & (sr[i].flux.value<1600):
             
 
             sr_x, sr_y = pol2cart(np.abs(90-sr[i].dec.value),
@@ -227,7 +227,8 @@ def process(cfg):
 	print cfg.fitsfile
 	bg_data, bg_f =fits.getdata(cfg.fitsfile, header=True)
     	beam_model = get_beam(bg_f["CRVAL3"]/1e6)
-	fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
+	#dont apply beam corr
+	#fitsimg.data[0,0,:,:] = fitsimg.data[0,0,:,:]*(np.max(beam_model)/beam_model)
 
         # Source find 
         configuration = {
